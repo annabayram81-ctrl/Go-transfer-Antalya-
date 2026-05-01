@@ -1,0 +1,108 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #0b1320;
+  background: #f4f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  width: min(680px, 100%);
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.12);
+  padding: 24px;
+}
+
+h1 {
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #3f4a5c;
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #ced6e3;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.primary {
+  border: none;
+  border-radius: 8px;
+  background: #1366ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.price {
+  margin: 16px 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.note {
+  margin: 0 0 14px;
+  color: #3f4a5c;
+}
+
+.contactButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.contact {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.whatsapp {
+  background: #21b35b;
+}
+
+.telegram {
+  background: #1c9cd8;
+}
