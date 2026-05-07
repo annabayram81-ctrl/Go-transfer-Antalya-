@@ -1,0 +1,4 @@
+# Copy this file to local.properties if you want to pin an Android SDK path.
+# Android Studio usually creates local.properties automatically.
+#
+# sdk.dir=/Users/you/Library/Android/sdk

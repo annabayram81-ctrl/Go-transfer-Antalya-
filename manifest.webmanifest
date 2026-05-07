@@ -1,0 +1,25 @@
+{
+  "name": "GoTransfer Antalya",
+  "short_name": "GoTransfer",
+  "description": "Private transfer booking in Antalya and nearby resort locations.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f4",
+  "theme_color": "#f7f7f4",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

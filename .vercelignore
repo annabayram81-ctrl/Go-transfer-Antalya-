@@ -1,0 +1,7 @@
+node_modules/
+.tools/
+.vercel/
+package.json
+package-lock.json
+local-server.mjs
+README.md
