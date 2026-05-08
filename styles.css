@@ -346,15 +346,22 @@ h1 {
 
 .booking__head {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 20px;
+}
+
+.booking__title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
 }
 
 .booking__head-actions {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
 }
 
@@ -362,9 +369,8 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-  min-height: 28px;
-  margin-top: 10px;
+  flex: 0 0 auto;
+  min-height: 30px;
   border: 1px solid rgba(23, 118, 86, 0.2);
   border-radius: 999px;
   padding: 0 10px;
@@ -1348,14 +1354,18 @@ h1 {
     margin-bottom: 14px;
   }
 
+  .booking__title-row {
+    gap: 8px;
+  }
+
   .payment-badge {
-    min-height: 27px;
-    margin-top: 8px;
-    font-size: 0.66rem;
+    min-height: 29px;
+    padding: 0 9px;
+    font-size: 0.64rem;
   }
 
   .booking h2 {
-    font-size: clamp(1.38rem, 7vw, 1.65rem);
+    font-size: clamp(1.24rem, 6.1vw, 1.56rem);
   }
 
   .icon-button {
@@ -1484,7 +1494,7 @@ h1 {
   }
 
   .booking h2 {
-    font-size: 1.34rem;
+    font-size: 1.24rem;
   }
 
   .install-banner {
