@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content="Политика конфиденциальности GoTransfer." />
     <title>Политика конфиденциальности | GoTransfer</title>
     <meta name="theme-color" content="#f7f7f4" />
@@ -27,7 +27,7 @@
         max-width: 780px;
         min-height: 100vh;
         margin: 0 auto;
-        padding: 30px 20px max(96px, calc(42px + env(safe-area-inset-bottom)));
+        padding: calc(34px + env(safe-area-inset-top)) 20px max(104px, calc(44px + env(safe-area-inset-bottom)));
       }
 
       a {
@@ -74,9 +74,12 @@
 
       h1 {
         margin: 0 0 12px;
-        font-size: clamp(2rem, 8vw, 4rem);
+        max-width: 100%;
+        font-size: clamp(1.9rem, 8vw, 4rem);
         letter-spacing: 0;
-        line-height: 0.95;
+        line-height: 1;
+        overflow-wrap: anywhere;
+        hyphens: auto;
       }
 
       h2 {
@@ -108,12 +111,24 @@
 
       @media (max-width: 520px) {
         main {
-          padding-top: 22px;
+          padding-top: calc(52px + env(safe-area-inset-top));
         }
 
         .top {
           align-items: flex-start;
           flex-direction: column;
+          margin-bottom: 28px;
+        }
+
+        .back {
+          display: inline-flex;
+          min-height: 42px;
+          align-items: center;
+        }
+
+        h1 {
+          font-size: clamp(1.72rem, 9.2vw, 2.4rem);
+          line-height: 1.04;
         }
       }
     </style>

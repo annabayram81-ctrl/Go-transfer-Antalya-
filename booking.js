@@ -196,6 +196,7 @@ const translations = {
     passengerFew: "пассажира",
     passengerMany: "пассажиров",
     totalPassengers: "Всего",
+    payOnArrivalShort: "оплата по факту",
     tariffPrefix: "тариф",
     quickWhatsappMessage: "Здравствуйте! Хочу уточнить трансфер GoTransfer.",
     whatsappGreeting: "Здравствуйте! Хочу заказать трансфер.",
@@ -296,6 +297,7 @@ const translations = {
     passengerFew: "passengers",
     passengerMany: "passengers",
     totalPassengers: "Total",
+    payOnArrivalShort: "pay on arrival",
     tariffPrefix: "tier",
     quickWhatsappMessage: "Hello! I would like to ask about a GoTransfer transfer.",
     whatsappGreeting: "Hello! I would like to book a transfer.",
@@ -396,6 +398,7 @@ const translations = {
     passengerFew: "yolcu",
     passengerMany: "yolcu",
     totalPassengers: "Toplam",
+    payOnArrivalShort: "ödeme transferden sonra",
     tariffPrefix: "tarife",
     quickWhatsappMessage: "Merhaba! GoTransfer transferi hakkında bilgi almak istiyorum.",
     whatsappGreeting: "Merhaba! Transfer rezervasyonu yapmak istiyorum.",
@@ -969,7 +972,7 @@ function updateQuote() {
   }
 
   elements.price.textContent = euroFormatter.format(quote.price);
-  elements.meta.textContent = `${getPlaceDisplayName(quote.from)} → ${getPlaceDisplayName(quote.to)}, ${formatPassengerSummary(quote.passengers)}, ${formatDistance(quote.distanceKm)}`;
+  elements.meta.textContent = `${getPlaceDisplayName(quote.from)} → ${getPlaceDisplayName(quote.to)}, ${formatPassengerSummary(quote.passengers)}, ${formatDistance(quote.distanceKm)}, ${t("payOnArrivalShort")}`;
   elements.whatsapp.href = buildWhatsappLink(quote);
 }
 
