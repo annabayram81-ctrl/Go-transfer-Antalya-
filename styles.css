@@ -362,16 +362,18 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 38px;
+  width: fit-content;
+  min-height: 28px;
+  margin-top: 10px;
   border: 1px solid rgba(23, 118, 86, 0.2);
   border-radius: 999px;
-  padding: 0 12px;
+  padding: 0 10px;
   color: #0f6f52;
   background: rgba(205, 255, 226, 0.86);
-  box-shadow: 0 10px 24px rgba(30, 142, 105, 0.15);
-  font-size: 0.78rem;
+  box-shadow: 0 8px 20px rgba(30, 142, 105, 0.13);
+  font-size: 0.72rem;
   font-weight: 830;
-  line-height: 1.05;
+  line-height: 1;
   text-align: center;
   white-space: nowrap;
 }
@@ -1346,16 +1348,10 @@ h1 {
     margin-bottom: 14px;
   }
 
-  .booking__head-actions {
-    align-items: flex-end;
-    flex-direction: column-reverse;
-    gap: 7px;
-  }
-
   .payment-badge {
-    min-height: 32px;
-    padding: 0 10px;
-    font-size: 0.68rem;
+    min-height: 27px;
+    margin-top: 8px;
+    font-size: 0.66rem;
   }
 
   .booking h2 {
@@ -1485,11 +1481,6 @@ h1 {
 
   .booking__head {
     align-items: center;
-  }
-
-  .payment-badge {
-    max-width: 118px;
-    white-space: normal;
   }
 
   .booking h2 {

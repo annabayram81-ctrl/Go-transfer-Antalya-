@@ -975,7 +975,7 @@ function updateQuote() {
   }
 
   elements.price.textContent = euroFormatter.format(quote.price);
-  elements.meta.textContent = `${getPlaceDisplayName(quote.from)} → ${getPlaceDisplayName(quote.to)}, ${formatPassengerSummary(quote.passengers)}, ${formatDistance(quote.distanceKm)}, ${t("payOnArrivalShort")}`;
+  elements.meta.textContent = `${getPlaceDisplayName(quote.from)} → ${getPlaceDisplayName(quote.to)}, ${formatPassengerSummary(quote.passengers)}, ${formatDistance(quote.distanceKm)}`;
   elements.whatsapp.href = buildWhatsappLink(quote);
 }
 
