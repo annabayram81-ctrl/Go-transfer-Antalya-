@@ -417,7 +417,7 @@ h1 {
 }
 
 .place-field input {
-  padding-right: 46px;
+  padding-right: 58px;
 }
 
 .place-field__clear {
@@ -1395,6 +1395,10 @@ h1 {
     min-height: 42px;
     padding: 0 11px;
     font-size: 16px;
+  }
+
+  .place-field input {
+    padding-right: 56px;
   }
 
   .place-field__clear {
