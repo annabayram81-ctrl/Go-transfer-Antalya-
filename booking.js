@@ -1328,7 +1328,48 @@ function getInitialLanguage() {
     return savedLanguage;
   }
 
-  return "ru";
+  return isLikelyRussianRegion() ? "ru" : "en";
+}
+
+function isLikelyRussianRegion() {
+  const russianTimeZones = new Set([
+    "Europe/Kaliningrad",
+    "Europe/Moscow",
+    "Europe/Kirov",
+    "Europe/Volgograd",
+    "Europe/Astrakhan",
+    "Europe/Saratov",
+    "Europe/Ulyanovsk",
+    "Asia/Yekaterinburg",
+    "Asia/Omsk",
+    "Asia/Novosibirsk",
+    "Asia/Barnaul",
+    "Asia/Tomsk",
+    "Asia/Novokuznetsk",
+    "Asia/Krasnoyarsk",
+    "Asia/Irkutsk",
+    "Asia/Chita",
+    "Asia/Yakutsk",
+    "Asia/Khandyga",
+    "Asia/Vladivostok",
+    "Asia/Ust-Nera",
+    "Asia/Magadan",
+    "Asia/Sakhalin",
+    "Asia/Srednekolymsk",
+    "Asia/Kamchatka",
+    "Asia/Anadyr",
+  ]);
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  if (russianTimeZones.has(timeZone)) {
+    return true;
+  }
+
+  if (timeZone) {
+    return false;
+  }
+
+  return (navigator.languages || [navigator.language]).some((locale) => /-(RU)\b/i.test(locale));
 }
 
 let deferredInstallPrompt = null;
