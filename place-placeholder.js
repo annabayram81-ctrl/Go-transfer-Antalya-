@@ -1,4 +1,4 @@
-import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-62";
+import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-63";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
@@ -64,8 +64,18 @@ function renderGallery() {
 
   place.gallery.forEach((item, index) => {
     const localizedCaptions = {
-      en: ["The canal promenade and fairytale architecture", "The theme park and major attractions", "The main Land of Legends complex"],
-      tr: ["Kanal gezinti yolu ve masalsı mimari", "Tema parkı ve büyük eğlence üniteleri", "The Land of Legends ana kompleksi"],
+      en: [
+        "The fairytale castle and Nickelodeon Land entrance",
+        "The castle with evening illumination",
+        "The canal promenade and fairytale architecture",
+        "The theme park and major attractions",
+      ],
+      tr: [
+        "Masalsı şato ve Nickelodeon Land girişi",
+        "Akşam ışıklarıyla şato",
+        "Kanal gezinti yolu ve masalsı mimari",
+        "Tema parkı ve büyük eğlence üniteleri",
+      ],
     };
     const caption = currentLanguage === "ru" ? item.caption : localizedCaptions[currentLanguage]?.[index] || item.caption;
     const figure = document.createElement("figure");

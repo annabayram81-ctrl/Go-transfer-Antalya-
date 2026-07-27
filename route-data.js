@@ -215,8 +215,16 @@ export const places = [
     category: "Развлечения и прогулка",
     description:
       "Яркий комплекс в Кадрие с каналом, вечерними огнями, ресторанами, магазинами и тематическим парком. Можно выбрать короткую прогулку или оставить больше времени на развлечения.",
-    image: "/images/places/land-legends-castle.jpg",
+    image: "/images/places/land-legends-castle-day.jpg",
     gallery: [
+      {
+        image: "/images/places/land-legends-castle-day.jpg",
+        caption: "Сказочный замок и вход в Nickelodeon Land",
+      },
+      {
+        image: "/images/places/land-legends-fairytale-castle.jpg",
+        caption: "Замок с вечерней подсветкой",
+      },
       {
         image: "/images/places/land-legends-castle.jpg",
         caption: "Прогулочная улица с каналом и сказочной архитектурой",
@@ -224,10 +232,6 @@ export const places = [
       {
         image: "/images/places/land-legends-park.jpg",
         caption: "Тематический парк и большие аттракционы",
-      },
-      {
-        image: "/images/places/land-of-legends.jpg",
-        caption: "Главный комплекс The Land of Legends",
       },
     ],
     slug: "land-of-legends",
