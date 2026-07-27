@@ -536,6 +536,11 @@ function setDefaultDateTime() {
 }
 
 function bindEvents() {
+  elements.date.addEventListener("click", () => {
+    if (typeof elements.date.showPicker === "function") {
+      elements.date.showPicker();
+    }
+  });
   elements.date.addEventListener("change", updateQuote);
   elements.time.addEventListener("change", updateQuote);
   elements.adultMinus.addEventListener("click", () => changeAdults(-1));
