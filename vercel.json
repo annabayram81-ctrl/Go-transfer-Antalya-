@@ -3,8 +3,16 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/routes/lara",
+      "destination": "/route-detail"
+    },
+    {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"
+    },
+    {
+      "source": "/places/:slug",
+      "destination": "/place-placeholder"
     }
   ]
 }
