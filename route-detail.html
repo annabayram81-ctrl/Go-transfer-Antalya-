@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Выберите водопады, прогулочные зоны и исторические места для индивидуального VIP-трансфера из аэропорта Антальи в Лару."
+    />
+    <title>VIP-трансфер из аэропорта Антальи в Лару с остановками</title>
+    <meta name="theme-color" content="#111316" />
+    <link rel="icon" href="/assets/app-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/app-icon-512.png" />
+    <link rel="stylesheet" href="/styles.css?v=20260727-pwa-52" />
+    <link rel="stylesheet" href="/route-detail.css?v=20260727-pwa-53" />
+  </head>
+  <body class="route-detail-page">
+    <header class="route-detail-topbar">
+      <a class="brand" href="/" aria-label="GoTransfer — главная">
+        <span class="brand__text"><span>GoTransfer</span></span>
+      </a>
+      <div class="topbar__actions">
+        <a class="route-detail-back" href="/routes">Назад к направлениям</a>
+        <div class="language-menu">
+          <button class="language-menu__button" type="button" aria-label="Язык" aria-expanded="false">
+            <span>RU</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.1 6.2 8 10.1l3.9-3.9" /></svg>
+          </button>
+          <div class="language-menu__list" role="listbox" aria-label="Язык">
+            <button class="language-menu__option is-active" type="button" role="option" aria-selected="true">RU</button>
+            <button class="language-menu__option" type="button" role="option" aria-disabled="true" disabled>TR</button>
+            <button class="language-menu__option" type="button" role="option" aria-disabled="true" disabled>EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="route-hero" aria-labelledby="routeTitle">
+        <img id="routeHeroImage" src="/assets/antalya-transfer-hero.png" alt="VIP-трансфер из аэропорта Антальи в Лару" />
+        <span class="route-hero__overlay"></span>
+        <div class="route-hero__content">
+          <a class="route-breadcrumb" href="/routes">← Выбор направления</a>
+          <p class="route-hero__eyebrow" id="routeLine">Аэропорт Антальи → Лара</p>
+          <h1 id="routeTitle">VIP-трансфер из аэропорта Антальи в Лару с остановками</h1>
+          <p id="routeDescription">
+            Обычный трансфер можно превратить в небольшое путешествие — добавить красивое место, прогулку или историческую остановку.
+          </p>
+          <div class="route-hero__actions">
+            <a class="route-action route-action--primary" id="heroOperatorLink" href="#">Связаться с оператором</a>
+            <a class="route-action route-action--secondary" href="#routeStops">Выбрать остановки</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="route-intro route-container" aria-labelledby="introTitle">
+        <div>
+          <p class="section-kicker">Ваш маршрут — ваши впечатления</p>
+          <h2 id="introTitle">Добавьте к трансферу то, что интересно именно вам</h2>
+          <p>
+            Превратите обычный трансфер в небольшое путешествие. Выберите одну или несколько остановок, а наш оператор рассчитает продолжительность и стоимость маршрута.
+          </p>
+        </div>
+        <ul>
+          <li>Стандартный трансфер проходит без остановок</li>
+          <li>Остановки выбираются дополнительно</li>
+          <li>Продолжительность и цена зависят от выбранного маршрута</li>
+          <li>Окончательный вариант подтверждает оператор</li>
+        </ul>
+      </section>
+
+      <section class="route-section route-container" id="routeStops" aria-labelledby="directStopsTitle">
+        <header class="route-section__head">
+          <div>
+            <p class="section-kicker">Рядом с прямым маршрутом</p>
+            <h2 id="directStopsTitle">Удобно посетить по пути</h2>
+          </div>
+          <p>Эти места удобно включить в поездку из аэропорта в Лару.</p>
+        </header>
+        <div class="stop-grid" id="directStops"></div>
+      </section>
+
+      <section class="route-section route-section--extra" aria-labelledby="extraTripsTitle">
+        <div class="route-container">
+          <header class="route-section__head">
+            <div>
+              <p class="section-kicker">Расширенный маршрут</p>
+              <h2 id="extraTripsTitle">Можно добавить как мини-путешествие</h2>
+            </div>
+            <p>
+              Эти места не находятся непосредственно на прямом маршруте. Их посещение может увеличить продолжительность и стоимость поездки.
+            </p>
+          </header>
+          <div class="route-notice">
+            <strong>Важно</strong>
+            <span>Оператор заранее согласует с вами порядок остановок, продолжительность и итоговую стоимость.</span>
+          </div>
+          <div class="stop-grid" id="extraTrips"></div>
+        </div>
+      </section>
+
+      <section class="route-help route-container">
+        <p class="section-kicker">Персональная рекомендация</p>
+        <h2>Не знаете, что выбрать?</h2>
+        <p>
+          Расскажите оператору, сколько времени у вас есть и что вам интересно — природа, история, прогулка или красивые места для фотографий. Мы предложим подходящий маршрут.
+        </p>
+        <a class="route-action route-action--primary" id="helpOperatorLink" href="#">Подобрать мини-путешествие</a>
+      </section>
+    </main>
+
+    <footer class="route-footer">
+      <span>GoTransfer</span>
+      <a href="/privacy">Политика конфиденциальности</a>
+    </footer>
+
+    <aside class="selection-bar" id="selectionBar" aria-live="polite" hidden>
+      <div>
+        <strong id="selectionCount">0 остановок</strong>
+        <span id="selectionNames">Выберите места для маршрута</span>
+      </div>
+      <a id="selectionOperatorLink" href="#" target="_blank" rel="noreferrer">Обсудить маршрут с оператором</a>
+    </aside>
+
+    <script type="module" src="/route-detail.js?v=20260727-pwa-54"></script>
+  </body>
+</html>
+
