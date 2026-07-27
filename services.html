@@ -1,1 +1,123 @@
-PLACEHOLDER
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Выберите формат индивидуальной VIP-поездки GoTransfer: трансфер, поездка с остановками, автомобиль с водителем или обслуживание особого события."
+    />
+    <title>VIP-услуги GoTransfer — выберите формат поездки</title>
+    <meta name="theme-color" content="#111316" />
+    <link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/app-icon-512.png" />
+    <link rel="stylesheet" href="./styles.css?v=20260727-pwa-45" />
+    <link rel="stylesheet" href="./services.css?v=20260727-pwa-46" />
+  </head>
+  <body class="services-page">
+    <main class="services-shell">
+      <section class="services-hero" aria-labelledby="servicesTitle">
+        <img
+          class="services-hero__background"
+          src="./assets/antalya-transfer-hero.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="services-hero__veil"></div>
+
+        <header class="topbar services-topbar">
+          <a class="brand" href="./" aria-label="GoTransfer — главная">
+            <span class="brand__mark">GT</span>
+            <span class="brand__text">
+              <span>GoTransfer</span>
+              <small>VIP-поездки по Анталийскому побережью</small>
+            </span>
+          </a>
+
+          <div class="topbar__actions">
+            <a class="services-home-link" href="./">Бронирование</a>
+            <div class="language-menu" id="servicesLanguageMenu">
+              <button
+                class="language-menu__button"
+                id="servicesLanguageButton"
+                type="button"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-label="Язык"
+              >
+                <span>RU</span>
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M4.1 6.2 8 10.1l3.9-3.9" />
+                </svg>
+              </button>
+              <div class="language-menu__list" role="listbox" aria-label="Язык">
+                <button class="language-menu__option is-active" type="button" role="option" data-services-language="ru" aria-selected="true">RU</button>
+                <button class="language-menu__option" type="button" role="option" data-services-language="tr" aria-selected="false">TR</button>
+                <button class="language-menu__option" type="button" role="option" data-services-language="en" aria-selected="false">EN</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="services-content">
+          <header class="services-intro">
+            <p class="services-intro__eyebrow">VIP-услуги GoTransfer</p>
+            <h1 id="servicesTitle">Выберите формат вашей поездки</h1>
+            <p class="services-intro__subtitle">
+              Мы предлагаем несколько вариантов индивидуальных VIP-поездок. Выберите подходящий формат, чтобы узнать подробнее.
+            </p>
+          </header>
+
+          <div class="services-grid" aria-label="Варианты VIP-поездок">
+            <a class="service-card service-card--one" href="./" aria-label="Заказать индивидуальный VIP-трансфер">
+              <img src="./assets/antalya-transfer-hero.png" alt="Индивидуальный VIP-трансфер на автомобиле бизнес-класса" />
+              <span class="service-card__overlay"></span>
+              <span class="service-card__content">
+                <span class="service-card__number">01</span>
+                <strong>Индивидуальный VIP-трансфер</strong>
+                <span class="service-card__description">Комфортная поездка из аэропорта прямо до вашего отеля без остановок.</span>
+                <span class="service-card__button">Заказать трансфер</span>
+              </span>
+            </a>
+
+            <a class="service-card service-card--two" href="./directions.html" aria-label="Выбрать направление VIP-трансфера с остановками">
+              <img src="./assets/antalya-transfer-hero.png" alt="VIP-трансфер с остановками по пути" />
+              <span class="service-card__overlay"></span>
+              <span class="service-card__content">
+                <span class="service-card__number">02</span>
+                <strong>VIP-трансфер с остановками</strong>
+                <span class="service-card__description">По дороге к месту назначения посетите интересные места, магазины, водопады, рестораны и другие достопримечательности.</span>
+                <span class="service-card__button">Выбрать направление</span>
+              </span>
+            </a>
+
+            <a class="service-card service-card--three" href="./chauffeur.html" aria-label="Подробнее об автомобиле с личным водителем">
+              <img src="./assets/antalya-transfer-hero.png" alt="Автомобиль бизнес-класса с личным водителем" />
+              <span class="service-card__overlay"></span>
+              <span class="service-card__content">
+                <span class="service-card__number">03</span>
+                <strong>Автомобиль с личным водителем</strong>
+                <span class="service-card__description">Автомобиль бизнес-класса с персональным водителем на несколько часов или на целый день.</span>
+                <span class="service-card__button">Подробнее</span>
+              </span>
+            </a>
+
+            <a class="service-card service-card--four" href="./special-events.html" aria-label="Подробнее о VIP-трансфере для бизнеса и особых случаев">
+              <img src="./assets/antalya-transfer-hero.png" alt="VIP-трансфер для бизнеса и особых случаев" />
+              <span class="service-card__overlay"></span>
+              <span class="service-card__content">
+                <span class="service-card__number">04</span>
+                <strong>VIP-трансфер для бизнеса и особых случаев</strong>
+                <span class="service-card__description">Деловые встречи, свадьбы, мероприятия, конференции, рестораны, яхты и индивидуальные поездки.</span>
+                <span class="service-card__button">Подробнее</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./services.js?v=20260727-pwa-46"></script>
+  </body>
+</html>
+
