@@ -306,17 +306,30 @@
 
 .stop-card__visual {
   position: relative;
-  display: flex;
   min-height: 260px;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 22px;
   color: rgba(255, 255, 255, 0.62);
   background:
     linear-gradient(145deg, rgba(119, 212, 198, 0.18), transparent 55%),
     radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.09), transparent 40%),
     #242a2f;
   overflow: hidden;
+}
+
+.stop-card__visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.stop-card:hover .stop-card__visual img {
+  transform: scale(1.035);
+}
+
+.stop-card__visual.is-missing img {
+  display: none;
 }
 
 .stop-card__visual::after {
@@ -330,15 +343,46 @@
   border-radius: 50%;
 }
 
-.stop-card__visual > span {
+.stop-card__number {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 2;
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.74rem;
   font-weight: 820;
   letter-spacing: 0.16em;
 }
 
-.stop-card__visual small {
-  position: relative;
+.stop-card__image-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px;
+  text-align: center;
+}
+
+.stop-card__visual.is-missing .stop-card__image-fallback {
+  display: flex;
+}
+
+.stop-card__image-icon {
+  display: grid;
+  width: 52px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.stop-card__image-fallback small {
   z-index: 1;
   max-width: 170px;
   font-size: 0.75rem;
