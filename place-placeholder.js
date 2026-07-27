@@ -1,4 +1,4 @@
-import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-58";
+import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-62";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
@@ -45,6 +45,38 @@ function renderHighlights() {
   });
 }
 
+function renderGallery() {
+  const section = document.querySelector("#placeGallerySection");
+  const container = document.querySelector("#placeGallery");
+  container.replaceChildren();
+
+  if (!place.gallery?.length) {
+    section.hidden = true;
+    return;
+  }
+
+  section.hidden = false;
+  const heading = section.querySelector(".place-gallery__heading");
+  heading.querySelector("p").textContent =
+    currentLanguage === "en" ? "PHOTOS OF THE PLACE" : currentLanguage === "tr" ? "MEKÂN FOTOĞRAFLARI" : "ФОТОГРАФИИ МЕСТА";
+  heading.querySelector("h2").textContent =
+    currentLanguage === "en" ? "See what awaits you" : currentLanguage === "tr" ? "Sizi nelerin beklediğini görün" : "Посмотрите, что вас ждёт";
+
+  place.gallery.forEach((item, index) => {
+    const localizedCaptions = {
+      en: ["The canal promenade and fairytale architecture", "The theme park and major attractions", "The main Land of Legends complex"],
+      tr: ["Kanal gezinti yolu ve masalsı mimari", "Tema parkı ve büyük eğlence üniteleri", "The Land of Legends ana kompleksi"],
+    };
+    const caption = currentLanguage === "ru" ? item.caption : localizedCaptions[currentLanguage]?.[index] || item.caption;
+    const figure = document.createElement("figure");
+    figure.innerHTML = `
+      <img src="${item.image}" alt="${place.title}: ${caption}" loading="${index ? "lazy" : "eager"}" decoding="async">
+      <figcaption>${caption}</figcaption>
+    `;
+    container.append(figure);
+  });
+}
+
 function renderPlace() {
   const copy = interfaceCopy[currentLanguage];
   document.documentElement.lang = currentLanguage;
@@ -86,6 +118,7 @@ function renderPlace() {
   document.querySelector("#placeBottomOperatorLink").href = operatorUrl;
 
   renderHighlights();
+  renderGallery();
 }
 
 renderPlace();

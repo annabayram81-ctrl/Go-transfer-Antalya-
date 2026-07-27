@@ -215,7 +215,21 @@ export const places = [
     category: "Развлечения и прогулка",
     description:
       "Яркий комплекс в Кадрие с каналом, вечерними огнями, ресторанами, магазинами и тематическим парком. Можно выбрать короткую прогулку или оставить больше времени на развлечения.",
-    image: "/images/places/land-of-legends.jpg",
+    image: "/images/places/land-legends-castle.jpg",
+    gallery: [
+      {
+        image: "/images/places/land-legends-castle.jpg",
+        caption: "Прогулочная улица с каналом и сказочной архитектурой",
+      },
+      {
+        image: "/images/places/land-legends-park.jpg",
+        caption: "Тематический парк и большие аттракционы",
+      },
+      {
+        image: "/images/places/land-of-legends.jpg",
+        caption: "Главный комплекс The Land of Legends",
+      },
+    ],
     slug: "land-of-legends",
     routeDestinationAccusative: "Белек",
     eyebrow: "Канал, шоу и тематический парк",
