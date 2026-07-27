@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260727-pwa-55";
+const CACHE_NAME = "gotransfer-v20260727-pwa-56";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -76,6 +76,10 @@ self.addEventListener("fetch", (event) => {
       }
 
       return fetch(event.request).then((response) => {
+        if (!response.ok) {
+          return response;
+        }
+
         const responseCopy = response.clone();
 
         caches.open(CACHE_NAME).then((cache) => {
@@ -87,4 +91,3 @@ self.addEventListener("fetch", (event) => {
     }),
   );
 });
-
