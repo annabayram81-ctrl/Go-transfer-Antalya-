@@ -3,31 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="Подробная страница достопримечательности готовится." />
-    <title>Подробная страница готовится — GoTransfer</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Достопримечательность на маршруте VIP-трансфера GoTransfer." />
+    <title>Достопримечательность — GoTransfer</title>
     <meta name="theme-color" content="#111316" />
+    <link id="placeCanonical" rel="canonical" href="https://gotransfer.my/routes/lara" />
     <link rel="icon" href="/assets/app-icon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css?v=20260727-pwa-52" />
-    <link rel="stylesheet" href="/route-detail.css?v=20260727-pwa-53" />
+    <link rel="stylesheet" href="/place-detail.css?v=20260727-pwa-57" />
   </head>
-  <body class="place-placeholder-page">
-    <main class="place-placeholder">
+  <body class="place-detail-page">
+    <header class="place-detail-topbar">
       <a class="brand" href="/" aria-label="GoTransfer — главная">
         <span class="brand__text"><span>GoTransfer</span></span>
       </a>
-      <section>
-        <p>Место для остановки</p>
-        <h1 id="placeTitle">Достопримечательность</h1>
-        <strong>Подробная страница готовится</strong>
-        <span id="placeDescription">Скоро здесь появятся фотографии, подробности посещения и рекомендации для поездки.</span>
+      <a class="place-detail-route-link" href="/routes/lara">← Вернуться к маршруту</a>
+    </header>
+
+    <main>
+      <section class="place-hero">
+        <img id="placeImage" src="" alt="" decoding="async" />
+        <div class="place-hero__overlay"></div>
+        <div class="place-hero__content">
+          <a href="/routes/lara">Маршрут: аэропорт Антальи → Лара</a>
+          <p id="placeEyebrow">Место для остановки</p>
+          <h1 id="placeTitle">Достопримечательность</h1>
+          <span id="placeIntro"></span>
+          <div class="place-hero__actions">
+            <a id="placeOperatorLink" class="place-primary-action" href="#" target="_blank" rel="noreferrer">
+              Добавить остановку
+            </a>
+            <a class="place-secondary-action" href="/routes/lara">Другие остановки</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="place-story" aria-labelledby="placeStoryTitle">
+        <div class="place-story__heading">
+          <p>ЧТО ЗДЕСЬ ИНТЕРЕСНО</p>
+          <h2 id="placeStoryTitle">Что посмотреть и чем заняться</h2>
+        </div>
+        <div id="placeHighlights" class="place-highlights"></div>
+      </section>
+
+      <section class="place-visit-note">
         <div>
-          <a href="/routes/lara">Вернуться к маршруту</a>
-          <a id="placeOperatorLink" href="#" target="_blank" rel="noreferrer">Связаться с оператором</a>
+          <p>ПЛАНИРОВАНИЕ ОСТАНОВКИ</p>
+          <h2>Сколько времени оставить?</h2>
+        </div>
+        <span id="placeVisitNote"></span>
+      </section>
+
+      <section class="place-detail-cta">
+        <p>Хотите включить это место в поездку?</p>
+        <h2>Оператор поможет рассчитать время и подобрать удобный формат остановки.</h2>
+        <div>
+          <a id="placeBottomOperatorLink" href="#" target="_blank" rel="noreferrer">Обсудить с оператором</a>
+          <a href="/routes/lara">Вернуться к выбору мест</a>
         </div>
       </section>
     </main>
-    <script type="module" src="/place-placeholder.js?v=20260727-pwa-55"></script>
+
+    <footer class="place-detail-footer">
+      <span>GoTransfer</span>
+      <a href="/">Главная</a>
+      <a href="/services">Выбрать путешествие</a>
+      <a href="/routes">Направления</a>
+    </footer>
+
+    <script type="module" src="/place-placeholder.js?v=20260727-pwa-57"></script>
   </body>
 </html>
-

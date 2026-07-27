@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260727-pwa-55";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260727-pwa-57";
 
 const routeSlug = location.pathname.split("/").filter(Boolean).at(-1);
 const route = routes[routeSlug] || routes.lara;
@@ -124,4 +124,3 @@ document.addEventListener("click", (event) => {
 });
 
 renderRoute();
-

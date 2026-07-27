@@ -1,0 +1,344 @@
+:root {
+  --place-bg: #101316;
+  --place-panel: #171b1f;
+  --place-muted: rgba(255, 255, 255, 0.68);
+  --place-line: rgba(255, 255, 255, 0.12);
+  --place-accent: #77d4c6;
+}
+
+.place-detail-page {
+  margin: 0;
+  color: #fff;
+  background: var(--place-bg);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.place-detail-page * {
+  box-sizing: border-box;
+}
+
+.place-detail-topbar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 4;
+  display: flex;
+  width: min(1180px, calc(100% - 48px));
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  transform: translateX(-50%);
+}
+
+.place-detail-page .brand {
+  color: #fff;
+  text-decoration: none;
+}
+
+.place-detail-route-link {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 0 17px;
+  color: #fff;
+  background: rgba(10, 13, 15, 0.36);
+  backdrop-filter: blur(12px);
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.place-hero {
+  position: relative;
+  display: grid;
+  min-height: min(820px, 92vh);
+  align-items: end;
+  overflow: hidden;
+}
+
+.place-hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.place-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 10, 12, 0.9) 0%, rgba(8, 10, 12, 0.54) 50%, rgba(8, 10, 12, 0.15) 100%),
+    linear-gradient(0deg, #101316 0%, transparent 48%);
+}
+
+.place-hero__content {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 150px 0 94px;
+}
+
+.place-hero__content > a:first-child,
+.place-hero__content > p,
+.place-story__heading > p,
+.place-visit-note p {
+  color: var(--place-accent);
+  font-size: 0.72rem;
+  font-weight: 820;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+}
+
+.place-hero h1 {
+  max-width: 860px;
+  margin: 17px 0 20px;
+  font-size: clamp(3rem, 7vw, 6.4rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.place-hero__content > span {
+  display: block;
+  max-width: 680px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  line-height: 1.62;
+}
+
+.place-hero__actions,
+.place-detail-cta > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.place-primary-action,
+.place-secondary-action,
+.place-detail-cta a {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 24px;
+  font-size: 0.82rem;
+  font-weight: 820;
+  text-decoration: none;
+}
+
+.place-primary-action,
+.place-detail-cta a:first-child {
+  color: #10201e;
+  background: var(--place-accent);
+}
+
+.place-secondary-action,
+.place-detail-cta a:last-child {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #fff;
+  background: rgba(18, 21, 24, 0.34);
+}
+
+.place-story,
+.place-visit-note,
+.place-detail-cta,
+.place-detail-footer {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.place-story {
+  display: grid;
+  grid-template-columns: 0.76fr 1.54fr;
+  gap: 64px;
+  padding: 108px 0;
+}
+
+.place-story h2,
+.place-visit-note h2,
+.place-detail-cta h2 {
+  margin: 12px 0 0;
+  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.place-highlights {
+  display: grid;
+  gap: 14px;
+}
+
+.place-highlight {
+  position: relative;
+  min-height: 190px;
+  border: 1px solid var(--place-line);
+  border-radius: 24px;
+  padding: 28px 30px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(119, 212, 198, 0.1), transparent 38%),
+    var(--place-panel);
+}
+
+.place-highlight > span {
+  color: var(--place-accent);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+}
+
+.place-highlight h3 {
+  margin: 24px 0 10px;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  letter-spacing: -0.035em;
+}
+
+.place-highlight p,
+.place-visit-note > span,
+.place-detail-cta > p {
+  margin: 0;
+  color: var(--place-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.place-visit-note {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 70px;
+  border-top: 1px solid var(--place-line);
+  border-bottom: 1px solid var(--place-line);
+  padding: 78px 0;
+}
+
+.place-visit-note > span {
+  font-size: 1.08rem;
+}
+
+.place-detail-cta {
+  padding: 110px 0;
+}
+
+.place-detail-cta > p {
+  color: var(--place-accent);
+  font-weight: 760;
+}
+
+.place-detail-cta h2 {
+  max-width: 920px;
+}
+
+.place-detail-footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid var(--place-line);
+  padding: 30px 0 46px;
+}
+
+.place-detail-footer span {
+  margin-right: auto;
+  font-size: 1.1rem;
+  font-weight: 850;
+}
+
+.place-detail-footer a {
+  color: var(--place-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.place-detail-page a {
+  transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.place-detail-page a:hover {
+  transform: translateY(-2px);
+}
+
+.place-detail-page a:focus-visible {
+  outline: 3px solid rgba(119, 212, 198, 0.54);
+  outline-offset: 4px;
+}
+
+@media (max-width: 780px) {
+  .place-detail-topbar {
+    width: calc(100% - 32px);
+    padding-top: 18px;
+  }
+
+  .place-detail-route-link {
+    min-height: 38px;
+    padding-inline: 13px;
+    font-size: 0.7rem;
+  }
+
+  .place-hero {
+    min-height: 760px;
+  }
+
+  .place-hero__overlay {
+    background:
+      linear-gradient(0deg, #101316 0%, rgba(8, 10, 12, 0.7) 54%, rgba(8, 10, 12, 0.2) 100%),
+      linear-gradient(90deg, rgba(8, 10, 12, 0.55), transparent);
+  }
+
+  .place-hero__content,
+  .place-story,
+  .place-visit-note,
+  .place-detail-cta,
+  .place-detail-footer {
+    width: calc(100% - 32px);
+  }
+
+  .place-hero__content {
+    padding-bottom: 62px;
+  }
+
+  .place-hero h1 {
+    font-size: clamp(3rem, 15vw, 4.6rem);
+  }
+
+  .place-hero__actions {
+    display: grid;
+  }
+
+  .place-story,
+  .place-visit-note {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .place-story {
+    padding: 76px 0;
+  }
+
+  .place-visit-note {
+    padding: 64px 0;
+  }
+
+  .place-highlight {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .place-detail-cta {
+    padding: 78px 0;
+  }
+
+  .place-detail-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .place-detail-footer span {
+    margin-bottom: 8px;
+  }
+}

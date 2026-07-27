@@ -20,7 +20,12 @@ const contentTypes = {
 
 createServer((request, response) => {
   const url = new URL(request.url || "/", `http://localhost:${port}`);
-  const requestedPath = url.pathname === "/" ? "/index.html" : url.pathname;
+  const requestedPath =
+    url.pathname === "/"
+      ? "/index.html"
+      : url.pathname.startsWith("/images/")
+        ? `/public${url.pathname}`
+        : url.pathname;
   const filePath = normalize(join(root, requestedPath));
 
   if (!filePath.startsWith(root) || !existsSync(filePath) || !statSync(filePath).isFile()) {
