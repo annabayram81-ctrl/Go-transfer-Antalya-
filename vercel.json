@@ -18,6 +18,10 @@
       "destination": "/route-detail"
     },
     {
+      "source": "/routes/alanya",
+      "destination": "/route-detail"
+    },
+    {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"
     },

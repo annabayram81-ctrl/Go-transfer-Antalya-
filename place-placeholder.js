@@ -1,4 +1,4 @@
-import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-65";
+import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-66";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
@@ -88,6 +88,26 @@ function renderGallery() {
           "Beyaz ve koyu mermerden ünlü Dansöz Heykeli",
           "Müzenin en önemli eserlerinden Yorgun Herakles",
           "Perge'den Roma Dönemi Üç Güzeller heykel grubu",
+        ],
+      },
+      "alanya-red-tower": {
+        en: [
+          "The Red Tower, symbol of Alanya's old harbour",
+          "The 13th-century Seljuk shipyard beside the castle walls",
+        ],
+        tr: [
+          "Alanya'nın eski limanının simgesi Kızılkule",
+          "Kale surlarının yanındaki 13. yüzyıl Selçuklu Tersanesi",
+        ],
+      },
+      "alanya-dim": {
+        en: [
+          "The cool Dim River among green mountain slopes",
+          "The stalactites and stone chambers of Dim Cave",
+        ],
+        tr: [
+          "Yeşil yamaçlar arasındaki serin Dim Çayı",
+          "Dim Mağarası'nın sarkıtları ve taş salonları",
         ],
       },
     };

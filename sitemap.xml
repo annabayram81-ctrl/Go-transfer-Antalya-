@@ -16,6 +16,9 @@
     <loc>https://gotransfer.my/routes/belek</loc>
   </url>
   <url>
+    <loc>https://gotransfer.my/routes/alanya</loc>
+  </url>
+  <url>
     <loc>https://gotransfer.my/places/lower-duden</loc>
   </url>
   <url>
@@ -47,5 +50,29 @@
   </url>
   <url>
     <loc>https://gotransfer.my/places/zeytintasi-cave</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/alanya-castle</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/alanya-cable-car</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/alanya-aya-yorgi</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/alanya-red-tower</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/alanya-damlatas</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/alanya-museum</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/alanya-dim</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/alanya-syedra</loc>
   </url>
 </urlset>
