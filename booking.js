@@ -139,6 +139,9 @@ const translations = {
     quickAttraction: "Достопримечательность",
     dateLabel: "Дата",
     timeLabel: "Время",
+    hoursLabel: "Часы",
+    minutesLabel: "Минуты",
+    openTimePicker: "Выбрать время",
     passengersLabel: "Пассажиры",
     adultLabel: "Взрослые",
     childrenLabel: "Дети",
@@ -241,6 +244,9 @@ const translations = {
     quickAttraction: "Attraction",
     dateLabel: "Date",
     timeLabel: "Time",
+    hoursLabel: "Hours",
+    minutesLabel: "Minutes",
+    openTimePicker: "Choose time",
     passengersLabel: "Passengers",
     adultLabel: "Adults",
     childrenLabel: "Children",
@@ -343,6 +349,9 @@ const translations = {
     quickAttraction: "Gezilecek yer",
     dateLabel: "Tarih",
     timeLabel: "Saat",
+    hoursLabel: "Saat",
+    minutesLabel: "Dakika",
+    openTimePicker: "Saat seç",
     passengersLabel: "Yolcu",
     adultLabel: "Yetişkin",
     childrenLabel: "Çocuk",
@@ -443,6 +452,8 @@ const elements = {
   date: document.querySelector("#rideDate"),
   dateDisplay: document.querySelector("#rideDateDisplay"),
   time: document.querySelector("#rideTime"),
+  timeHour: document.querySelector("#rideTimeHour"),
+  timeMinute: document.querySelector("#rideTimeMinute"),
   passengers: document.querySelector("#passengers"),
   adultsCount: document.querySelector("#adultsCount"),
   adultMinus: document.querySelector("#adultMinus"),
@@ -533,6 +544,7 @@ function setDefaultDateTime() {
   elements.date.value = formatDate(tomorrow);
   elements.time.value = "10:00";
   updateDateDisplay();
+  updateTimeSegments();
 }
 
 function bindEvents() {
@@ -542,7 +554,19 @@ function bindEvents() {
     }
   });
   elements.date.addEventListener("change", updateQuote);
-  elements.time.addEventListener("change", updateQuote);
+  elements.time.addEventListener("click", () => {
+    if (typeof elements.time.showPicker === "function") {
+      elements.time.showPicker();
+    }
+  });
+  elements.time.addEventListener("change", () => {
+    updateTimeSegments();
+    updateQuote();
+  });
+  elements.timeHour.addEventListener("input", () => handleTimeSegmentInput(elements.timeHour, 23, elements.timeMinute));
+  elements.timeMinute.addEventListener("input", () => handleTimeSegmentInput(elements.timeMinute, 59));
+  elements.timeHour.addEventListener("blur", commitTimeSegments);
+  elements.timeMinute.addEventListener("blur", commitTimeSegments);
   elements.adultMinus.addEventListener("click", () => changeAdults(-1));
   elements.adultPlus.addEventListener("click", () => changeAdults(1));
   elements.openChildrenSheet.addEventListener("click", openChildrenSheet);
@@ -1274,6 +1298,55 @@ function formatHumanDate(value) {
   return new Intl.DateTimeFormat(t("dateLocale"), t("dateFormatOptions")).format(new Date(`${value}T12:00:00`));
 }
 
+function handleTimeSegmentInput(input, max, nextInput) {
+  input.value = input.value.replace(/\D/g, "").slice(0, 2);
+
+  if (input.value.length === 2) {
+    input.value = String(Math.min(max, Number(input.value))).padStart(2, "0");
+
+    if (nextInput) {
+      nextInput.focus();
+      nextInput.select();
+    }
+  }
+
+  syncTimeFromSegments();
+}
+
+function commitTimeSegments() {
+  const [fallbackHour = "10", fallbackMinute = "00"] = elements.time.value.split(":");
+  const hour = Math.min(23, Math.max(0, Number(elements.timeHour.value || fallbackHour)));
+  const minute = Math.min(59, Math.max(0, Number(elements.timeMinute.value || fallbackMinute)));
+
+  elements.timeHour.value = String(hour).padStart(2, "0");
+  elements.timeMinute.value = String(minute).padStart(2, "0");
+  elements.time.value = `${elements.timeHour.value}:${elements.timeMinute.value}`;
+  updateQuote();
+}
+
+function syncTimeFromSegments() {
+  const hour = Number(elements.timeHour.value);
+  const minute = Number(elements.timeMinute.value);
+
+  if (
+    elements.timeHour.value.length === 2 &&
+    elements.timeMinute.value.length === 2 &&
+    hour >= 0 &&
+    hour <= 23 &&
+    minute >= 0 &&
+    minute <= 59
+  ) {
+    elements.time.value = `${elements.timeHour.value}:${elements.timeMinute.value}`;
+    updateQuote();
+  }
+}
+
+function updateTimeSegments() {
+  const [hour = "10", minute = "00"] = elements.time.value.split(":");
+  elements.timeHour.value = hour;
+  elements.timeMinute.value = minute;
+}
+
 function updateDateDisplay() {
   elements.dateDisplay.textContent = formatHumanDate(elements.date.value);
   elements.date.lang = currentLanguage;
@@ -1518,3 +1591,4 @@ function isStandaloneApp() {
 }
 
 init();
+
