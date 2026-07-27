@@ -1171,10 +1171,7 @@ function getTariffTier(passengers) {
 }
 
 function calculatePrice(tariffTier, distanceKm, passengers) {
-  const extraPassengers = Math.max(0, passengers - 9);
-  const largeBusMultiplier = tariffTier.extraPassengerRate ? 1 + extraPassengers * tariffTier.extraPassengerRate : 1;
-
-  return Math.max(0, roundToFive((tariffTier.base + distanceKm * tariffTier.perKm) * (tariffTier.multiplier || 1) * largeBusMultiplier) - 5);
+  return globalThis.GoTransferPricing.calculateTransferPrice(tariffTier, distanceKm, passengers);
 }
 
 function getRouteDistanceKm(fromId, toId) {

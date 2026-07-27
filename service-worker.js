@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260727-pwa-66";
+const CACHE_NAME = "gotransfer-v20260727-long-distance-1";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -9,7 +9,8 @@ const CORE_ASSETS = [
   "/place-placeholder.html",
   "/privacy.html",
   "/styles.css?v=20260727-pwa-52",
-  "/booking.js?v=20260727-pwa-49",
+  "/pricing.js?v=20260727-long-distance-1",
+  "/booking.js?v=20260727-long-distance-1",
   "/services.css?v=20260727-pwa-49",
   "/services.js?v=20260727-pwa-47",
   "/routes.css?v=20260727-pwa-50",
