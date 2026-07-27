@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Выберите курортное направление для VIP-трансфера с остановками из аэропорта Анталии."
+    />
+    <title>Куда вы отправляетесь? — маршруты GoTransfer</title>
+    <meta name="theme-color" content="#111316" />
+    <link rel="icon" href="/assets/app-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/app-icon-512.png" />
+    <link rel="stylesheet" href="/styles.css?v=20260727-pwa-50" />
+    <link rel="stylesheet" href="/routes.css?v=20260727-pwa-50" />
+  </head>
+  <body class="routes-page">
+    <header class="routes-topbar">
+      <a class="brand" href="/" aria-label="GoTransfer — главная">
+        <span class="brand__text"><span>GoTransfer</span></span>
+      </a>
+
+      <div class="topbar__actions">
+        <a class="routes-back-link" href="/services">Все услуги</a>
+        <div class="language-menu" id="routesLanguageMenu">
+          <button
+            class="language-menu__button"
+            id="routesLanguageButton"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-label="Язык"
+          >
+            <span>RU</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.1 6.2 8 10.1l3.9-3.9" /></svg>
+          </button>
+          <div class="language-menu__list" role="listbox" aria-label="Язык">
+            <button class="language-menu__option is-active" type="button" role="option" aria-selected="true">RU</button>
+            <button class="language-menu__option" type="button" role="option" aria-selected="false" aria-disabled="true" disabled>TR</button>
+            <button class="language-menu__option" type="button" role="option" aria-selected="false" aria-disabled="true" disabled>EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="routes-main">
+      <header class="routes-intro">
+        <p class="routes-intro__eyebrow">VIP-трансфер с остановками</p>
+        <h1>Куда вы отправляетесь?</h1>
+        <p>
+          Выберите направление, и мы покажем интересные места, которые можно посетить по пути из аэропорта.
+        </p>
+      </header>
+
+      <section class="destination-grid" aria-label="Направления из аэропорта Анталии">
+        <a class="destination-card destination-card--coast" href="/routes/lara">
+          <img src="/assets/antalya-transfer-hero.png" alt="Побережье по пути в Лару" width="1280" height="720" fetchpriority="high" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Лара</small><strong>Лара</strong><span>Короткий путь к морю, пальмовым аллеям и атмосфере курортного города.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--resort" href="/routes/belek">
+          <img src="/assets/antalya-transfer-hero.png" alt="Премиальный курортный путь в Белек" width="1280" height="720" fetchpriority="high" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Белек</small><strong>Белек</strong><span>Спокойная дорога среди сосен к отелям, гольф-полям и широким пляжам.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--history" href="/routes/side">
+          <img src="/assets/antalya-transfer-hero.png" alt="Античное побережье по пути в Сиде" width="1280" height="720" fetchpriority="high" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Сиде</small><strong>Сиде</strong><span>Путешествие к античным силуэтам, старому городу и тёплому морскому берегу.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--history" href="/routes/alanya">
+          <img src="/assets/antalya-transfer-hero.png" alt="Крепость и побережье Аланьи" width="1280" height="720" loading="lazy" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Аланья</small><strong>Аланья</strong><span>Длинная живописная поездка вдоль моря к крепости и яркой набережной.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--mountains" href="/routes/konyaalti">
+          <img src="/assets/antalya-transfer-hero.png" alt="Море и горы Коньяалты" width="1280" height="720" loading="lazy" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Коньяалты</small><strong>Коньяалты</strong><span>Городской маршрут к длинному пляжу с панорамой Средиземного моря и Тавра.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--mountains" href="/routes/beldibi">
+          <img src="/assets/antalya-transfer-hero.png" alt="Горное побережье Бельдиби" width="1280" height="720" loading="lazy" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Бельдиби</small><strong>Бельдиби</strong><span>Дорога между морем и горами, где курортная суета сменяется тишиной сосен.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--forest" href="/routes/goynuk">
+          <img src="/assets/antalya-transfer-hero.png" alt="Зелёное побережье Гёйнюка" width="1280" height="720" loading="lazy" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Гёйнюк</small><strong>Гёйнюк</strong><span>Свежий маршрут к сосновым склонам, каньону и прозрачным бухтам.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--forest" href="/routes/kemer">
+          <img src="/assets/antalya-transfer-hero.png" alt="Побережье и горы Кемера" width="1280" height="720" loading="lazy" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Кемер</small><strong>Кемер</strong><span>Эффектная дорога к марине, горным панорамам и бирюзовому побережью.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--bay" href="/routes/kiris">
+          <img src="/assets/antalya-transfer-hero.png" alt="Спокойная бухта Кириша" width="1280" height="720" loading="lazy" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Кириш</small><strong>Кириш</strong><span>Уютное продолжение пути за Кемером — к спокойным бухтам и зелёным склонам.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--bay" href="/routes/camyuva">
+          <img src="/assets/antalya-transfer-hero.png" alt="Средиземноморская Чамьюва" width="1280" height="720" loading="lazy" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Чамьюва</small><strong>Чамьюва</strong><span>Мягкий курортный маршрут к апельсиновым садам и светлым галечным пляжам.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--wild" href="/routes/tekirova">
+          <img src="/assets/antalya-transfer-hero.png" alt="Бирюзовое побережье Текировы" width="1280" height="720" loading="lazy" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Текирова</small><strong>Текирова</strong><span>Путь к бирюзовым бухтам у подножия Тахталы и древним местам Ликии.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+        <a class="destination-card destination-card--wild" href="/routes/adrasan">
+          <img src="/assets/antalya-transfer-hero.png" alt="Тихая бухта Адрасана" width="1280" height="720" loading="lazy" />
+          <span class="destination-card__shade"></span>
+          <span class="destination-card__content"><small>Аэропорт Анталии → Адрасан</small><strong>Адрасан</strong><span>Самый уединённый маршрут — через горы и леса к широкой тихой бухте.</span><b>Смотреть маршрут <i aria-hidden="true">→</i></b></span>
+        </a>
+      </section>
+    </main>
+
+    <script>
+      const menu = document.querySelector("#routesLanguageMenu");
+      const button = document.querySelector("#routesLanguageButton");
+      button.addEventListener("click", () => {
+        const open = menu.classList.toggle("is-open");
+        button.setAttribute("aria-expanded", String(open));
+      });
+      document.addEventListener("click", (event) => {
+        if (!menu.contains(event.target)) {
+          menu.classList.remove("is-open");
+          button.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
+  </body>
+</html>
+
