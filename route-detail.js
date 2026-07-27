@@ -1,4 +1,4 @@
-import { places, routes, whatsappPhone } from "./route-data.js?v=20260727-pwa-54";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260727-pwa-55";
 
 const routeSlug = location.pathname.split("/").filter(Boolean).at(-1);
 const route = routes[routeSlug] || routes.lara;
@@ -18,7 +18,7 @@ function pluralStops(count) {
 }
 
 function messageForSelection() {
-  const selectedNames = [...selectedStops].map((slug) => places[slug].name);
+  const selectedNames = [...selectedStops].map((slug) => placesBySlug[slug].title);
 
   if (!selectedNames.length) {
     return `Здравствуйте! Меня интересует VIP-трансфер из аэропорта Антальи в ${route.destinationAccusative}. Подскажите, пожалуйста, какие остановки можно добавить к маршруту.`;
@@ -33,7 +33,7 @@ function whatsappUrl(message) {
 
 function updateSelection() {
   const count = selectedStops.size;
-  const names = [...selectedStops].map((slug) => places[slug].name);
+  const names = [...selectedStops].map((slug) => placesBySlug[slug].title);
 
   selectionBar.hidden = count === 0;
   selectionCount.textContent = pluralStops(count);
@@ -55,24 +55,35 @@ function toggleStop(slug) {
 }
 
 function stopCard(slug, index) {
-  const place = places[slug];
+  const place = placesBySlug[slug];
   const article = document.createElement("article");
   article.className = "stop-card";
   article.innerHTML = `
-    <div class="stop-card__visual" role="img" aria-label="${place.imageNote}">
-      <span>0${index + 1}</span>
-      <small>${place.imageNote}</small>
+    <div class="stop-card__visual">
+      <img src="${place.image}" alt="${place.title}" loading="lazy" decoding="async">
+      <div class="stop-card__image-fallback" aria-hidden="true">
+        <span class="stop-card__image-icon">▧</span>
+        <small>Фотография скоро появится</small>
+      </div>
+      <span class="stop-card__number">0${index + 1}</span>
     </div>
     <div class="stop-card__body">
       <span class="stop-card__category">${place.category}</span>
-      <h3>${place.name}</h3>
+      <h3>${place.title}</h3>
       <p>${place.description}</p>
       <div class="stop-card__actions">
-        <a href="/places/${slug}">Подробнее</a>
-        <button type="button" data-add-stop="${slug}" aria-pressed="false">Добавить к маршруту</button>
+        <a href="/places/${place.slug}">Подробнее</a>
+        <button type="button" data-add-stop="${place.slug}" aria-pressed="false">Добавить к маршруту</button>
       </div>
     </div>
   `;
+
+  // Replace this image by adding a file to:
+  // /public/images/places/
+  const image = article.querySelector("img");
+  image.addEventListener("load", () => article.querySelector(".stop-card__visual").classList.remove("is-missing"));
+  image.addEventListener("error", () => article.querySelector(".stop-card__visual").classList.add("is-missing"));
+
   article.querySelector("[data-add-stop]").addEventListener("click", () => toggleStop(slug));
   return article;
 }
