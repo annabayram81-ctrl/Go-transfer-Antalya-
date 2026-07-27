@@ -3,6 +3,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/images/:path*",
+      "destination": "/public/images/:path*"
+    },
+    {
       "source": "/routes/lara",
       "destination": "/route-detail"
     },
