@@ -1,56 +1,72 @@
 export const whatsappPhone = "905346801828";
 
-export const places = {
-  "lower-duden": {
-    name: "Нижний Дюден",
+export const places = [
+  {
+    id: "lower-duden",
+    title: "Нижний Дюден",
     category: "Короткая остановка",
     description:
       "Живописный водопад, который впадает прямо в Средиземное море. Подходит для короткой остановки и фотографий недалеко от Лары.",
-    imageNote: "Здесь будет фотография Нижнего Дюдена",
+    image: "/images/places/lower-duden.jpg",
+    slug: "lower-duden",
   },
-  "duden-park": {
-    name: "Парк Дюден",
+  {
+    id: "duden-park",
+    title: "Парк Дюден",
     category: "Прогулка",
     description:
       "Прогулочная зона возле моря и водопада с красивыми видами и местами для отдыха. Можно ненадолго задержаться у смотровых площадок.",
-    imageNote: "Здесь будет фотография парка Дюден",
+    image: "/images/places/duden-park.jpg",
+    slug: "duden-park",
   },
-  kaleici: {
-    name: "Калеичи",
+  {
+    id: "kaleici",
+    title: "Калеичи",
     category: "Историческое место",
     description:
       "Исторический центр Антальи со старинными улицами, портом, воротами Адриана и обзорными площадками. Для посещения потребуется дополнительное время.",
-    imageNote: "Здесь будет фотография Калеичи",
+    image: "/images/places/kaleici.jpg",
+    slug: "kaleici",
   },
-  perge: {
-    name: "Древний город Перге",
+  {
+    id: "perge",
+    title: "Древний город Перге",
     category: "Историческое место",
     description:
       "Один из наиболее известных античных городов региона с древними улицами, колоннами, стадионом и историческими сооружениями.",
-    imageNote: "Здесь будет фотография древнего города Перге",
+    image: "/images/places/perge.jpg",
+    slug: "perge",
   },
-  "kursunlu-waterfall": {
-    name: "Водопад Куршунлу",
+  {
+    id: "kursunlu-waterfall",
+    title: "Водопад Куршунлу",
     category: "Прогулка",
     description:
       "Природный парк с водопадом, прогулочными дорожками и зелёной территорией. Требует отклонения от прямого маршрута.",
-    imageNote: "Здесь будет фотография водопада Куршунлу",
+    image: "/images/places/kursunlu.jpg",
+    slug: "kursunlu-waterfall",
   },
-  "upper-duden": {
-    name: "Верхний Дюден",
+  {
+    id: "upper-duden",
+    title: "Верхний Дюден",
     category: "Прогулка",
     description:
       "Водопад и природная зона в северной части Антальи. Подходит для отдельной дополнительной остановки.",
-    imageNote: "Здесь будет фотография Верхнего Дюдена",
+    image: "/images/places/upper-duden.jpg",
+    slug: "upper-duden",
   },
-  "antalya-museum": {
-    name: "Археологический музей Антальи",
+  {
+    id: "antalya-museum",
+    title: "Археологический музей Антальи",
     category: "Историческое место",
     description:
       "Музей с археологическими находками из Перге, Аспендоса и других древних городов региона.",
-    imageNote: "Здесь будет фотография Археологического музея Антальи",
+    image: "/images/places/antalya-museum.jpg",
+    slug: "antalya-museum",
   },
-};
+];
+
+export const placesBySlug = Object.fromEntries(places.map((place) => [place.slug, place]));
 
 export const routes = {
   lara: {
