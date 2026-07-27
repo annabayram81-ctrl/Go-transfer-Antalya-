@@ -166,7 +166,6 @@ function applyLanguage(language) {
         ? "GoTransfer — ana sayfa"
         : "GoTransfer — home",
   );
-  document.querySelector(".brand__text small").textContent = copy.brandSubtitle;
   document.querySelector(".services-home-link").textContent = copy.homeLink;
   languageButton.setAttribute("aria-label", copy.languageLabel);
   languageButtonLabel.textContent = selectedLanguage.toUpperCase();
