@@ -18,7 +18,7 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="apple-touch-icon" href="./assets/app-icon-512.png" />
     <link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260727-pwa-45" />
+    <link rel="stylesheet" href="./styles.css?v=20260727-pwa-49" />
   </head>
   <body>
     <main class="app-shell">
@@ -44,15 +44,16 @@
 
         <div class="topbar">
           <a class="brand" href="#" aria-label="GoTransfer">
-            <span class="brand__mark">GT</span>
             <span class="brand__text">
               <span>GoTransfer</span>
-              <small data-i18n="brandTagline">Трансфер по Анталийскому побережью</small>
             </span>
           </a>
 
           <div class="topbar__actions" id="topbarMenu">
-            <a class="language-menu__button" href="./services.html">Наши услуги</a>
+            <a class="journey-link" href="./services.html">
+              <span data-i18n="serviceCta">Выбрать путешествие</span>
+              <span class="journey-link__arrow" aria-hidden="true">→</span>
+            </a>
             <div class="language-menu" id="languageMenu">
               <button
                 class="language-menu__button"
@@ -312,7 +313,7 @@
       </section>
     </div>
 
-    <script src="./booking.js?v=20260727-pwa-45"></script>
+    <script src="./booking.js?v=20260727-pwa-49"></script>
   </body>
 </html>
 
