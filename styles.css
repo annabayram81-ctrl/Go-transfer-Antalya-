@@ -1037,6 +1037,93 @@ h1 {
   opacity: 0.48;
 }
 
+@media (min-width: 900px) {
+  .hero__content {
+    padding-top: 24px;
+    padding-bottom: 30px;
+  }
+
+  .booking {
+    padding: 16px 18px;
+  }
+
+  .booking__head {
+    margin-bottom: 12px;
+  }
+
+  .booking h2 {
+    font-size: 1.58rem;
+  }
+
+  .field-grid {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .field {
+    gap: 6px;
+  }
+
+  .field input,
+  .field select,
+  .date-picker,
+  .date-picker__value,
+  .time-picker {
+    min-height: 46px;
+  }
+
+  .quick-place-groups {
+    margin-bottom: 10px;
+  }
+
+  .quick-place {
+    min-height: 32px;
+  }
+
+  .passenger-options {
+    gap: 6px;
+    margin-bottom: 9px;
+  }
+
+  .passenger-option {
+    min-height: 48px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .stepper strong {
+    min-height: 36px;
+  }
+
+  .stepper__button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .summary {
+    min-height: 64px;
+    margin: 6px 0 10px;
+    padding: 8px 0;
+  }
+
+  .summary strong {
+    font-size: 1.85rem;
+  }
+
+  .contact-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .primary-action,
+  .secondary-action {
+    min-height: 48px;
+    padding: 6px 10px;
+    font-size: 0.82rem;
+    line-height: 1.2;
+  }
+}
+
 .details {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
