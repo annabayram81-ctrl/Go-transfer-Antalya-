@@ -158,29 +158,26 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.82);
+  filter: brightness(1.08) saturate(1.04) contrast(1.02);
   transition:
     filter 0.5s ease,
     transform 0.65s cubic-bezier(0.2, 0.75, 0.2, 1);
 }
 
 .service-card--one > img {
-  object-position: 74% center;
+  object-position: 50% center;
 }
 
 .service-card--two > img {
   object-position: 50% center;
-  transform: scale(1.12);
 }
 
 .service-card--three > img {
-  object-position: 86% center;
-  transform: scale(1.16);
+  object-position: 56% center;
 }
 
 .service-card--four > img {
-  object-position: 34% center;
-  transform: scale(1.18);
+  object-position: 54% center;
 }
 
 .service-card__overlay {
@@ -188,8 +185,8 @@
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(10, 13, 16, 0.18), rgba(10, 13, 16, 0.92)),
-    linear-gradient(90deg, rgba(10, 13, 16, 0.56), transparent 72%);
+    linear-gradient(180deg, rgba(10, 13, 16, 0.04) 28%, rgba(10, 13, 16, 0.24) 56%, rgba(10, 13, 16, 0.9) 100%),
+    linear-gradient(90deg, rgba(10, 13, 16, 0.18), transparent 62%);
 }
 
 .service-card__content {
@@ -256,23 +253,23 @@
 
 .service-card:hover > img,
 .service-card:focus-visible > img {
-  filter: saturate(1);
+  filter: brightness(1.12) saturate(1.1) contrast(1.03);
   transform: scale(1.07);
 }
 
 .service-card--two:hover > img,
 .service-card--two:focus-visible > img {
-  transform: scale(1.19);
+  transform: scale(1.07);
 }
 
 .service-card--three:hover > img,
 .service-card--three:focus-visible > img {
-  transform: scale(1.23);
+  transform: scale(1.07);
 }
 
 .service-card--four:hover > img,
 .service-card--four:focus-visible > img {
-  transform: scale(1.25);
+  transform: scale(1.07);
 }
 
 .service-card:hover .service-card__button,
@@ -425,4 +422,3 @@
     transition: none;
   }
 }
-
