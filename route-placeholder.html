@@ -23,6 +23,24 @@
         <a href="/routes">Вернуться к направлениям <b aria-hidden="true">→</b></a>
       </section>
     </main>
+    <button class="mobile-back-button" id="mobileBackButton" type="button" aria-label="Вернуться назад">← <span>Назад</span></button>
+    <script type="module">
+      import { getLanguage, setupBackButton } from "/journey-language.js?v=20260727-pwa-60";
+      const copy = {
+        ru: ["Новый VIP-маршрут", "Маршрут готовится.", "Скоро здесь появятся интересные остановки и варианты поездки.", "Вернуться к направлениям", "Назад"],
+        en: ["New VIP route", "This route is being prepared.", "Interesting stops and travel options will appear here soon.", "Back to destinations", "Back"],
+        tr: ["Yeni VIP rota", "Bu rota hazırlanıyor.", "Yakında burada ilginç duraklar ve yolculuk seçenekleri yer alacak.", "Rotalara dön", "Geri"],
+      };
+      const language = getLanguage();
+      const text = copy[language];
+      document.documentElement.lang = language;
+      const section = document.querySelector(".route-placeholder section");
+      section.querySelector("p").textContent = text[0];
+      section.querySelector("h1").textContent = text[1];
+      section.querySelector("span").textContent = text[2];
+      section.querySelector("a").childNodes[0].textContent = `${text[3]} `;
+      document.querySelector("#mobileBackButton span").textContent = text[4];
+      setupBackButton(document.querySelector("#mobileBackButton"), "/routes");
+    </script>
   </body>
 </html>
-

@@ -6,6 +6,39 @@
   --place-accent: #77d4c6;
 }
 
+.place-detail-topbar .language-menu {
+  margin-left: auto;
+}
+
+.mobile-back-button {
+  position: fixed;
+  left: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 80;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(17, 19, 22, 0.94);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  font: inherit;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .mobile-back-button {
+    display: inline-flex;
+  }
+
+  .place-detail-page {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+}
+
 .place-detail-page {
   margin: 0;
   color: #fff;

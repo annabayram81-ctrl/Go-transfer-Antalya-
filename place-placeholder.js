@@ -1,9 +1,20 @@
 import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-58";
+import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
 const querySlug = new URLSearchParams(location.search).get("slug");
 const slug = placesBySlug[pathSlug] ? pathSlug : querySlug;
 const place = placesBySlug[slug] || placesBySlug["lower-duden"];
+let currentLanguage = getLanguage();
+const interfaceCopy = {
+  ru: { back:"← Вернуться к маршруту", add:"Добавить остановку", others:"Другие остановки", interesting:"ЧТО ЗДЕСЬ ИНТЕРЕСНО", see:"Что посмотреть и чем заняться", planning:"ПЛАНИРОВАНИЕ ОСТАНОВКИ", time:"Сколько времени оставить?", want:"Хотите включить это место в поездку?", help:"Оператор поможет рассчитать время и подобрать удобный формат остановки.", discuss:"Обсудить с оператором", choose:"Вернуться к выбору мест", home:"Главная", journey:"Выбрать путешествие", routes:"Направления", mobileBack:"Назад" },
+  en: { back:"← Back to route", add:"Add this stop", others:"Other stops", interesting:"WHAT IS INTERESTING HERE", see:"What to see and do", planning:"PLANNING YOUR STOP", time:"How much time should you allow?", want:"Would you like to include this place?", help:"Our operator will help calculate the time and choose a convenient stop format.", discuss:"Discuss with the operator", choose:"Back to places", home:"Home", journey:"Choose a journey", routes:"Destinations", mobileBack:"Back" },
+  tr: { back:"← Rotaya dön", add:"Bu durağı ekle", others:"Diğer duraklar", interesting:"BURADA NELER İLGİNÇ", see:"Görülecek ve yapılacaklar", planning:"DURAĞI PLANLAYIN", time:"Ne kadar zaman ayırmalı?", want:"Bu yeri yolculuğa eklemek ister misiniz?", help:"Operatörümüz süreyi hesaplamanıza ve uygun durak biçimini seçmenize yardımcı olur.", discuss:"Operatörle görüş", choose:"Yer seçimine dön", home:"Ana sayfa", journey:"Yolculuk seç", routes:"Rotalar", mobileBack:"Geri" },
+};
+const localizedNames = {
+  en: {"lower-duden":"Lower Düden Waterfall","duden-park":"Düden Park","kaleici":"Kaleiçi Old Town","perge":"Ancient City of Perge","kursunlu-waterfall":"Kurşunlu Waterfall","upper-duden":"Upper Düden Waterfall","antalya-museum":"Antalya Archaeological Museum","land-of-legends":"The Land of Legends","belek-beach":"Belek Beach","aspendos":"Ancient Theatre of Aspendos","zeytintasi-cave":"Zeytintaşı Cave"},
+  tr: {"lower-duden":"Aşağı Düden Şelalesi","duden-park":"Düden Parkı","kaleici":"Kaleiçi","perge":"Perge Antik Kenti","kursunlu-waterfall":"Kurşunlu Şelalesi","upper-duden":"Yukarı Düden Şelalesi","antalya-museum":"Antalya Arkeoloji Müzesi","land-of-legends":"The Land of Legends","belek-beach":"Belek Plajı","aspendos":"Aspendos Antik Tiyatrosu","zeytintasi-cave":"Zeytintaşı Mağarası"},
+};
 
 function whatsappUrl() {
   const destination = place.routeDestinationAccusative || "Лару";
@@ -18,7 +29,11 @@ function whatsappUrl() {
 function renderHighlights() {
   const container = document.querySelector("#placeHighlights");
 
-  place.highlights.forEach((highlight, index) => {
+  const generic = currentLanguage === "en"
+    ? [{title:"Main experience",text:"See the character and atmosphere of this place at a comfortable pace."},{title:"Time for photos",text:"Your driver can help choose a convenient meeting point after the visit."},{title:"Flexible planning",text:"The duration can be adapted to your transfer and arrival time."}]
+    : [{title:"Başlıca deneyim",text:"Bu yerin karakterini ve atmosferini rahat bir tempoda keşfedin."},{title:"Fotoğraf zamanı",text:"Ziyaret sonrası uygun buluşma noktasını şoförünüzle belirleyebilirsiniz."},{title:"Esnek planlama",text:"Süre, transferinize ve varış saatinize göre ayarlanabilir."}];
+  const highlights = currentLanguage === "ru" ? place.highlights : generic;
+  highlights.forEach((highlight, index) => {
     const article = document.createElement("article");
     article.className = "place-highlight";
     article.innerHTML = `
@@ -31,6 +46,8 @@ function renderHighlights() {
 }
 
 function renderPlace() {
+  const copy = interfaceCopy[currentLanguage];
+  document.documentElement.lang = currentLanguage;
   document.title = `${place.title}: что посмотреть — GoTransfer`;
   document.querySelector('meta[name="description"]').content = place.seoDescription;
   document.querySelector("#placeCanonical").href = `https://gotransfer.my/places/${place.slug}`;
@@ -39,10 +56,30 @@ function renderPlace() {
   image.src = place.image;
   image.alt = place.title;
 
-  document.querySelector("#placeEyebrow").textContent = place.eyebrow;
-  document.querySelector("#placeTitle").textContent = place.title;
-  document.querySelector("#placeIntro").textContent = place.intro;
-  document.querySelector("#placeVisitNote").textContent = place.visitNote;
+  const displayTitle = currentLanguage === "ru" ? place.title : localizedNames[currentLanguage]?.[place.slug] || place.title;
+  if (currentLanguage !== "ru") {
+    document.title = currentLanguage === "en" ? `${displayTitle}: travel stop — GoTransfer` : `${displayTitle}: rota durağı — GoTransfer`;
+    document.querySelector('meta[name="description"]').content = currentLanguage === "en" ? `Discover ${displayTitle} during a private transfer from Antalya Airport.` : `${displayTitle} yerini Antalya Havalimanı özel transferinize ekleyin.`;
+    document.querySelector(".place-hero__content > a").textContent = currentLanguage === "en" ? "Route from Antalya Airport" : "Antalya Havalimanı rotası";
+  }
+  document.querySelector("#placeEyebrow").textContent = currentLanguage === "ru" ? place.eyebrow : (currentLanguage === "en" ? "A stop worth discovering" : "Keşfedilmeye değer bir durak");
+  document.querySelector("#placeTitle").textContent = displayTitle;
+  document.querySelector("#placeIntro").textContent = currentLanguage === "ru" ? place.intro : (currentLanguage === "en" ? `${displayTitle} can become a memorable part of your private transfer from Antalya Airport. Explore it without rushing and continue the journey when you are ready.` : `${displayTitle}, Antalya Havalimanı'ndan özel transferinizin unutulmaz bir parçası olabilir. Acele etmeden keşfedin ve hazır olduğunuzda yolculuğa devam edin.`);
+  document.querySelector("#placeVisitNote").textContent = currentLanguage === "ru" ? place.visitNote : (currentLanguage === "en" ? "Ask the operator to allow enough time for the visit and the additional drive." : "Ziyaret ve ek yol için yeterli süreyi operatörle önceden planlayın.");
+  document.querySelector(".place-detail-route-link").textContent = copy.back;
+  document.querySelector("#placeOperatorLink").textContent = copy.add;
+  document.querySelector(".place-secondary-action").textContent = copy.others;
+  document.querySelector(".place-story__heading p").textContent = copy.interesting;
+  document.querySelector("#placeStoryTitle").textContent = copy.see;
+  document.querySelector(".place-visit-note p").textContent = copy.planning;
+  document.querySelector(".place-visit-note h2").textContent = copy.time;
+  document.querySelector(".place-detail-cta > p").textContent = copy.want;
+  document.querySelector(".place-detail-cta > h2").textContent = copy.help;
+  document.querySelector("#placeBottomOperatorLink").textContent = copy.discuss;
+  document.querySelector(".place-detail-cta a[href^='/routes']").textContent = copy.choose;
+  const footerLinks = document.querySelectorAll(".place-detail-footer a");
+  footerLinks[0].textContent = copy.home; footerLinks[1].textContent = copy.journey; footerLinks[2].textContent = copy.routes;
+  document.querySelector("#mobileBackButton span").textContent = copy.mobileBack;
 
   const operatorUrl = whatsappUrl();
   document.querySelector("#placeOperatorLink").href = operatorUrl;
@@ -52,3 +89,11 @@ function renderPlace() {
 }
 
 renderPlace();
+const updateLanguageMenu = bindLanguageMenu(document.querySelector(".language-menu"), (language) => {
+  currentLanguage = language;
+  document.querySelector("#placeHighlights").replaceChildren();
+  renderPlace();
+  updateLanguageMenu(language);
+});
+updateLanguageMenu(currentLanguage);
+setupBackButton(document.querySelector("#mobileBackButton"), "/routes");

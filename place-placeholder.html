@@ -18,6 +18,14 @@
         <span class="brand__text"><span>GoTransfer</span></span>
       </a>
       <a class="place-detail-route-link" href="/routes/lara">← Вернуться к маршруту</a>
+      <div class="language-menu">
+        <button class="language-menu__button" type="button" aria-label="Язык" aria-expanded="false"><span>RU</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.1 6.2 8 10.1l3.9-3.9" /></svg></button>
+        <div class="language-menu__list" role="listbox" aria-label="Язык">
+          <button class="language-menu__option is-active" data-language="ru" type="button" role="option">RU</button>
+          <button class="language-menu__option" data-language="tr" type="button" role="option">TR</button>
+          <button class="language-menu__option" data-language="en" type="button" role="option">EN</button>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -70,7 +78,8 @@
       <a href="/services">Выбрать путешествие</a>
       <a href="/routes">Направления</a>
     </footer>
+    <button class="mobile-back-button" id="mobileBackButton" type="button" aria-label="Вернуться назад">← <span>Назад</span></button>
 
-    <script type="module" src="/place-placeholder.js?v=20260727-pwa-58"></script>
+    <script type="module" src="/place-placeholder.js?v=20260727-pwa-60"></script>
   </body>
 </html>

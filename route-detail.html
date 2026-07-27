@@ -27,9 +27,9 @@
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.1 6.2 8 10.1l3.9-3.9" /></svg>
           </button>
           <div class="language-menu__list" role="listbox" aria-label="Язык">
-            <button class="language-menu__option is-active" type="button" role="option" aria-selected="true">RU</button>
-            <button class="language-menu__option" type="button" role="option" aria-disabled="true" disabled>TR</button>
-            <button class="language-menu__option" type="button" role="option" aria-disabled="true" disabled>EN</button>
+            <button class="language-menu__option is-active" data-language="ru" type="button" role="option" aria-selected="true">RU</button>
+            <button class="language-menu__option" data-language="tr" type="button" role="option" aria-selected="false">TR</button>
+            <button class="language-menu__option" data-language="en" type="button" role="option" aria-selected="false">EN</button>
           </div>
         </div>
       </div>
@@ -121,7 +121,8 @@
       </div>
       <a id="selectionOperatorLink" href="#" target="_blank" rel="noreferrer">Обсудить маршрут с оператором</a>
     </aside>
+    <button class="mobile-back-button" id="mobileBackButton" type="button" aria-label="Вернуться назад">← <span>Назад</span></button>
 
-    <script type="module" src="/route-detail.js?v=20260727-pwa-58"></script>
+    <script type="module" src="/route-detail.js?v=20260727-pwa-60"></script>
   </body>
 </html>
