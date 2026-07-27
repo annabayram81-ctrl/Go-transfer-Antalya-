@@ -1,4 +1,4 @@
-import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-57";
+import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-58";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
 const querySlug = new URLSearchParams(location.search).get("slug");
@@ -6,9 +6,10 @@ const slug = placesBySlug[pathSlug] ? pathSlug : querySlug;
 const place = placesBySlug[slug] || placesBySlug["lower-duden"];
 
 function whatsappUrl() {
+  const destination = place.routeDestinationAccusative || "Лару";
   const message =
     `Здравствуйте! Меня интересует остановка «${place.title}» ` +
-    "во время VIP-трансфера из аэропорта Антальи в Лару. " +
+    `во время VIP-трансфера из аэропорта Антальи в ${destination}. ` +
     "Подскажите, пожалуйста, сколько времени она займёт.";
 
   return `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;

@@ -13,6 +13,9 @@
     <loc>https://gotransfer.my/routes/lara</loc>
   </url>
   <url>
+    <loc>https://gotransfer.my/routes/belek</loc>
+  </url>
+  <url>
     <loc>https://gotransfer.my/places/lower-duden</loc>
   </url>
   <url>
@@ -32,5 +35,17 @@
   </url>
   <url>
     <loc>https://gotransfer.my/places/antalya-museum</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/land-of-legends</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/belek-beach</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/aspendos</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/zeytintasi-cave</loc>
   </url>
 </urlset>

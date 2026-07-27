@@ -1,6 +1,8 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260727-pwa-57";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260727-pwa-58";
 
-const routeSlug = location.pathname.split("/").filter(Boolean).at(-1);
+const routeSlug =
+  new URLSearchParams(location.search).get("route") ||
+  location.pathname.split("/").filter(Boolean).at(-1);
 const route = routes[routeSlug] || routes.lara;
 const selectedStops = new Set();
 
@@ -94,6 +96,8 @@ function renderRoute() {
   document.querySelector("#routeTitle").textContent = route.title;
   document.querySelector("#routeDescription").textContent = route.description;
   document.querySelector("#routeLine").textContent = `${route.origin} → ${route.destination}`;
+  document.querySelector("#directStopsDescription").textContent =
+    `Эти места удобно включить в поездку из аэропорта в ${route.destinationAccusative}.`;
   document.querySelector("#routeHeroImage").src = route.image;
   document.querySelector("#routeHeroImage").alt = route.title;
 
