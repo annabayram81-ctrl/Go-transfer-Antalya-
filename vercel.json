@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/routes/:slug",
-      "destination": "/route-placeholder.html"
+      "destination": "/route-placeholder"
     }
   ]
 }
