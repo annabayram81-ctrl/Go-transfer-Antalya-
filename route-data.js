@@ -95,7 +95,7 @@ export const places = [
     category: "Историческое место",
     description:
       "Один из наиболее известных античных городов региона с древними улицами, колоннами, стадионом и историческими сооружениями.",
-    image: "/images/places/perge.jpg",
+    image: "/images/places/perge-panorama.jpg",
     slug: "perge",
     eyebrow: "Античный город",
     intro:
