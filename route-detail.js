@@ -5,6 +5,7 @@ const routeSlug =
   new URLSearchParams(location.search).get("route") ||
   location.pathname.split("/").filter(Boolean).at(-1);
 const route = routes[routeSlug] || routes.lara;
+const localizedDestination = route.slug === "belek" ? "Belek" : route.slug === "lara" ? "Lara" : route.destination;
 const selectedStops = new Set();
 let currentLanguage = getLanguage();
 const interfaceCopy = {
@@ -109,6 +110,10 @@ function stopCard(slug, index) {
 
 function renderRoute() {
   const copy = interfaceCopy[currentLanguage];
+  if (currentLanguage !== "ru") {
+    copy.title = copy.title.replace(route.destination, localizedDestination);
+    copy.directText = copy.directText.replace(route.destination, localizedDestination);
+  }
   document.documentElement.lang = currentLanguage;
   document.querySelector(".route-detail-back").textContent = copy.back;
   document.querySelector(".route-breadcrumb").textContent = copy.breadcrumb;
