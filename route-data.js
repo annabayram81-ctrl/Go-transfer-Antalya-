@@ -185,7 +185,21 @@ export const places = [
     category: "Историческое место",
     description:
       "Музей с археологическими находками из Перге, Аспендоса и других древних городов региона.",
-    image: "/images/places/antalya-museum.jpg",
+    image: "/images/places/antalya-museum-dancer-full.jpg",
+    gallery: [
+      {
+        image: "/images/places/antalya-museum-dancer-full.jpg",
+        caption: "Знаменитая «Танцовщица» из белого и тёмного мрамора",
+      },
+      {
+        image: "/images/places/antalya-museum-heracles.jpg",
+        caption: "«Уставший Геракл» — одна из главных ценностей музея",
+      },
+      {
+        image: "/images/places/antalya-museum-three-graces.jpg",
+        caption: "Римская скульптурная группа «Три грации» из Перге",
+      },
+    ],
     slug: "antalya-museum",
     eyebrow: "Археология Средиземноморья",
     intro:

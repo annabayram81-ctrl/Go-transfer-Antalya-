@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260727-pwa-64";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260727-pwa-65";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const routeSlug =

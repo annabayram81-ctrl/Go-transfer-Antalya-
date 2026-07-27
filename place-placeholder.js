@@ -1,4 +1,4 @@
-import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-64";
+import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260727-pwa-65";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
@@ -64,20 +64,37 @@ function renderGallery() {
 
   place.gallery.forEach((item, index) => {
     const localizedCaptions = {
-      en: [
-        "The fairytale castle and Nickelodeon Land entrance",
-        "The castle with evening illumination",
-        "The canal promenade and fairytale architecture",
-        "The theme park and major attractions",
-      ],
-      tr: [
-        "Masalsı şato ve Nickelodeon Land girişi",
-        "Akşam ışıklarıyla şato",
-        "Kanal gezinti yolu ve masalsı mimari",
-        "Tema parkı ve büyük eğlence üniteleri",
-      ],
+      "land-of-legends": {
+        en: [
+          "The fairytale castle and Nickelodeon Land entrance",
+          "The castle with evening illumination",
+          "The canal promenade and fairytale architecture",
+          "The theme park and major attractions",
+        ],
+        tr: [
+          "Masalsı şato ve Nickelodeon Land girişi",
+          "Akşam ışıklarıyla şato",
+          "Kanal gezinti yolu ve masalsı mimari",
+          "Tema parkı ve büyük eğlence üniteleri",
+        ],
+      },
+      "antalya-museum": {
+        en: [
+          "The celebrated Dancing Woman in white and dark marble",
+          "The Weary Heracles, one of the museum's greatest treasures",
+          "The Roman Three Graces sculptural group from Perge",
+        ],
+        tr: [
+          "Beyaz ve koyu mermerden ünlü Dansöz Heykeli",
+          "Müzenin en önemli eserlerinden Yorgun Herakles",
+          "Perge'den Roma Dönemi Üç Güzeller heykel grubu",
+        ],
+      },
     };
-    const caption = currentLanguage === "ru" ? item.caption : localizedCaptions[currentLanguage]?.[index] || item.caption;
+    const caption =
+      currentLanguage === "ru"
+        ? item.caption
+        : localizedCaptions[place.slug]?.[currentLanguage]?.[index] || item.caption;
     const figure = document.createElement("figure");
     figure.innerHTML = `
       <img src="${item.image}" alt="${place.title}: ${caption}" loading="${index ? "lazy" : "eager"}" decoding="async">

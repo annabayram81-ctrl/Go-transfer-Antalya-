@@ -4,6 +4,12 @@
 
 - `perge-panorama.jpg` — панорамный вид древнего города Перге с эллинистической башней и колоннами; Engin Akyurt, Pexels License.
 
+## Археологический музей Антальи
+
+- `antalya-museum-dancer-full.jpg` — «Танцовщица» из Перге; Kadellar, Wikimedia Commons, CC BY-SA 3.0.
+- `antalya-museum-heracles.jpg` — «Уставший Геракл» из Перге; Ingo Mehling, Wikimedia Commons, CC BY-SA 3.0.
+- `antalya-museum-three-graces.jpg` — «Три грации» из Перге; Dosseman, Wikimedia Commons, CC BY-SA 4.0.
+
 ## Маршрут в Белек
 
 - `land-of-legends.jpg` — The Land of Legends, Wikimedia Commons; локальная оптимизированная копия свободно лицензированного изображения.
