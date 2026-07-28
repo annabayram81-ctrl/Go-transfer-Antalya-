@@ -49,6 +49,12 @@
     <loc>https://gotransfer.my/routes/cirali</loc>
   </url>
   <url>
+    <loc>https://gotransfer.my/routes/adrasan</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/routes/kumluca</loc>
+  </url>
+  <url>
     <loc>https://gotransfer.my/places/lower-duden</loc>
   </url>
   <url>
@@ -176,5 +182,17 @@
   </url>
   <url>
     <loc>https://gotransfer.my/places/ulupinar</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/adrasan-bay</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/suluada</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/gelidonya-lighthouse</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/rhodiapolis</loc>
   </url>
 </urlset>

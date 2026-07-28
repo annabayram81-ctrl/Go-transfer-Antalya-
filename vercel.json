@@ -62,6 +62,14 @@
       "destination": "/route-detail"
     },
     {
+      "source": "/routes/adrasan",
+      "destination": "/route-detail"
+    },
+    {
+      "source": "/routes/kumluca",
+      "destination": "/route-detail"
+    },
+    {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"
     },

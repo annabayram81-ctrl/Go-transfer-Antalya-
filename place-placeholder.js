@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-76";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-77";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
@@ -28,6 +28,10 @@ Object.assign(localizedNames.en, {
   "cirali-beach": "Çıralı and Olympos Beach",
   "yanartas": "Yanartaş — Flames of Chimaera",
   "ulupinar": "Ulupınar Mountain River",
+  "adrasan-bay": "Adrasan Bay and Beach",
+  "suluada": "Suluada Boat Trip",
+  "gelidonya-lighthouse": "Cape Gelidonya Lighthouse",
+  "rhodiapolis": "Ancient City of Rhodiapolis",
 });
 Object.assign(localizedNames.tr, {
   "kemer-clock-tower": "Kemer Saat Kulesi ve Merkez",
@@ -42,6 +46,10 @@ Object.assign(localizedNames.tr, {
   "cirali-beach": "Çıralı ve Olympos Plajı",
   "yanartas": "Yanartaş — Khimaira'nın Ateşleri",
   "ulupinar": "Ulupınar Dağ Deresi",
+  "adrasan-bay": "Adrasan Koyu ve Plajı",
+  "suluada": "Suluada Tekne Turu",
+  "gelidonya-lighthouse": "Gelidonya Feneri",
+  "rhodiapolis": "Rhodiapolis Antik Kenti",
 });
 
 function whatsappUrl() {
@@ -161,6 +169,16 @@ function renderPlace() {
   const requestedRoute = new URLSearchParams(location.search).get("route");
   const selectedRoute = routes[requestedRoute] || routes[place.routeSlug] || routes.lara;
   const routeHref = `/routes/${selectedRoute.slug}`;
+  const selectedDestination =
+    selectedRoute.slug === "cirali"
+      ? "Çıralı"
+      : selectedRoute.slug === "olympos"
+        ? "Olympos"
+        : selectedRoute.slug === "adrasan"
+          ? "Adrasan"
+          : selectedRoute.slug === "kumluca"
+            ? "Kumluca"
+            : selectedRoute.destination;
   document.querySelector(".place-detail-route-link").href = routeHref;
   document.querySelector(".place-hero__content > a").href = routeHref;
   document.querySelector(".place-secondary-action").href = routeHref;
@@ -169,8 +187,8 @@ function renderPlace() {
     currentLanguage === "ru"
       ? `Маршрут: аэропорт Анталии → ${selectedRoute.destination}`
       : currentLanguage === "en"
-        ? `Route: Antalya Airport → ${selectedRoute.slug === "cirali" ? "Çıralı" : selectedRoute.slug === "olympos" ? "Olympos" : selectedRoute.destination}`
-        : `Rota: Antalya Havalimanı → ${selectedRoute.slug === "cirali" ? "Çıralı" : selectedRoute.slug === "olympos" ? "Olympos" : selectedRoute.destination}`;
+        ? `Route: Antalya Airport → ${selectedDestination}`
+        : `Rota: Antalya Havalimanı → ${selectedDestination}`;
 
   const image = document.querySelector("#placeImage");
   image.src = place.image;

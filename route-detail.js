@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-76";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-77";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const routeSlug =
@@ -6,7 +6,7 @@ const routeSlug =
   location.pathname.split("/").filter(Boolean).at(-1);
 const route = routes[routeSlug] || routes.lara;
 const localizedDestination =
-  route.slug === "belek" ? "Belek" : route.slug === "lara" ? "Lara" : route.slug === "alanya" ? "Alanya" : route.slug === "side" ? "Side" : route.slug === "konyaalti" ? "Konyaaltı" : route.slug === "beldibi" ? "Beldibi" : route.slug === "goynuk" ? "Göynük" : route.slug === "kemer" ? "Kemer" : route.slug === "kiris" ? "Kiriş" : route.slug === "camyuva" ? "Çamyuva" : route.slug === "tekirova" ? "Tekirova" : route.slug === "olympos" ? "Olympos" : route.slug === "cirali" ? "Çıralı" : route.destination;
+  route.slug === "belek" ? "Belek" : route.slug === "lara" ? "Lara" : route.slug === "alanya" ? "Alanya" : route.slug === "side" ? "Side" : route.slug === "konyaalti" ? "Konyaaltı" : route.slug === "beldibi" ? "Beldibi" : route.slug === "goynuk" ? "Göynük" : route.slug === "kemer" ? "Kemer" : route.slug === "kiris" ? "Kiriş" : route.slug === "camyuva" ? "Çamyuva" : route.slug === "tekirova" ? "Tekirova" : route.slug === "olympos" ? "Olympos" : route.slug === "cirali" ? "Çıralı" : route.slug === "adrasan" ? "Adrasan" : route.slug === "kumluca" ? "Kumluca" : route.destination;
 const selectedStops = new Set();
 let currentLanguage = getLanguage();
 const interfaceCopy = {
@@ -31,6 +31,10 @@ Object.assign(placeNames.en, {
   "cirali-beach": "Çıralı and Olympos Beach",
   "yanartas": "Yanartaş — Flames of Chimaera",
   "ulupinar": "Ulupınar Mountain River",
+  "adrasan-bay": "Adrasan Bay and Beach",
+  "suluada": "Suluada Boat Trip",
+  "gelidonya-lighthouse": "Cape Gelidonya Lighthouse",
+  "rhodiapolis": "Ancient City of Rhodiapolis",
 });
 Object.assign(placeNames.tr, {
   "kemer-clock-tower": "Kemer Saat Kulesi ve Merkez",
@@ -45,6 +49,10 @@ Object.assign(placeNames.tr, {
   "cirali-beach": "Çıralı ve Olympos Plajı",
   "yanartas": "Yanartaş — Khimaira'nın Ateşleri",
   "ulupinar": "Ulupınar Dağ Deresi",
+  "adrasan-bay": "Adrasan Koyu ve Plajı",
+  "suluada": "Suluada Tekne Turu",
+  "gelidonya-lighthouse": "Gelidonya Feneri",
+  "rhodiapolis": "Rhodiapolis Antik Kenti",
 });
 
 function displayPlace(place) {
