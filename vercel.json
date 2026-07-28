@@ -69,6 +69,9 @@
       "source": "/routes/kumluca",
       "destination": "/route-detail"
     },
+    {"source":"/routes/finike","destination":"/route-detail"},
+    {"source":"/routes/demre","destination":"/route-detail"},
+    {"source":"/routes/kas","destination":"/route-detail"},
     {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"

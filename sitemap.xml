@@ -54,6 +54,9 @@
   <url>
     <loc>https://gotransfer.my/routes/kumluca</loc>
   </url>
+  <url><loc>https://gotransfer.my/routes/finike</loc></url>
+  <url><loc>https://gotransfer.my/routes/demre</loc></url>
+  <url><loc>https://gotransfer.my/routes/kas</loc></url>
   <url>
     <loc>https://gotransfer.my/places/lower-duden</loc>
   </url>
@@ -195,4 +198,15 @@
   <url>
     <loc>https://gotransfer.my/places/rhodiapolis</loc>
   </url>
+  <url><loc>https://gotransfer.my/places/finike-marina</loc></url>
+  <url><loc>https://gotransfer.my/places/limyra</loc></url>
+  <url><loc>https://gotransfer.my/places/arykanda</loc></url>
+  <url><loc>https://gotransfer.my/places/myra</loc></url>
+  <url><loc>https://gotransfer.my/places/saint-nicholas-demre</loc></url>
+  <url><loc>https://gotransfer.my/places/andriake</loc></url>
+  <url><loc>https://gotransfer.my/places/kekova</loc></url>
+  <url><loc>https://gotransfer.my/places/kas-old-town</loc></url>
+  <url><loc>https://gotransfer.my/places/antiphellos</loc></url>
+  <url><loc>https://gotransfer.my/places/kaputas</loc></url>
+  <url><loc>https://gotransfer.my/places/patara</loc></url>
 </urlset>

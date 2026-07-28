@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-77";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-78";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
@@ -32,6 +32,7 @@ Object.assign(localizedNames.en, {
   "suluada": "Suluada Boat Trip",
   "gelidonya-lighthouse": "Cape Gelidonya Lighthouse",
   "rhodiapolis": "Ancient City of Rhodiapolis",
+  "finike-marina":"Finike Marina and Promenade","limyra":"Ancient City of Limyra","arykanda":"Ancient City of Arykanda","myra":"Ancient City of Myra","saint-nicholas-demre":"Church of Saint Nicholas","andriake":"Andriake and Museum of Lycian Civilisations","kekova":"Kekova and the Sunken City","kas-old-town":"Kaş Old Town and Harbour","antiphellos":"Antiphellos Ancient Theatre","kaputas":"Kaputaş Beach","patara":"Ancient Patara and Beach",
 });
 Object.assign(localizedNames.tr, {
   "kemer-clock-tower": "Kemer Saat Kulesi ve Merkez",
@@ -50,6 +51,7 @@ Object.assign(localizedNames.tr, {
   "suluada": "Suluada Tekne Turu",
   "gelidonya-lighthouse": "Gelidonya Feneri",
   "rhodiapolis": "Rhodiapolis Antik Kenti",
+  "finike-marina":"Finike Marina ve Sahili","limyra":"Limyra Antik Kenti","arykanda":"Arykanda Antik Kenti","myra":"Myra Antik Kenti","saint-nicholas-demre":"Aziz Nikolaos Kilisesi","andriake":"Andriake ve Likya Uygarlıkları Müzesi","kekova":"Kekova ve Batık Şehir","kas-old-town":"Kaş Eski Şehir ve Liman","antiphellos":"Antiphellos Antik Tiyatrosu","kaputas":"Kaputaş Plajı","patara":"Patara Antik Kenti ve Plajı",
 });
 
 function whatsappUrl() {
@@ -178,6 +180,12 @@ function renderPlace() {
           ? "Adrasan"
           : selectedRoute.slug === "kumluca"
             ? "Kumluca"
+            : selectedRoute.slug === "finike"
+              ? "Finike"
+              : selectedRoute.slug === "demre"
+                ? "Demre"
+                : selectedRoute.slug === "kas"
+                  ? "Kaş"
             : selectedRoute.destination;
   document.querySelector(".place-detail-route-link").href = routeHref;
   document.querySelector(".place-hero__content > a").href = routeHref;
