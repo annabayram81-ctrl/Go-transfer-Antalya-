@@ -54,6 +54,14 @@
       "destination": "/route-detail"
     },
     {
+      "source": "/routes/olympos",
+      "destination": "/route-detail"
+    },
+    {
+      "source": "/routes/cirali",
+      "destination": "/route-detail"
+    },
+    {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"
     },

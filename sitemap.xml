@@ -43,6 +43,12 @@
     <loc>https://gotransfer.my/routes/tekirova</loc>
   </url>
   <url>
+    <loc>https://gotransfer.my/routes/olympos</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/routes/cirali</loc>
+  </url>
+  <url>
     <loc>https://gotransfer.my/places/lower-duden</loc>
   </url>
   <url>
@@ -158,5 +164,17 @@
   </url>
   <url>
     <loc>https://gotransfer.my/places/three-islands</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/olympos-ancient-city</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/cirali-beach</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/yanartas</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/ulupinar</loc>
   </url>
 </urlset>

@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-74";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-76";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
@@ -24,6 +24,10 @@ Object.assign(localizedNames.en, {
   "alacasu-bay": "Alacasu Bay",
   "tekirova-coast": "Tekirova Coast",
   "three-islands": "Boat Trip to the Three Islands",
+  "olympos-ancient-city": "Ancient City of Olympos",
+  "cirali-beach": "Çıralı and Olympos Beach",
+  "yanartas": "Yanartaş — Flames of Chimaera",
+  "ulupinar": "Ulupınar Mountain River",
 });
 Object.assign(localizedNames.tr, {
   "kemer-clock-tower": "Kemer Saat Kulesi ve Merkez",
@@ -34,6 +38,10 @@ Object.assign(localizedNames.tr, {
   "alacasu-bay": "Alacasu Koyu",
   "tekirova-coast": "Tekirova Sahili",
   "three-islands": "Üç Adalar Tekne Turu",
+  "olympos-ancient-city": "Olympos Antik Kenti",
+  "cirali-beach": "Çıralı ve Olympos Plajı",
+  "yanartas": "Yanartaş — Khimaira'nın Ateşleri",
+  "ulupinar": "Ulupınar Dağ Deresi",
 });
 
 function whatsappUrl() {
@@ -151,11 +159,18 @@ function renderPlace() {
   document.querySelector('meta[name="description"]').content = place.seoDescription;
   document.querySelector("#placeCanonical").href = `https://gotransfer.my/places/${place.slug}`;
   const requestedRoute = new URLSearchParams(location.search).get("route");
-  const routeHref = `/routes/${routes[requestedRoute] ? requestedRoute : place.routeSlug || "lara"}`;
+  const selectedRoute = routes[requestedRoute] || routes[place.routeSlug] || routes.lara;
+  const routeHref = `/routes/${selectedRoute.slug}`;
   document.querySelector(".place-detail-route-link").href = routeHref;
   document.querySelector(".place-hero__content > a").href = routeHref;
   document.querySelector(".place-secondary-action").href = routeHref;
   document.querySelector(".place-detail-cta a[href^='/routes']").href = routeHref;
+  document.querySelector(".place-hero__content > a").textContent =
+    currentLanguage === "ru"
+      ? `Маршрут: аэропорт Анталии → ${selectedRoute.destination}`
+      : currentLanguage === "en"
+        ? `Route: Antalya Airport → ${selectedRoute.slug === "cirali" ? "Çıralı" : selectedRoute.slug === "olympos" ? "Olympos" : selectedRoute.destination}`
+        : `Rota: Antalya Havalimanı → ${selectedRoute.slug === "cirali" ? "Çıralı" : selectedRoute.slug === "olympos" ? "Olympos" : selectedRoute.destination}`;
 
   const image = document.querySelector("#placeImage");
   image.src = place.image;
@@ -165,7 +180,6 @@ function renderPlace() {
   if (currentLanguage !== "ru") {
     document.title = currentLanguage === "en" ? `${displayTitle}: travel stop — GoTransfer` : `${displayTitle}: rota durağı — GoTransfer`;
     document.querySelector('meta[name="description"]').content = currentLanguage === "en" ? `Discover ${displayTitle} during a private transfer from Antalya Airport.` : `${displayTitle} yerini Antalya Havalimanı özel transferinize ekleyin.`;
-    document.querySelector(".place-hero__content > a").textContent = currentLanguage === "en" ? "Route from Antalya Airport" : "Antalya Havalimanı rotası";
   }
   document.querySelector("#placeEyebrow").textContent = currentLanguage === "ru" ? place.eyebrow : (currentLanguage === "en" ? "A stop worth discovering" : "Keşfedilmeye değer bir durak");
   document.querySelector("#placeTitle").textContent = displayTitle;
