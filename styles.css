@@ -232,11 +232,14 @@ a {
 
 .topbar__icon-link--whatsapp {
   color: white;
-  background: rgba(25, 135, 84, 0.86);
+  background: #18a85b;
+  box-shadow: 0 8px 20px rgba(24, 168, 91, 0.26);
 }
 
 .topbar__icon-link--telegram {
-  background: rgba(230, 247, 255, 0.72);
+  color: #fff;
+  background: #229ed9;
+  box-shadow: 0 8px 20px rgba(34, 158, 217, 0.24);
 }
 
 .language-menu {
@@ -905,6 +908,27 @@ h1 {
   white-space: nowrap;
 }
 
+.mobile-back-button {
+  position: fixed;
+  left: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 80;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 0 18px;
+  color: #fff;
+  background: rgba(17, 19, 22, 0.94);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  font: inherit;
+  font-weight: 760;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+}
+
 .time-picker {
   position: relative;
   display: grid;
@@ -1431,9 +1455,9 @@ h1 {
   }
 
   .topbar__icon-link {
-    min-width: 34px;
-    width: 34px;
-    min-height: 34px;
+    min-width: 42px;
+    width: 42px;
+    min-height: 42px;
     gap: 0;
     padding: 0;
   }
@@ -1448,8 +1472,8 @@ h1 {
   }
 
   .topbar__icon-link svg {
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
   }
 
   .language-menu__button {
@@ -1600,12 +1624,15 @@ h1 {
 
   .payment-badge {
     min-height: 29px;
-    border-color: rgba(23, 118, 86, 0.32);
+    border-color: rgba(15, 139, 84, 0.58);
     padding: 0 9px;
-    color: #0b6247;
-    background: rgba(191, 250, 216, 0.96);
-    box-shadow: 0 7px 18px rgba(30, 142, 105, 0.18);
+    color: #075d3e;
+    background: #b7f7ce;
+    box-shadow:
+      0 0 0 2px rgba(74, 205, 127, 0.1),
+      0 8px 20px rgba(30, 142, 105, 0.24);
     font-size: 0.64rem;
+    font-weight: 860;
   }
 
   .booking h2 {
@@ -1714,6 +1741,16 @@ h1 {
   .details article:last-child {
     min-height: auto;
     border-radius: var(--radius);
+  }
+}
+
+@media (max-width: 900px), (display-mode: standalone) {
+  .mobile-back-button {
+    display: inline-flex;
+  }
+
+  body:has(.mobile-back-button) {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
   }
 }
 
