@@ -22,6 +22,10 @@
       "destination": "/route-detail"
     },
     {
+      "source": "/routes/side",
+      "destination": "/route-detail"
+    },
+    {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"
     },

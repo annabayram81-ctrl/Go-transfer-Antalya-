@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260727-pwa-66";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-67";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const routeSlug =
@@ -6,7 +6,7 @@ const routeSlug =
   location.pathname.split("/").filter(Boolean).at(-1);
 const route = routes[routeSlug] || routes.lara;
 const localizedDestination =
-  route.slug === "belek" ? "Belek" : route.slug === "lara" ? "Lara" : route.slug === "alanya" ? "Alanya" : route.destination;
+  route.slug === "belek" ? "Belek" : route.slug === "lara" ? "Lara" : route.slug === "alanya" ? "Alanya" : route.slug === "side" ? "Side" : route.destination;
 const selectedStops = new Set();
 let currentLanguage = getLanguage();
 const interfaceCopy = {
