@@ -26,6 +26,10 @@
       "destination": "/route-detail"
     },
     {
+      "source": "/routes/konyaalti",
+      "destination": "/route-detail"
+    },
+    {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"
     },

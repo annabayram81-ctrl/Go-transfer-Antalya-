@@ -22,6 +22,9 @@
     <loc>https://gotransfer.my/routes/side</loc>
   </url>
   <url>
+    <loc>https://gotransfer.my/routes/konyaalti</loc>
+  </url>
+  <url>
     <loc>https://gotransfer.my/places/lower-duden</loc>
   </url>
   <url>
@@ -89,5 +92,17 @@
   </url>
   <url>
     <loc>https://gotransfer.my/places/koprulu-canyon</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/konyaalti-beach</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/antalya-aquarium</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/termessos</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/karain-cave</loc>
   </url>
 </urlset>
