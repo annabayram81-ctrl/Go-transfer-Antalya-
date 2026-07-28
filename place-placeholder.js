@@ -1,4 +1,4 @@
-import { placesBySlug, whatsappPhone } from "./route-data.js?v=20260728-pwa-69";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-70";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
@@ -12,8 +12,8 @@ const interfaceCopy = {
   tr: { back:"← Rotaya dön", add:"Bu durağı ekle", others:"Diğer duraklar", interesting:"BURADA NELER İLGİNÇ", see:"Görülecek ve yapılacaklar", planning:"DURAĞI PLANLAYIN", time:"Ne kadar zaman ayırmalı?", want:"Bu yeri yolculuğa eklemek ister misiniz?", help:"Operatörümüz süreyi hesaplamanıza ve uygun durak biçimini seçmenize yardımcı olur.", discuss:"Operatörle görüş", choose:"Yer seçimine dön", home:"Ana sayfa", journey:"Yolculuk seç", routes:"Rotalar", mobileBack:"Geri" },
 };
 const localizedNames = {
-  en: {"lower-duden":"Lower Düden Waterfall","duden-park":"Düden Park","kaleici":"Kaleiçi Old Town","perge":"Ancient City of Perge","kursunlu-waterfall":"Kurşunlu Waterfall","upper-duden":"Upper Düden Waterfall","antalya-museum":"Antalya Archaeological Museum","land-of-legends":"The Land of Legends","belek-beach":"Belek Beach","aspendos":"Ancient Theatre of Aspendos","zeytintasi-cave":"Zeytintaşı Cave","side-ancient-city":"Ancient Side and the Temple of Apollo","side-museum":"Side Archaeological Museum","manavgat-waterfall":"Manavgat Waterfall","koprulu-canyon":"Köprülü Canyon","konyaalti-beach":"Konyaaltı Beach and Promenade","antalya-aquarium":"Antalya Aquarium","termessos":"Ancient City of Termessos","karain-cave":"Karain Cave"},
-  tr: {"lower-duden":"Aşağı Düden Şelalesi","duden-park":"Düden Parkı","kaleici":"Kaleiçi","perge":"Perge Antik Kenti","kursunlu-waterfall":"Kurşunlu Şelalesi","upper-duden":"Yukarı Düden Şelalesi","antalya-museum":"Antalya Arkeoloji Müzesi","land-of-legends":"The Land of Legends","belek-beach":"Belek Plajı","aspendos":"Aspendos Antik Tiyatrosu","zeytintasi-cave":"Zeytintaşı Mağarası","side-ancient-city":"Side Antik Kenti ve Apollon Tapınağı","side-museum":"Side Arkeoloji Müzesi","manavgat-waterfall":"Manavgat Şelalesi","koprulu-canyon":"Köprülü Kanyon","konyaalti-beach":"Konyaaltı Plajı ve Sahili","antalya-aquarium":"Antalya Akvaryum","termessos":"Termessos Antik Kenti","karain-cave":"Karain Mağarası"},
+  en: {"lower-duden":"Lower Düden Waterfall","duden-park":"Düden Park","kaleici":"Kaleiçi Old Town","perge":"Ancient City of Perge","kursunlu-waterfall":"Kurşunlu Waterfall","upper-duden":"Upper Düden Waterfall","antalya-museum":"Antalya Archaeological Museum","land-of-legends":"The Land of Legends","belek-beach":"Belek Beach","aspendos":"Ancient Theatre of Aspendos","zeytintasi-cave":"Zeytintaşı Cave","side-ancient-city":"Ancient Side and the Temple of Apollo","side-museum":"Side Archaeological Museum","manavgat-waterfall":"Manavgat Waterfall","koprulu-canyon":"Köprülü Canyon","konyaalti-beach":"Konyaaltı Beach and Promenade","antalya-aquarium":"Antalya Aquarium","termessos":"Ancient City of Termessos","karain-cave":"Karain Cave","beldibi-cave":"Beldibi Cave","beldibi-beach":"Beldibi Coast","goynuk-canyon":"Göynük Canyon","phaselis":"Ancient City of Phaselis"},
+  tr: {"lower-duden":"Aşağı Düden Şelalesi","duden-park":"Düden Parkı","kaleici":"Kaleiçi","perge":"Perge Antik Kenti","kursunlu-waterfall":"Kurşunlu Şelalesi","upper-duden":"Yukarı Düden Şelalesi","antalya-museum":"Antalya Arkeoloji Müzesi","land-of-legends":"The Land of Legends","belek-beach":"Belek Plajı","aspendos":"Aspendos Antik Tiyatrosu","zeytintasi-cave":"Zeytintaşı Mağarası","side-ancient-city":"Side Antik Kenti ve Apollon Tapınağı","side-museum":"Side Arkeoloji Müzesi","manavgat-waterfall":"Manavgat Şelalesi","koprulu-canyon":"Köprülü Kanyon","konyaalti-beach":"Konyaaltı Plajı ve Sahili","antalya-aquarium":"Antalya Akvaryum","termessos":"Termessos Antik Kenti","karain-cave":"Karain Mağarası","beldibi-cave":"Beldibi Mağarası","beldibi-beach":"Beldibi Sahili","goynuk-canyon":"Göynük Kanyonu","phaselis":"Phaselis Antik Kenti"},
 };
 
 function whatsappUrl() {
@@ -130,7 +130,8 @@ function renderPlace() {
   document.title = `${place.title}: что посмотреть — GoTransfer`;
   document.querySelector('meta[name="description"]').content = place.seoDescription;
   document.querySelector("#placeCanonical").href = `https://gotransfer.my/places/${place.slug}`;
-  const routeHref = `/routes/${place.routeSlug || "lara"}`;
+  const requestedRoute = new URLSearchParams(location.search).get("route");
+  const routeHref = `/routes/${routes[requestedRoute] ? requestedRoute : place.routeSlug || "lara"}`;
   document.querySelector(".place-detail-route-link").href = routeHref;
   document.querySelector(".place-hero__content > a").href = routeHref;
   document.querySelector(".place-secondary-action").href = routeHref;

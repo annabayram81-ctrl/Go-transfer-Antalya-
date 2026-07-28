@@ -30,6 +30,14 @@
       "destination": "/route-detail"
     },
     {
+      "source": "/routes/beldibi",
+      "destination": "/route-detail"
+    },
+    {
+      "source": "/routes/goynuk",
+      "destination": "/route-detail"
+    },
+    {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"
     },

@@ -25,6 +25,12 @@
     <loc>https://gotransfer.my/routes/konyaalti</loc>
   </url>
   <url>
+    <loc>https://gotransfer.my/routes/beldibi</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/routes/goynuk</loc>
+  </url>
+  <url>
     <loc>https://gotransfer.my/places/lower-duden</loc>
   </url>
   <url>
@@ -104,5 +110,17 @@
   </url>
   <url>
     <loc>https://gotransfer.my/places/karain-cave</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/beldibi-cave</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/beldibi-beach</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/goynuk-canyon</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/phaselis</loc>
   </url>
 </urlset>
