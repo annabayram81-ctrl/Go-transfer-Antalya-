@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260728-floating-navigation-1";
+const CACHE_NAME = "gotransfer-v20260728-contact-header-1";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -8,14 +8,14 @@ const CORE_ASSETS = [
   "/route-placeholder.html",
   "/place-placeholder.html",
   "/privacy.html",
-  "/styles.css?v=20260728-pwa-57",
+  "/styles.css?v=20260728-pwa-58",
   "/pricing.js?v=20260727-long-distance-1",
   "/booking.js?v=20260727-long-distance-1",
   "/services.css?v=20260727-pwa-49",
   "/services.js?v=20260727-pwa-47",
   "/routes.css?v=20260728-pwa-51",
   "/route-detail.css?v=20260728-pwa-56",
-  "/place-detail.css?v=20260728-pwa-58",
+  "/place-detail.css?v=20260728-pwa-59",
   "/route-data.js?v=20260727-pwa-66",
   "/route-detail.js?v=20260727-pwa-66",
   "/place-placeholder.js?v=20260727-pwa-66",

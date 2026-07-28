@@ -376,9 +376,7 @@
   }
 
   .place-detail-route-link {
-    min-height: 38px;
-    padding-inline: 13px;
-    font-size: 0.7rem;
+    display: none;
   }
 
   .place-hero {
