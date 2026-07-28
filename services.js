@@ -45,9 +45,9 @@ const translations = {
       {
         title: "VIP-трансфер для бизнеса и особых случаев",
         description:
-          "Деловые встречи, свадьбы, мероприятия, конференции, рестораны, яхты и индивидуальные поездки.",
-        button: "Подробнее",
-        ariaLabel: "Подробнее о VIP-трансфере для бизнеса и особых случаев",
+          "Представительский транспорт для свадеб, деловых мероприятий, VIP-гостей, яхт, ресторанов и индивидуальных путешествий.",
+        button: "Выбрать услугу",
+        ariaLabel: "Выбрать VIP-трансфер для бизнеса и особых случаев",
         imageAlt: "VIP-трансфер для бизнеса и особых случаев",
       },
     ],
@@ -91,9 +91,9 @@ const translations = {
       {
         title: "VIP transport for business and special occasions",
         description:
-          "Business meetings, weddings, events, conferences, restaurants, yachts, and private journeys.",
-        button: "Learn more",
-        ariaLabel: "Learn more about VIP transport for business and special occasions",
+          "Executive transport for weddings, business events, VIP guests, yachts, restaurants, and private journeys.",
+        button: "Choose a service",
+        ariaLabel: "Choose VIP transport for business and special occasions",
         imageAlt: "VIP transport for business and special occasions",
       },
     ],
@@ -137,9 +137,9 @@ const translations = {
       {
         title: "İş ve özel günler için VIP transfer",
         description:
-          "İş toplantıları, düğünler, etkinlikler, konferanslar, restoranlar, yatlar ve kişiye özel yolculuklar.",
-        button: "Daha fazla bilgi",
-        ariaLabel: "İş ve özel günler için VIP transfer hakkında daha fazla bilgi",
+          "Düğünler, iş etkinlikleri, VIP misafirler, yatlar, restoranlar ve özel yolculuklar için prestijli ulaşım.",
+        button: "Hizmet seç",
+        ariaLabel: "İş ve özel günler için VIP transfer hizmeti seç",
         imageAlt: "İş ve özel günler için VIP transfer",
       },
     ],

@@ -1,9 +1,10 @@
-const CACHE_NAME = "gotransfer-v20260728-chauffeur-language-1";
+const CACHE_NAME = "gotransfer-v20260728-vip-events-1";
 const CORE_ASSETS = [
   "/",
   "/index.html",
   "/services.html",
   "/chauffeur.html",
+  "/vip-events.html",
   "/routes.html",
   "/route-detail.html",
   "/route-placeholder.html",
@@ -13,11 +14,13 @@ const CORE_ASSETS = [
   "/pricing.js?v=20260727-long-distance-1",
   "/booking.js?v=20260727-long-distance-1",
   "/services.css?v=20260727-pwa-49",
-  "/services.js?v=20260728-pwa-48",
+  "/services.js?v=20260728-pwa-49",
   "/chauffeur.css?v=20260728-pwa-1",
   "/chauffeur-form.css?v=20260728-pwa-1",
   "/chauffeur.js?v=20260728-pwa-3",
   "/chauffeur-language.js?v=20260728-pwa-1",
+  "/vip-events.css?v=20260728-pwa-1",
+  "/vip-events.js?v=20260728-pwa-1",
   "/routes.css?v=20260728-pwa-51",
   "/route-detail.css?v=20260728-pwa-73",
   "/place-detail.css?v=20260728-pwa-59",
