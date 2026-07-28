@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-71";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-74";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
@@ -20,12 +20,20 @@ Object.assign(localizedNames.en, {
   "kemer-marina-moonlight": "Kemer Marina and Moonlight Bay",
   "kiris-coast": "Kiriş Coast and Bays",
   "tahtali-cable-car": "Mount Tahtalı and Cable Car",
+  "camyuva-coast": "Çamyuva Coast",
+  "alacasu-bay": "Alacasu Bay",
+  "tekirova-coast": "Tekirova Coast",
+  "three-islands": "Boat Trip to the Three Islands",
 });
 Object.assign(localizedNames.tr, {
   "kemer-clock-tower": "Kemer Saat Kulesi ve Merkez",
   "kemer-marina-moonlight": "Kemer Marina ve Ayışığı Koyu",
   "kiris-coast": "Kiriş Sahili ve Koyları",
   "tahtali-cable-car": "Tahtalı Dağı ve Teleferik",
+  "camyuva-coast": "Çamyuva Sahili",
+  "alacasu-bay": "Alacasu Koyu",
+  "tekirova-coast": "Tekirova Sahili",
+  "three-islands": "Üç Adalar Tekne Turu",
 });
 
 function whatsappUrl() {

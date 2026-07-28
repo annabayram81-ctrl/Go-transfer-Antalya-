@@ -46,6 +46,14 @@
       "destination": "/route-detail"
     },
     {
+      "source": "/routes/camyuva",
+      "destination": "/route-detail"
+    },
+    {
+      "source": "/routes/tekirova",
+      "destination": "/route-detail"
+    },
+    {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"
     },

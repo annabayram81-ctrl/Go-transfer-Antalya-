@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-71";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-74";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const routeSlug =
@@ -6,7 +6,7 @@ const routeSlug =
   location.pathname.split("/").filter(Boolean).at(-1);
 const route = routes[routeSlug] || routes.lara;
 const localizedDestination =
-  route.slug === "belek" ? "Belek" : route.slug === "lara" ? "Lara" : route.slug === "alanya" ? "Alanya" : route.slug === "side" ? "Side" : route.slug === "konyaalti" ? "Konyaaltı" : route.slug === "beldibi" ? "Beldibi" : route.slug === "goynuk" ? "Göynük" : route.slug === "kemer" ? "Kemer" : route.slug === "kiris" ? "Kiriş" : route.destination;
+  route.slug === "belek" ? "Belek" : route.slug === "lara" ? "Lara" : route.slug === "alanya" ? "Alanya" : route.slug === "side" ? "Side" : route.slug === "konyaalti" ? "Konyaaltı" : route.slug === "beldibi" ? "Beldibi" : route.slug === "goynuk" ? "Göynük" : route.slug === "kemer" ? "Kemer" : route.slug === "kiris" ? "Kiriş" : route.slug === "camyuva" ? "Çamyuva" : route.slug === "tekirova" ? "Tekirova" : route.destination;
 const selectedStops = new Set();
 let currentLanguage = getLanguage();
 const interfaceCopy = {
@@ -23,12 +23,20 @@ Object.assign(placeNames.en, {
   "kemer-marina-moonlight": "Kemer Marina and Moonlight Bay",
   "kiris-coast": "Kiriş Coast and Bays",
   "tahtali-cable-car": "Mount Tahtalı and Cable Car",
+  "camyuva-coast": "Çamyuva Coast",
+  "alacasu-bay": "Alacasu Bay",
+  "tekirova-coast": "Tekirova Coast",
+  "three-islands": "Boat Trip to the Three Islands",
 });
 Object.assign(placeNames.tr, {
   "kemer-clock-tower": "Kemer Saat Kulesi ve Merkez",
   "kemer-marina-moonlight": "Kemer Marina ve Ayışığı Koyu",
   "kiris-coast": "Kiriş Sahili ve Koyları",
   "tahtali-cable-car": "Tahtalı Dağı ve Teleferik",
+  "camyuva-coast": "Çamyuva Sahili",
+  "alacasu-bay": "Alacasu Koyu",
+  "tekirova-coast": "Tekirova Sahili",
+  "three-islands": "Üç Adalar Tekne Turu",
 });
 
 function displayPlace(place) {

@@ -37,6 +37,12 @@
     <loc>https://gotransfer.my/routes/kiris</loc>
   </url>
   <url>
+    <loc>https://gotransfer.my/routes/camyuva</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/routes/tekirova</loc>
+  </url>
+  <url>
     <loc>https://gotransfer.my/places/lower-duden</loc>
   </url>
   <url>
@@ -140,5 +146,17 @@
   </url>
   <url>
     <loc>https://gotransfer.my/places/tahtali-cable-car</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/camyuva-coast</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/alacasu-bay</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/tekirova-coast</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/three-islands</loc>
   </url>
 </urlset>
