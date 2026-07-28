@@ -98,7 +98,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px), (display-mode: standalone) {
   .mobile-back-button {
     display: inline-flex;
   }

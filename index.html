@@ -18,7 +18,7 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="apple-touch-icon" href="./assets/app-icon-512.png" />
     <link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260727-pwa-52" />
+    <link rel="stylesheet" href="./styles.css?v=20260728-pwa-56" />
   </head>
   <body>
     <main class="app-shell">
@@ -99,14 +99,9 @@
                 <h2 data-i18n="bookingTitle">Рассчитать стоимость</h2>
                 <span class="payment-badge" data-i18n="payOnArrivalBadge">Оплата по факту</span>
               </div>
-              <div class="booking__head-actions">
-                <button class="icon-button" type="button" id="swapRoute" aria-label="Поменять откуда и куда" data-i18n-aria="swapRoute">
-                  <span aria-hidden="true">↕</span>
-                </button>
-              </div>
             </div>
 
-            <div class="field-grid">
+            <div class="field-grid route-fields">
               <label class="field place-field">
                 <span data-i18n="fromLabel">Откуда</span>
                 <input id="fromSearch" type="text" autocomplete="off" spellcheck="false" data-place-field="from" required />
@@ -122,6 +117,9 @@
                 <input id="toPlaceId" type="hidden" />
                 <div class="place-results" id="toResults" role="listbox" hidden></div>
               </label>
+              <button class="icon-button route-fields__swap" type="button" id="swapRoute" aria-label="Поменять откуда и куда" data-i18n-aria="swapRoute">
+                <span aria-hidden="true">↕</span>
+              </button>
             </div>
 
             <div class="quick-place-groups" aria-label="Quick place filters">
@@ -317,4 +315,3 @@
     <script src="./booking.js?v=20260727-long-distance-1"></script>
   </body>
 </html>
-
