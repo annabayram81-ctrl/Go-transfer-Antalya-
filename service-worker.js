@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260728-kemer-kiris-1";
+const CACHE_NAME = "gotransfer-v20260728-route-cards-first-1";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -14,7 +14,7 @@ const CORE_ASSETS = [
   "/services.css?v=20260727-pwa-49",
   "/services.js?v=20260727-pwa-47",
   "/routes.css?v=20260728-pwa-51",
-  "/route-detail.css?v=20260728-pwa-56",
+  "/route-detail.css?v=20260728-pwa-73",
   "/place-detail.css?v=20260728-pwa-59",
   "/route-data.js?v=20260728-pwa-71",
   "/route-detail.js?v=20260728-pwa-71",

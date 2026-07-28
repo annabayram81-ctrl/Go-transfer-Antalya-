@@ -53,7 +53,7 @@
 .route-hero {
   position: relative;
   display: flex;
-  min-height: min(790px, 92svh);
+  min-height: min(650px, 76svh);
   align-items: flex-end;
   overflow: hidden;
 }
@@ -81,12 +81,12 @@
   z-index: 2;
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 150px 0 72px;
+  padding: 124px 0 50px;
 }
 
 .route-breadcrumb {
   display: inline-flex;
-  margin-bottom: 42px;
+  margin-bottom: 26px;
   color: rgba(255, 255, 255, 0.72);
   font-size: 0.82rem;
   font-weight: 700;
@@ -230,7 +230,7 @@
 }
 
 .route-section {
-  padding-top: 42px;
+  padding-top: 64px;
   padding-bottom: 96px;
 }
 
@@ -656,7 +656,7 @@
   }
 
   .route-hero {
-    min-height: 760px;
+    min-height: 600px;
     align-items: flex-end;
   }
 
@@ -665,19 +665,31 @@
   }
 
   .route-hero__content {
-    padding: 118px 0 42px;
+    padding: 88px 0 28px;
   }
 
   .route-breadcrumb {
-    margin-bottom: 74px;
+    margin-bottom: 18px;
   }
 
   .route-hero h1 {
-    font-size: clamp(2.65rem, 12vw, 4rem);
+    margin-bottom: 14px;
+    font-size: clamp(2.2rem, 10vw, 3.25rem);
+    line-height: 0.98;
+  }
+
+  .route-hero__content > p:not(.route-hero__eyebrow) {
+    margin-bottom: 20px;
+    font-size: 0.94rem;
+    line-height: 1.42;
   }
 
   .route-hero__actions {
     display: grid;
+  }
+
+  .route-hero__actions .route-action {
+    min-height: 44px;
   }
 
   .route-intro,
