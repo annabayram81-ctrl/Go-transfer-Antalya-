@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260728-side-route-1";
+const CACHE_NAME = "gotransfer-v20260728-side-route-2";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -17,8 +17,8 @@ const CORE_ASSETS = [
   "/route-detail.css?v=20260728-pwa-56",
   "/place-detail.css?v=20260728-pwa-59",
   "/route-data.js?v=20260728-pwa-67",
-  "/route-detail.js?v=20260728-pwa-67",
-  "/place-placeholder.js?v=20260728-pwa-67",
+  "/route-detail.js?v=20260728-pwa-68",
+  "/place-placeholder.js?v=20260728-pwa-68",
   "/journey-language.js?v=20260727-pwa-60",
   "/floating-back.js?v=20260728-pwa-1",
   "/routes-language.js?v=20260727-pwa-60",
