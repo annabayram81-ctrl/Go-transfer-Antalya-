@@ -1,4 +1,4 @@
-import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-70";
+import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-71";
 import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
 
 const routeSlug =
@@ -6,7 +6,7 @@ const routeSlug =
   location.pathname.split("/").filter(Boolean).at(-1);
 const route = routes[routeSlug] || routes.lara;
 const localizedDestination =
-  route.slug === "belek" ? "Belek" : route.slug === "lara" ? "Lara" : route.slug === "alanya" ? "Alanya" : route.slug === "side" ? "Side" : route.slug === "konyaalti" ? "Konyaaltı" : route.slug === "beldibi" ? "Beldibi" : route.slug === "goynuk" ? "Göynük" : route.destination;
+  route.slug === "belek" ? "Belek" : route.slug === "lara" ? "Lara" : route.slug === "alanya" ? "Alanya" : route.slug === "side" ? "Side" : route.slug === "konyaalti" ? "Konyaaltı" : route.slug === "beldibi" ? "Beldibi" : route.slug === "goynuk" ? "Göynük" : route.slug === "kemer" ? "Kemer" : route.slug === "kiris" ? "Kiriş" : route.destination;
 const selectedStops = new Set();
 let currentLanguage = getLanguage();
 const interfaceCopy = {
@@ -18,6 +18,18 @@ const placeNames = {
   en: {"lower-duden":"Lower Düden Waterfall","duden-park":"Düden Park","kaleici":"Kaleiçi Old Town","perge":"Ancient City of Perge","kursunlu-waterfall":"Kurşunlu Waterfall","upper-duden":"Upper Düden Waterfall","antalya-museum":"Antalya Archaeological Museum","land-of-legends":"The Land of Legends","belek-beach":"Belek Beach","aspendos":"Ancient Theatre of Aspendos","zeytintasi-cave":"Zeytintaşı Cave","alanya-castle":"Alanya Castle","alanya-cable-car":"Alanya Cable Car","alanya-aya-yorgi":"Church of Saint George","alanya-red-tower":"Red Tower and Seljuk Shipyard","alanya-damlatas":"Damlataş Cave and Cleopatra Beach","alanya-museum":"Alanya Archaeological Museum","alanya-dim":"Dim River and Dim Cave","alanya-syedra":"Ancient City of Syedra","side-ancient-city":"Ancient Side and the Temple of Apollo","side-museum":"Side Archaeological Museum","manavgat-waterfall":"Manavgat Waterfall","koprulu-canyon":"Köprülü Canyon","konyaalti-beach":"Konyaaltı Beach and Promenade","antalya-aquarium":"Antalya Aquarium","termessos":"Ancient City of Termessos","karain-cave":"Karain Cave","beldibi-cave":"Beldibi Cave","beldibi-beach":"Beldibi Coast","goynuk-canyon":"Göynük Canyon","phaselis":"Ancient City of Phaselis"},
   tr: {"lower-duden":"Aşağı Düden Şelalesi","duden-park":"Düden Parkı","kaleici":"Kaleiçi","perge":"Perge Antik Kenti","kursunlu-waterfall":"Kurşunlu Şelalesi","upper-duden":"Yukarı Düden Şelalesi","antalya-museum":"Antalya Arkeoloji Müzesi","land-of-legends":"The Land of Legends","belek-beach":"Belek Plajı","aspendos":"Aspendos Antik Tiyatrosu","zeytintasi-cave":"Zeytintaşı Mağarası","alanya-castle":"Alanya Kalesi","alanya-cable-car":"Alanya Teleferiği","alanya-aya-yorgi":"Aya Yorgi Kilisesi","alanya-red-tower":"Kızılkule ve Selçuklu Tersanesi","alanya-damlatas":"Damlataş Mağarası ve Kleopatra Plajı","alanya-museum":"Alanya Arkeoloji Müzesi","alanya-dim":"Dim Çayı ve Dim Mağarası","alanya-syedra":"Syedra Antik Kenti","side-ancient-city":"Side Antik Kenti ve Apollon Tapınağı","side-museum":"Side Arkeoloji Müzesi","manavgat-waterfall":"Manavgat Şelalesi","koprulu-canyon":"Köprülü Kanyon","konyaalti-beach":"Konyaaltı Plajı ve Sahili","antalya-aquarium":"Antalya Akvaryum","termessos":"Termessos Antik Kenti","karain-cave":"Karain Mağarası","beldibi-cave":"Beldibi Mağarası","beldibi-beach":"Beldibi Sahili","goynuk-canyon":"Göynük Kanyonu","phaselis":"Phaselis Antik Kenti"},
 };
+Object.assign(placeNames.en, {
+  "kemer-clock-tower": "Kemer Clock Tower and Town Centre",
+  "kemer-marina-moonlight": "Kemer Marina and Moonlight Bay",
+  "kiris-coast": "Kiriş Coast and Bays",
+  "tahtali-cable-car": "Mount Tahtalı and Cable Car",
+});
+Object.assign(placeNames.tr, {
+  "kemer-clock-tower": "Kemer Saat Kulesi ve Merkez",
+  "kemer-marina-moonlight": "Kemer Marina ve Ayışığı Koyu",
+  "kiris-coast": "Kiriş Sahili ve Koyları",
+  "tahtali-cable-car": "Tahtalı Dağı ve Teleferik",
+});
 
 function displayPlace(place) {
   if (currentLanguage === "ru") return place;

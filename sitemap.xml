@@ -31,6 +31,12 @@
     <loc>https://gotransfer.my/routes/goynuk</loc>
   </url>
   <url>
+    <loc>https://gotransfer.my/routes/kemer</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/routes/kiris</loc>
+  </url>
+  <url>
     <loc>https://gotransfer.my/places/lower-duden</loc>
   </url>
   <url>
@@ -122,5 +128,17 @@
   </url>
   <url>
     <loc>https://gotransfer.my/places/phaselis</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/kemer-clock-tower</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/kemer-marina-moonlight</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/kiris-coast</loc>
+  </url>
+  <url>
+    <loc>https://gotransfer.my/places/tahtali-cable-car</loc>
   </url>
 </urlset>

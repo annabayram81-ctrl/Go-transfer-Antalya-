@@ -38,6 +38,14 @@
       "destination": "/route-detail"
     },
     {
+      "source": "/routes/kemer",
+      "destination": "/route-detail"
+    },
+    {
+      "source": "/routes/kiris",
+      "destination": "/route-detail"
+    },
+    {
       "source": "/routes/:slug",
       "destination": "/route-placeholder"
     },
