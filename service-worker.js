@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260728-chauffeur-1";
+const CACHE_NAME = "gotransfer-v20260728-chauffeur-2";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -13,7 +13,7 @@ const CORE_ASSETS = [
   "/pricing.js?v=20260727-long-distance-1",
   "/booking.js?v=20260727-long-distance-1",
   "/services.css?v=20260727-pwa-49",
-  "/services.js?v=20260727-pwa-47",
+  "/services.js?v=20260728-pwa-48",
   "/chauffeur.css?v=20260728-pwa-1",
   "/chauffeur.js?v=20260728-pwa-1",
   "/routes.css?v=20260728-pwa-51",
