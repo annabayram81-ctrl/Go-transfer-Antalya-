@@ -35,9 +35,9 @@ const translations = {
         imageAlt: "VIP-трансфер с остановками по пути",
       },
       {
-        title: "Индивидуальные путешествия по Турции",
+        title: "VIP-путешествия по Анталийскому побережью",
         description:
-          "Авторские маршруты на один или несколько дней с персональным водителем, остановками, отелями и возможностью изменить программу.",
+          "Однодневные индивидуальные маршруты с персональным водителем: море, античные города, каньоны и святыни древней Ликии.",
         button: "Выбрать путешествие",
         ariaLabel: "Выбрать индивидуальное путешествие по Турции",
         imageAlt: "Однодневное VIP-путешествие по Анталийскому побережью",
@@ -81,9 +81,9 @@ const translations = {
         imageAlt: "VIP transfer with stops along the way",
       },
       {
-        title: "Private journeys across Turkey",
+        title: "VIP journeys along the Antalya coast",
         description:
-          "Tailor-made one or multi-day itineraries with a personal chauffeur, selected stops, hotels, and a flexible programme.",
+          "Private day itineraries with a personal chauffeur: the sea, ancient cities, canyons, and the sacred heritage of Lycia.",
         button: "Choose a journey",
         ariaLabel: "Choose a private journey across Turkey",
         imageAlt: "Private VIP day journey along the Antalya coast",
@@ -127,9 +127,9 @@ const translations = {
         imageAlt: "Yol üzerinde durakları olan VIP transfer",
       },
       {
-        title: "Türkiye'de kişiye özel yolculuklar",
+        title: "Antalya kıyısında VIP yolculuklar",
         description:
-          "Kişisel şoför, seçilmiş duraklar, oteller ve esnek programla bir veya birkaç günlük özel rotalar.",
+          "Kişisel şoförle deniz, antik kentler, kanyonlar ve Likya'nın kutsal mirasına uzanan özel günübirlik rotalar.",
         button: "Yolculuk seç",
         ariaLabel: "Türkiye'de kişiye özel yolculuk seç",
         imageAlt: "Antalya sahilinde kişiye özel VIP günlük yolculuk",
