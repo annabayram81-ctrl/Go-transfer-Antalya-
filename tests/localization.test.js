@@ -79,11 +79,14 @@ test("mobile layouts prevent horizontal page drift", () => {
   const sharedCss = read("styles.css");
   const routesCss = read("routes.css");
   const journeysCss = read("journeys-mobile.css");
+  const vipEventsCss = read("vip-events-mobile.css");
   assert.match(sharedCss, /html\s*\{[\s\S]*?overflow-x:\s*clip/);
   assert.match(sharedCss, /body\s*\{[\s\S]*?overflow-x:\s*clip/);
   assert.match(routesCss, /\.routes-intro h1\s*\{[\s\S]*?overflow-wrap:\s*anywhere/);
   assert.match(journeysCss, /\.journeys-root\s*\{[\s\S]*?overflow-x:\s*clip/);
   assert.match(journeysCss, /\.journeys-page\s*\{[\s\S]*?overscroll-behavior-x:\s*none/);
+  assert.match(vipEventsCss, /\.vip-events-root\s*\{[\s\S]*?overflow-x:\s*clip/);
+  assert.match(vipEventsCss, /\.vip-events-page\s*\{[\s\S]*?overscroll-behavior-x:\s*none/);
 });
 
 test("privacy page keeps all languages and a floating mobile back button", () => {

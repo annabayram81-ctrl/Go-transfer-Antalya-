@@ -1,0 +1,80 @@
+.vip-events-root {
+  max-width: 100%;
+  overflow-x: clip;
+  background: #0e1013;
+}
+
+.vip-events-page {
+  max-width: 100%;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+
+.vip-events-page .contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.vip-events-page .contact svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+@media (max-width: 620px) {
+  .vip-topbar {
+    top: calc(30px + env(safe-area-inset-top));
+    right: 12px;
+    left: 12px;
+    padding: 0;
+  }
+
+  .vip-topbar .brand {
+    min-height: 42px;
+    padding: 0 12px;
+    color: #fff;
+    background: rgba(14, 16, 19, 0.72);
+    border-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(14px);
+  }
+
+  .vip-topbar nav {
+    gap: 6px;
+  }
+
+  .vip-events-page .contact {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .vip-events-page .contact span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .vip-events-page .contact svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .vip-hero__copy {
+    padding: 132px 18px 54px;
+  }
+
+  .vip-hero h1 {
+    max-width: 100%;
+    font-size: clamp(2rem, 9.2vw, 2.45rem);
+    line-height: 1.04;
+    overflow-wrap: anywhere;
+  }
+}
