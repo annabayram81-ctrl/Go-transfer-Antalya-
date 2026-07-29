@@ -58,3 +58,10 @@ test("route placeholder exposes all five language options", () => {
   });
   assert.match(html, /gotransfer:languagechange/);
 });
+
+test("shared locale handler does not double-toggle page-owned language menus", () => {
+  const source = read("site-locale.js");
+  assert.match(source, /if\(!globallyManaged\)return/);
+  assert.match(source, /localeGenerated/);
+  assert.match(read("route-placeholder.html"), /data-global-locale-menu/);
+});

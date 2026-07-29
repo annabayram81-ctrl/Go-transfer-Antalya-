@@ -47,6 +47,7 @@
     button.type="button";
     button.setAttribute("role","option");
     button.setAttribute(attribute,language);
+    button.dataset.localeGenerated="true";
     button.setAttribute("aria-selected","false");
     button.textContent=labels[language];
     list.appendChild(button);
@@ -69,14 +70,23 @@
       list.addEventListener("click",event=>{
         const button=event.target.closest(".language-menu__option");
         if(!button)return;
+        const menu=list.closest(".language-menu");
+        const globallyManaged=menu?.classList.contains("universal-language-menu")||menu?.hasAttribute("data-global-locale-menu");
+        if(!globallyManaged&&!button.dataset.localeGenerated)return;
         const language=button.dataset.languageOption||button.dataset.servicesLanguage||button.dataset.language;
         if(supported.includes(language))set(language);
       });
     });
     document.querySelectorAll(".language-menu__button").forEach(button=>{
+      const menu=button.closest(".language-menu");
+      const globallyManaged=menu?.classList.contains("universal-language-menu")||menu?.hasAttribute("data-global-locale-menu");
+      if(!globallyManaged)return;
       if(button.dataset.localeBound)return;
       button.dataset.localeBound="true";
-      button.addEventListener("click",()=>button.closest(".language-menu")?.classList.toggle("is-open"));
+      button.addEventListener("click",()=>{
+        const open=menu.classList.toggle("is-open");
+        button.setAttribute("aria-expanded",String(open));
+      });
     });
   }
 
