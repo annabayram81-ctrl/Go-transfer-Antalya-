@@ -284,6 +284,18 @@
   margin: auto 0;
 }
 
+.route-placeholder__languages {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  z-index: 5;
+}
+
+html[dir="rtl"] .route-placeholder__languages {
+  right: auto;
+  left: 0;
+}
+
 .route-placeholder section > p {
   color: #77d4c6;
   font-size: 0.78rem;

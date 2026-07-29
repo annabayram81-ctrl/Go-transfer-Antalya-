@@ -9,13 +9,25 @@
     <meta name="theme-color" content="#111316" />
     <link rel="icon" href="/assets/app-icon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css?v=20260728-pwa-58" />
-    <link rel="stylesheet" href="/routes.css?v=20260727-pwa-50" />
+    <link rel="stylesheet" href="/routes.css?v=20260729-i18n-2" />
   </head>
   <body class="route-placeholder-page">
     <main class="route-placeholder">
       <a class="brand" href="/" aria-label="GoTransfer — главная">
         <span class="brand__text"><span>GoTransfer</span></span>
       </a>
+      <div class="language-menu route-placeholder__languages">
+        <button class="language-menu__button" type="button" aria-label="Язык" aria-expanded="false">
+          <span>RU</span><span aria-hidden="true">⌄</span>
+        </button>
+        <div class="language-menu__list" role="listbox" aria-label="Язык">
+          <button class="language-menu__option is-active" data-language="ru" type="button" role="option">RU</button>
+          <button class="language-menu__option" data-language="tr" type="button" role="option">TR</button>
+          <button class="language-menu__option" data-language="en" type="button" role="option">EN</button>
+          <button class="language-menu__option" data-language="de" type="button" role="option">DE</button>
+          <button class="language-menu__option" data-language="ar" type="button" role="option">العربية</button>
+        </div>
+      </div>
       <section>
         <p>Новый VIP-маршрут</p>
         <h1>Маршрут готовится.</h1>
@@ -34,16 +46,19 @@
         de: ["Neue VIP-Route", "Diese Route wird vorbereitet.", "Bald finden Sie hier besondere Stopps und individuelle Reiseoptionen.", "Zurück zu den Zielen", "Zurück"],
         ar: ["مسار جديد لكبار الشخصيات", "نعمل على إعداد هذا المسار.", "ستجد هنا قريباً محطات مميزة وخيارات خاصة للرحلة.", "العودة إلى الوجهات", "رجوع"],
       };
-      const language = getLanguage();
-      const text = copy[language];
-      document.documentElement.lang = language;
-      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
-      const section = document.querySelector(".route-placeholder section");
-      section.querySelector("p").textContent = text[0];
-      section.querySelector("h1").textContent = text[1];
-      section.querySelector("span").textContent = text[2];
-      section.querySelector("a").childNodes[0].textContent = `${text[3]} `;
-      document.querySelector("#mobileBackButton span").textContent = text[4];
+      function applyLanguage(language) {
+        const text = copy[language] || copy.ru;
+        document.documentElement.lang = language;
+        document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+        const section = document.querySelector(".route-placeholder section");
+        section.querySelector("p").textContent = text[0];
+        section.querySelector("h1").textContent = text[1];
+        section.querySelector("span").textContent = text[2];
+        section.querySelector("a").childNodes[0].textContent = `${text[3]} `;
+        document.querySelector("#mobileBackButton span").textContent = text[4];
+      }
+      applyLanguage(getLanguage());
+      window.addEventListener("gotransfer:languagechange", (event) => applyLanguage(event.detail.language));
       setupBackButton(document.querySelector("#mobileBackButton"), "/routes");
     </script>
   </body>

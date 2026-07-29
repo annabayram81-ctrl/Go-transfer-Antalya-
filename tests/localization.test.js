@@ -50,3 +50,11 @@ test("RTL stylesheet protects LTR contact, price and URL content", () => {
   assert.match(css, /\[dir="ltr"\]/);
   assert.match(css, /wa\.me|tel:|mailto:|booking-price/);
 });
+
+test("route placeholder exposes all five language options", () => {
+  const html = read("route-placeholder.html");
+  ["ru", "tr", "en", "de", "ar"].forEach((language) => {
+    assert.match(html, new RegExp(`data-language="${language}"`));
+  });
+  assert.match(html, /gotransfer:languagechange/);
+});
