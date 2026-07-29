@@ -1,0 +1,3 @@
+const grid=document.querySelector("#journeyGrid");
+const bookingUrl=title=>`https://wa.me/905346801828?text=${encodeURIComponent(`Здравствуйте! Хочу забронировать однодневное VIP-путешествие «${title}».`)}`;
+grid.innerHTML=window.VIP_JOURNEYS.map(item=>`<article class="journey-card"><img src="${item.image}" alt="${item.title}" loading="lazy"><span class="journey-card__shade"></span><div><small>ИНДИВИДУАЛЬНО · ${item.duration}</small><h3>${item.title}</h3><p>${item.description}</p><nav><a href="/journeys/${item.slug}">Подробнее</a><a class="book" href="${bookingUrl(item.title)}" target="_blank" rel="noreferrer">Забронировать VIP-путешествие</a></nav></div></article>`).join("");

@@ -40,7 +40,7 @@ const translations = {
           "Авторские маршруты на один или несколько дней с персональным водителем, остановками, отелями и возможностью изменить программу.",
         button: "Выбрать путешествие",
         ariaLabel: "Выбрать индивидуальное путешествие по Турции",
-        imageAlt: "Индивидуальное путешествие по Турции с персональным водителем",
+        imageAlt: "Однодневное VIP-путешествие по Анталийскому побережью",
       },
       {
         title: "VIP-трансфер для бизнеса и особых случаев",
@@ -86,7 +86,7 @@ const translations = {
           "Tailor-made one or multi-day itineraries with a personal chauffeur, selected stops, hotels, and a flexible programme.",
         button: "Choose a journey",
         ariaLabel: "Choose a private journey across Turkey",
-        imageAlt: "Private journey across Turkey with a personal chauffeur",
+        imageAlt: "Private VIP day journey along the Antalya coast",
       },
       {
         title: "VIP transport for business and special occasions",
@@ -132,7 +132,7 @@ const translations = {
           "Kişisel şoför, seçilmiş duraklar, oteller ve esnek programla bir veya birkaç günlük özel rotalar.",
         button: "Yolculuk seç",
         ariaLabel: "Türkiye'de kişiye özel yolculuk seç",
-        imageAlt: "Kişisel şoförle Türkiye yolculuğu",
+        imageAlt: "Antalya sahilinde kişiye özel VIP günlük yolculuk",
       },
       {
         title: "İş ve özel günler için VIP transfer",

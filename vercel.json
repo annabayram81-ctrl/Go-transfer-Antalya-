@@ -5,10 +5,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/journeys/lycia", "destination": "/journey-detail" },
-    { "source": "/journeys/nature", "destination": "/journey-detail" },
-    { "source": "/journeys/cappadocia", "destination": "/journey-detail" },
-    { "source": "/journeys/multiday", "destination": "/journey-detail" },
+    { "source": "/journeys/:slug", "destination": "/journey-detail" },
     {
       "source": "/images/:path*",
       "destination": "/public/images/:path*"
