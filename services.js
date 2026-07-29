@@ -35,12 +35,12 @@ const translations = {
         imageAlt: "VIP-трансфер с остановками по пути",
       },
       {
-        title: "Персональный водитель в Анталии",
+        title: "Индивидуальные путешествия по Турции",
         description:
-          "Автомобиль бизнес-класса с персональным водителем на несколько часов или на целый день.",
-        button: "Выбрать формат",
-        ariaLabel: "Выбрать формат услуги персонального водителя в Анталии",
-        imageAlt: "Автомобиль бизнес-класса с личным водителем",
+          "Авторские маршруты на один или несколько дней с персональным водителем, остановками, отелями и возможностью изменить программу.",
+        button: "Выбрать путешествие",
+        ariaLabel: "Выбрать индивидуальное путешествие по Турции",
+        imageAlt: "Индивидуальное путешествие по Турции с персональным водителем",
       },
       {
         title: "VIP-трансфер для бизнеса и особых случаев",
@@ -81,12 +81,12 @@ const translations = {
         imageAlt: "VIP transfer with stops along the way",
       },
       {
-        title: "Car with a private chauffeur",
+        title: "Private journeys across Turkey",
         description:
-          "A business-class car with a personal chauffeur for several hours or for the entire day.",
-        button: "Learn more",
-        ariaLabel: "Learn more about a car with a private chauffeur",
-        imageAlt: "Business-class car with a private chauffeur",
+          "Tailor-made one or multi-day itineraries with a personal chauffeur, selected stops, hotels, and a flexible programme.",
+        button: "Choose a journey",
+        ariaLabel: "Choose a private journey across Turkey",
+        imageAlt: "Private journey across Turkey with a personal chauffeur",
       },
       {
         title: "VIP transport for business and special occasions",
@@ -127,12 +127,12 @@ const translations = {
         imageAlt: "Yol üzerinde durakları olan VIP transfer",
       },
       {
-        title: "Özel şoförlü araç",
+        title: "Türkiye'de kişiye özel yolculuklar",
         description:
-          "Birkaç saatliğine veya tüm gün boyunca kişisel şoförlü business sınıfı araç.",
-        button: "Daha fazla bilgi",
-        ariaLabel: "Özel şoförlü araç hakkında daha fazla bilgi",
-        imageAlt: "Özel şoförlü business sınıfı araç",
+          "Kişisel şoför, seçilmiş duraklar, oteller ve esnek programla bir veya birkaç günlük özel rotalar.",
+        button: "Yolculuk seç",
+        ariaLabel: "Türkiye'de kişiye özel yolculuk seç",
+        imageAlt: "Kişisel şoförle Türkiye yolculuğu",
       },
       {
         title: "İş ve özel günler için VIP transfer",
