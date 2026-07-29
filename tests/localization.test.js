@@ -74,3 +74,9 @@ test("every VIP journey has a reusable photographic stop showcase", () => {
   assert.match(read("journey-detail.html"), /id="detailPlaceCards"/);
   assert.match(read("journey-detail.js"), /JourneyShowcases\.details/);
 });
+
+test("floating mobile back button is localized in German and Arabic", () => {
+  const source = read("floating-back.js");
+  assert.match(source, /de:\s*"Zurück"/);
+  assert.match(source, /ar:\s*"رجوع"/);
+});
