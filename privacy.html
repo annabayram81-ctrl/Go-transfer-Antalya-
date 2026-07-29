@@ -141,6 +141,8 @@
           <button class="is-active" type="button" data-language="ru">RU</button>
           <button type="button" data-language="tr">TR</button>
           <button type="button" data-language="en">EN</button>
+          <button type="button" data-language="de">DE</button>
+          <button type="button" data-language="ar">العربية</button>
         </div>
       </div>
 
@@ -252,7 +254,28 @@
           main page.
         </p>
       </article>
+
+      <article data-policy="de">
+        <h1>Datenschutzerklärung</h1><p class="updated">Aktualisiert am 5. Mai 2026</p>
+        <p>GoTransfer unterstützt Nutzer bei der Berechnung und Anfrage privater Transfers in Antalya und entlang der Küste. Diese Erklärung beschreibt die Verarbeitung von Daten auf Website und in der App.</p>
+        <h2>Von Ihnen eingegebene Angaben</h2><p>Im Formular wählen Sie Route, Datum, Uhrzeit, Erwachsene, Kinder und Kindersitze. Beim Wechsel zu WhatsApp oder Telegram werden diese Angaben in eine Nachricht eingefügt, die Sie selbst an unser Buchungsteam senden.</p>
+        <h2>Android-App</h2><p>Die Android-App ist eine sichere WebView-Hülle für die GoTransfer-Website. Sie ergänzt keine nativen Konten, Zahlungen, Push-Mitteilungen, Zugriffe auf Kontakte oder Standort, Analyse- oder Werbe-SDKs.</p>
+        <h2>Lokale Speicherung</h2><p>Die Website kann kleine Einstellungen wie die gewählte Sprache lokal im Browser beziehungsweise WebView speichern.</p>
+        <h2>Externe Dienste</h2><p>WhatsApp, Telegram und Google Places sind externe Dienste. Beim Öffnen von Links, Senden von Nachrichten oder Auswählen von Orten gelten deren eigene Datenschutzbestimmungen.</p>
+        <h2>Kontakt</h2><p>Bei Datenschutzfragen erreichen Sie GoTransfer über WhatsApp oder Telegram auf der Startseite.</p>
+      </article>
+
+      <article data-policy="ar">
+        <h1>سياسة الخصوصية</h1><p class="updated">آخر تحديث: 5 مايو 2026</p>
+        <p>تساعد GoTransfer المستخدمين في تقدير تكلفة خدمات النقل الخاصة وطلبها في أنطاليا وعلى طول ساحلها. توضح هذه السياسة كيفية التعامل مع البيانات في الموقع والتطبيق.</p>
+        <h2>المعلومات التي تدخلها</h2><p>يتيح لك النموذج اختيار المسار والتاريخ والوقت وعدد البالغين والأطفال ومقاعد الأطفال. عند المتابعة إلى WhatsApp أو Telegram، تُدرج هذه التفاصيل في رسالة تختار أنت إرسالها إلى مسؤول الحجز.</p>
+        <h2>تطبيق Android</h2><p>التطبيق عبارة عن غلاف WebView آمن لموقع GoTransfer، ولا يضيف حسابات أصلية أو مدفوعات أو إشعارات أو وصولاً إلى جهات الاتصال أو الموقع أو أدوات تحليل وإعلانات.</p>
+        <h2>التخزين المحلي</h2><p>قد يحفظ الموقع بعض التفضيلات البسيطة، مثل اللغة المختارة، محلياً في المتصفح أو WebView.</p>
+        <h2>الخدمات الخارجية</h2><p>WhatsApp وTelegram وGoogle Places خدمات خارجية، وتطبق سياسات الخصوصية الخاصة بها عند فتح الروابط أو إرسال الرسائل أو اختيار الأماكن.</p>
+        <h2>التواصل</h2><p>للاستفسارات المتعلقة بالخصوصية، تواصل مع GoTransfer عبر WhatsApp أو Telegram في الصفحة الرئيسية.</p>
+      </article>
     </main>
+    <script src="/site-locale.js?v=20260729-i18n-1"></script>
     <script>
       const buttons = document.querySelectorAll("[data-language]");
       const policies = document.querySelectorAll("[data-policy]");
@@ -260,10 +283,13 @@
         ru: "Политика конфиденциальности | GoTransfer",
         tr: "Gizlilik Politikası | GoTransfer",
         en: "Privacy Policy | GoTransfer",
+        de: "Datenschutzerklärung | GoTransfer",
+        ar: "سياسة الخصوصية | GoTransfer",
       };
 
       function setPolicyLanguage(language) {
         document.documentElement.lang = language;
+        document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
         document.title = titles[language] || titles.ru;
         buttons.forEach((button) => button.classList.toggle("is-active", button.dataset.language === language));
         policies.forEach((policy) => policy.classList.toggle("is-active", policy.dataset.policy === language));
@@ -311,11 +337,14 @@
       }
 
       buttons.forEach((button) => {
-        button.addEventListener("click", () => setPolicyLanguage(button.dataset.language));
+        button.addEventListener("click", () => {
+          localStorage.setItem("gotransfer-language", button.dataset.language);
+          setPolicyLanguage(button.dataset.language);
+        });
       });
 
-      const savedLanguage = localStorage.getItem("gotransfer-language");
-      if (["ru", "tr", "en"].includes(savedLanguage)) {
+      const savedLanguage = new URLSearchParams(location.search).get("lang") || localStorage.getItem("gotransfer-language");
+      if (["ru", "tr", "en", "de", "ar"].includes(savedLanguage)) {
         setPolicyLanguage(savedLanguage);
       } else {
         setPolicyLanguage(isLikelyRussianRegion() ? "ru" : "en");

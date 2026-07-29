@@ -1,7 +1,9 @@
 export const LANGUAGE_KEY = "gotransfer-language";
-export const supportedLanguages = ["ru", "tr", "en"];
+export const supportedLanguages = ["ru", "tr", "en", "de", "ar"];
 
 export function getLanguage() {
+  const requested = new URLSearchParams(location.search).get("lang");
+  if (supportedLanguages.includes(requested)) return requested;
   const saved = localStorage.getItem(LANGUAGE_KEY);
   return supportedLanguages.includes(saved) ? saved : "ru";
 }
@@ -17,6 +19,7 @@ export function bindLanguageMenu(menu, onChange) {
     option.removeAttribute("aria-disabled");
     option.addEventListener("click", () => {
       localStorage.setItem(LANGUAGE_KEY, language);
+      window.GoTransferLocale?.set(language,{notify:false});
       menu.classList.remove("is-open");
       button.setAttribute("aria-expanded", "false");
       onChange(language);
@@ -51,4 +54,3 @@ export function setupBackButton(button, fallback) {
     else location.href = fallback;
   });
 }
-

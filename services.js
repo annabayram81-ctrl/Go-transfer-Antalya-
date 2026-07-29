@@ -144,6 +144,24 @@ const translations = {
       },
     ],
   },
+  de: {
+    pageTitle:"GoTransfer VIP-Services — Reiseformat auswählen",metaDescription:"Wählen Sie Ihren privaten VIP-Service an der Küste von Antalya: Direkttransfer, Transfer mit Stopps, Tagesreise oder besonderer Fahrservice.",brandSubtitle:"VIP-Reisen an der Küste von Antalya",homeLink:"Buchung",languageLabel:"Sprache",eyebrow:"GoTransfer VIP-Services",title:"Wählen Sie das Format Ihrer Reise",subtitle:"Entdecken Sie private VIP-Fahrten mit persönlichem Service und einem Programm, das zu Ihren Wünschen passt.",gridLabel:"VIP-Reiseoptionen",
+    cards:[
+      {title:"Privater VIP-Transfer",description:"Komfortable Fahrt ohne Zwischenstopp vom Flughafen direkt zu Ihrem Hotel.",button:"Transfer buchen",ariaLabel:"Privaten VIP-Transfer buchen",imageAlt:"Privater VIP-Transfer mit Business-Class-Fahrzeug"},
+      {title:"VIP-Transfer mit Stopps",description:"Besuchen Sie unterwegs Sehenswürdigkeiten, Geschäfte, Wasserfälle und ausgewählte Restaurants.",button:"Route auswählen",ariaLabel:"Route für VIP-Transfer mit Stopps auswählen",imageAlt:"VIP-Transfer mit individuellen Stopps"},
+      {title:"VIP-Reisen an der Küste von Antalya",description:"Private Tagesrouten mit persönlichem Fahrer zu Meer, antiken Städten, Canyons und den Heiligtümern Lykiens.",button:"Reise auswählen",ariaLabel:"Private VIP-Tagesreise an der Küste von Antalya auswählen",imageAlt:"Private VIP-Tagesreise an der Küste von Antalya"},
+      {title:"VIP-Fahrservice für Business und besondere Anlässe",description:"Repräsentativer Fahrservice für Hochzeiten, Geschäftstermine, VIP-Gäste, Yachten und besondere Abende.",button:"Service auswählen",ariaLabel:"VIP-Fahrservice für Business und besondere Anlässe auswählen",imageAlt:"VIP-Fahrservice für Business und besondere Anlässe"}
+    ]
+  },
+  ar: {
+    pageTitle:"خدمات GoTransfer لكبار الشخصيات — اختر نوع الرحلة",metaDescription:"اختر خدمة GoTransfer الخاصة على ساحل أنطاليا: نقل مباشر، رحلة مع محطات، رحلة يومية أو سيارة للمناسبات.",brandSubtitle:"رحلات كبار الشخصيات على ساحل أنطاليا",homeLink:"الحجز",languageLabel:"اللغة",eyebrow:"خدمات GoTransfer لكبار الشخصيات",title:"اختروا الشكل المناسب لرحلتكم",subtitle:"نقدّم خيارات خاصة مع خدمة شخصية وبرنامج مرن يناسب اهتماماتكم.",gridLabel:"خيارات رحلات كبار الشخصيات",
+    cards:[
+      {title:"نقل خاص لكبار الشخصيات",description:"رحلة مريحة ومباشرة من المطار إلى الفندق من دون توقف.",button:"احجز خدمة النقل",ariaLabel:"احجز خدمة نقل خاصة لكبار الشخصيات",imageAlt:"خدمة نقل خاصة بسيارة من فئة رجال الأعمال"},
+      {title:"نقل خاص مع محطات",description:"زوروا المعالم والمتاجر والشلالات والمطاعم المختارة في طريقكم إلى الوجهة.",button:"اختر المسار",ariaLabel:"اختر مسار النقل الخاص مع محطات",imageAlt:"خدمة نقل خاصة مع محطات حسب الطلب"},
+      {title:"رحلات كبار الشخصيات على ساحل أنطاليا",description:"رحلات يومية خاصة مع سائق شخصي إلى البحر والمدن الأثرية والأودية والمواقع المقدسة في ليكيا.",button:"اختر الرحلة",ariaLabel:"اختر رحلة يومية خاصة على ساحل أنطاليا",imageAlt:"رحلة يومية خاصة على ساحل أنطاليا"},
+      {title:"نقل خاص للأعمال والمناسبات",description:"خدمة راقية لحفلات الزفاف والاجتماعات وضيوف كبار الشخصيات واليخوت والأمسيات الخاصة.",button:"اختر الخدمة",ariaLabel:"اختر خدمة النقل للأعمال والمناسبات",imageAlt:"خدمة نقل خاصة للأعمال والمناسبات"}
+    ]
+  },
 };
 
 function closeLanguageMenu() {
@@ -156,6 +174,7 @@ function applyLanguage(language) {
   const copy = translations[selectedLanguage];
 
   document.documentElement.lang = selectedLanguage;
+  document.documentElement.dir = selectedLanguage === "ar" ? "rtl" : "ltr";
   document.title = copy.pageTitle;
   descriptionMeta.setAttribute("content", copy.metaDescription);
   document.querySelector(".brand").setAttribute(
@@ -168,7 +187,7 @@ function applyLanguage(language) {
   );
   document.querySelector(".services-home-link").textContent = copy.homeLink;
   languageButton.setAttribute("aria-label", copy.languageLabel);
-  languageButtonLabel.textContent = selectedLanguage.toUpperCase();
+  languageButtonLabel.textContent = selectedLanguage === "ar" ? "AR" : selectedLanguage.toUpperCase();
   document.querySelector(".language-menu__list").setAttribute("aria-label", copy.languageLabel);
   document.querySelector(".services-intro__eyebrow").textContent = copy.eyebrow;
   document.querySelector("#servicesTitle").textContent = copy.title;
@@ -218,4 +237,5 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-applyLanguage(localStorage.getItem("gotransfer-language") || "ru");
+window.addEventListener("gotransfer:languagechange",event=>applyLanguage(event.detail.language));
+applyLanguage(window.GoTransferLocale?.get() || localStorage.getItem("gotransfer-language") || "ru");

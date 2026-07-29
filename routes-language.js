@@ -1,4 +1,4 @@
-import { bindLanguageMenu, getLanguage } from "./journey-language.js?v=20260727-pwa-60";
+import { bindLanguageMenu, getLanguage } from "./journey-language.js?v=20260729-i18n-1";
 
 const pageCopy = {
   ru: {
@@ -34,11 +34,19 @@ const pageCopy = {
     airport: "Antalya Havalimanı",
     action: "Rotayı görüntüle",
   },
+  de: {
+    title:"Wohin möchten Sie fahren? — GoTransfer-Routen",meta:"Wählen Sie Ihr Reiseziel für einen privaten VIP-Transfer mit Stopps ab Flughafen Antalya.",back:"Alle Leistungen",language:"Sprache",eyebrow:"VIP-Transfer mit Stopps",heading:"Wohin möchten Sie fahren?",subtitle:"Wählen Sie Ihr Ziel, und wir zeigen Ihnen interessante Orte auf dem Weg vom Flughafen.",airport:"Flughafen Antalya",action:"Route ansehen"
+  },
+  ar: {
+    title:"إلى أين تتجهون؟ — مسارات GoTransfer",meta:"اختاروا الوجهة لخدمة نقل خاصة مع محطات انطلاقاً من مطار أنطاليا.",back:"جميع الخدمات",language:"اللغة",eyebrow:"نقل خاص مع محطات",heading:"إلى أين تتجهون؟",subtitle:"اختاروا الوجهة وسنعرض لكم الأماكن المميزة التي يمكن زيارتها في الطريق من المطار.",airport:"مطار أنطاليا",action:"عرض المسار"
+  },
 };
 
 const names = {
   en: ["Lara","Belek","Side","Alanya","Konyaaltı","Beldibi","Göynük","Kemer","Kiriş","Çamyuva","Tekirova","Olympos","Çıralı","Adrasan","Kumluca","Finike","Demre","Kaş"],
   tr: ["Lara","Belek","Side","Alanya","Konyaaltı","Beldibi","Göynük","Kemer","Kiriş","Çamyuva","Tekirova","Olimpos","Çıralı","Adrasan","Kumluca","Finike","Demre","Kaş"],
+  de: ["Lara","Belek","Side","Alanya","Konyaaltı","Beldibi","Göynük","Kemer","Kiriş","Çamyuva","Tekirova","Olympos","Çıralı","Adrasan","Kumluca","Finike","Demre","Kaş"],
+  ar: ["لارا","بيليك","سيدا","ألانيا","كونيالتي","بيلديبي","غوينوك","كيمر","كيريش","تشاميوفا","تكيروفا","أوليمبوس","تشيرالي","أدراسان","كوملوجا","فينيكه","ديمره","كاش"],
 };
 
 const descriptions = {
@@ -91,6 +99,7 @@ const updateMenu = bindLanguageMenu(menu, applyLanguage);
 function applyLanguage(language) {
   const copy = pageCopy[language] || pageCopy.ru;
   document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
   document.title = copy.title;
   document.querySelector('meta[name="description"]').content = copy.meta;
   document.querySelector(".routes-back-link").textContent = copy.back;
@@ -107,10 +116,11 @@ function applyLanguage(language) {
     if (!description.dataset.ru) description.dataset.ru = description.textContent;
     strong.textContent = destination;
     card.querySelector("small").textContent = `${copy.airport} → ${destination}`;
-    description.textContent = language === "ru" ? description.dataset.ru : descriptions[language][index];
+    description.textContent = language === "ru" ? description.dataset.ru : descriptions[language]?.[index] || (language === "ar" ? `رحلة خاصة ومريحة من مطار أنطاليا إلى ${destination} مع إمكانية اختيار محطات مميزة في الطريق.` : `Komfortable Privatfahrt vom Flughafen Antalya nach ${destination} mit ausgewählten Stopps entlang der Route.`);
     card.querySelector("b").childNodes[0].textContent = `${copy.action} `;
   });
   updateMenu(language);
 }
 
 applyLanguage(getLanguage());
+window.addEventListener("gotransfer:languagechange",event=>applyLanguage(event.detail.language));

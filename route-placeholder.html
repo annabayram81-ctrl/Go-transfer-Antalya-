@@ -24,16 +24,20 @@
       </section>
     </main>
     <button class="mobile-back-button" id="mobileBackButton" type="button" aria-label="Вернуться назад">← <span>Назад</span></button>
+    <script src="/site-locale.js?v=20260729-i18n-1"></script>
     <script type="module">
-      import { getLanguage, setupBackButton } from "/journey-language.js?v=20260727-pwa-60";
+      import { getLanguage, setupBackButton } from "/journey-language.js?v=20260729-i18n-1";
       const copy = {
         ru: ["Новый VIP-маршрут", "Маршрут готовится.", "Скоро здесь появятся интересные остановки и варианты поездки.", "Вернуться к направлениям", "Назад"],
         en: ["New VIP route", "This route is being prepared.", "Interesting stops and travel options will appear here soon.", "Back to destinations", "Back"],
         tr: ["Yeni VIP rota", "Bu rota hazırlanıyor.", "Yakında burada ilginç duraklar ve yolculuk seçenekleri yer alacak.", "Rotalara dön", "Geri"],
+        de: ["Neue VIP-Route", "Diese Route wird vorbereitet.", "Bald finden Sie hier besondere Stopps und individuelle Reiseoptionen.", "Zurück zu den Zielen", "Zurück"],
+        ar: ["مسار جديد لكبار الشخصيات", "نعمل على إعداد هذا المسار.", "ستجد هنا قريباً محطات مميزة وخيارات خاصة للرحلة.", "العودة إلى الوجهات", "رجوع"],
       };
       const language = getLanguage();
       const text = copy[language];
       document.documentElement.lang = language;
+      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
       const section = document.querySelector(".route-placeholder section");
       section.querySelector("p").textContent = text[0];
       section.querySelector("h1").textContent = text[1];

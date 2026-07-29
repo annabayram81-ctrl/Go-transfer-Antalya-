@@ -1,4 +1,4 @@
-import { bindLanguageMenu, getLanguage } from "./journey-language.js?v=20260727-pwa-60";
+import { bindLanguageMenu, getLanguage } from "./journey-language.js?v=20260729-i18n-1";
 
 const copy = {
   ru: {
@@ -51,12 +51,63 @@ const scenarios = {
   tr: [["Antalya'da alışveriş","Alışveriş merkezleri, butikler ve outletler arasında, her mağazada beklemeli yolculuklar."],["Restoranlar ve gece hayatı","Şoförünüz sizi restorana, kafeye, kulübe veya başka bir mekâna götürür ve geceniz bitene kadar bekler."],["Plajlar ve geziler","Plajlara, sahil yollarına, parklara ve Antalya'nın güzel yerlerine konforlu yolculuklar."],["Klinikler ve sağlık merkezleri","Hastanelere, özel kliniklere, diş kliniklerine ve sağlık merkezlerine beklemeli yolculuklar."],["Şehirde işler","Banka, noter, konsolosluk, resmi kurum ve ihtiyaç duyduğunuz diğer adresler."],["Aile yolculukları","Çocuklar, yaşlı yakınlar veya tüm aile için şoförlü, konforlu araç."],["Kişisel rota","Yerleri ve sıralamasını siz seçersiniz. Şoför planınızı takip eder ve rezervasyon süresince yanınızda kalır."]]
 };
 
+copy.de = {
+  title: "Privater Chauffeur in Antalya — GoTransfer",
+  description: "Privater Chauffeur in Antalya für mehrere Stunden oder den ganzen Tag, mit Wartezeit und individuell geplanter Route.",
+  services: "← Leistungen", heroKicker: "GO TRANSFER · ANTALYA", heroTitle: "Privater Chauffeur für mehrere Stunden oder den ganzen Tag",
+  heroText: "Ihr Chauffeur begleitet Sie durch Antalya, wartet an jedem Ziel und folgt Ihrer persönlich zusammengestellten Route.", heroButton: "Route planen",
+  scenarioKicker: "IHR TAG · IHRE ROUTE", scenarioTitle: "Wählen Sie den passenden Anlass",
+  orderKicker: "PERSÖNLICHES ANGEBOT", orderTitle: "Stellen Sie Ihre Route zusammen",
+  orderText: "Geben Sie Hin- und Rückfahrt, Datum, Wartezeit und Personenzahl an. Die Fahrt wird nach der Gesamtstrecke berechnet; Wartezeit kostet 20 € pro Stunde.",
+  labels: ["Abholort","Ziel","Rückfahrt nach","Datum","Startzeit","Wartezeit in Stunden","Fahrgäste","Weitere Ziele auf der Route"],
+  placeholders: ["Zum Beispiel: Flughafen Antalya","Zum Beispiel: Kemer","Zum Beispiel: Flughafen Antalya","Zum Beispiel: Strand → Einkaufszentrum → Restaurant"],
+  help: "Möchten Sie mehrere Orte besuchen, tragen Sie diese hier ein. Für ein genaues Angebot stimmt unser Buchungsteam die Route persönlich mit Ihnen ab.",
+  quote: ["Gesamtstrecke","Fahrtpreis","Wartezeit (20 € / Stunde)","Gesamt"], calculate: "Preis berechnen", whatsapp: "Über WhatsApp schreiben",
+  footer: ["Startseite","Reise auswählen"], back: "Zurück"
+};
+
+copy.ar = {
+  title: "سائق خاص في أنطاليا — GoTransfer",
+  description: "خدمة سائق خاص في أنطاليا لعدة ساعات أو ليوم كامل، مع وقت انتظار ومسار مصمم وفق رغبتك.",
+  services: "الخدمات →", heroKicker: "GO TRANSFER · أنطاليا", heroTitle: "سائق خاص لعدة ساعات أو ليوم كامل",
+  heroText: "يرافقك السائق في أنطاليا، وينتظرك عند كل محطة، ويتبع المسار الذي تختاره بما يناسب برنامجك.", heroButton: "خطط لمسارك",
+  scenarioKicker: "يومك · مسارك", scenarioTitle: "اختر السيناريو المناسب",
+  orderKicker: "عرض سعر شخصي", orderTitle: "صمّم مسارك الخاص",
+  orderText: "أدخل مسار الذهاب والعودة والتاريخ ومدة الانتظار وعدد الركاب. تُحسب الرحلة وفق المسافة الإجمالية، ويبلغ سعر الانتظار 20 € للساعة.",
+  labels: ["مكان الانطلاق","الوجهة","العودة إلى","التاريخ","وقت الانطلاق","ساعات الانتظار","عدد الركاب","أماكن إضافية على المسار"],
+  placeholders: ["مثال: مطار أنطاليا","مثال: كيمر","مثال: مطار أنطاليا","مثال: الشاطئ ← مركز التسوق ← المطعم"],
+  help: "إذا رغبت في زيارة أكثر من مكان، فاكتبها هنا. سيتواصل معك مسؤول الحجز لتأكيد المسار وتقديم حساب أدق.",
+  quote: ["المسافة الإجمالية","سعر الرحلة","الانتظار (20 € / ساعة)","الإجمالي"], calculate: "احسب السعر", whatsapp: "تواصل عبر WhatsApp",
+  footer: ["الصفحة الرئيسية","اختر رحلتك"], back: "رجوع"
+};
+
+scenarios.de = [
+  ["Shopping in Antalya","Fahrten zu Einkaufszentren, Boutiquen und Outlets mit Wartezeit an jedem Geschäft."],
+  ["Restaurants und Abendprogramm","Ihr Chauffeur bringt Sie zum Restaurant, Café oder Club und wartet bis zum Ende Ihres Abends."],
+  ["Strände und Spaziergänge","Komfortable Fahrten zu Stränden, Promenaden, Parks und schönen Orten in Antalya."],
+  ["Kliniken und Gesundheitszentren","Fahrten zu Krankenhäusern, Privatkliniken, Zahnarztpraxen und Gesundheitszentren mit Wartezeit."],
+  ["Termine in der Stadt","Banken, Notare, Konsulate, Behörden und weitere wichtige Adressen."],
+  ["Familienfahrten","Ein komfortables Fahrzeug mit Chauffeur für Kinder, ältere Angehörige oder die ganze Familie."],
+  ["Individuelle Route","Sie bestimmen Ziele und Reihenfolge. Der Chauffeur folgt Ihrem Plan und bleibt während der gesamten Buchungszeit bei Ihnen."]
+];
+
+scenarios.ar = [
+  ["التسوق في أنطاليا","تنقل مريح بين مراكز التسوق والبوتيكات ومنافذ العلامات التجارية، مع انتظار السائق عند كل متجر."],
+  ["المطاعم والسهرات المسائية","يوصلك السائق إلى المطعم أو المقهى أو النادي وينتظرك حتى نهاية أمسيتك."],
+  ["الشواطئ والتنزه","رحلات مريحة إلى الشواطئ والواجهات البحرية والحدائق وأجمل أماكن أنطاليا."],
+  ["العيادات والمراكز الطبية","تنقل إلى المستشفيات والعيادات الخاصة وعيادات الأسنان والمراكز الطبية مع خدمة الانتظار."],
+  ["المواعيد داخل المدينة","البنوك وكتّاب العدل والقنصليات والدوائر الرسمية وغيرها من العناوين المهمة."],
+  ["الرحلات العائلية","سيارة مريحة مع سائق للتنقل مع الأطفال أو كبار السن أو جميع أفراد العائلة."],
+  ["مسار حسب الطلب","أنت تختار الأماكن وترتيبها، والسائق يتبع خطتك ويبقى معك طوال مدة الحجز."]
+];
+
 const menu = document.querySelector("#chauffeurLanguageMenu");
 const updateMenu = bindLanguageMenu(menu, applyLanguage);
 
 function applyLanguage(language) {
   const text = copy[language] || copy.ru;
   document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
   document.title = text.title;
   document.querySelector('meta[name="description"]').content = text.description;
   document.querySelector('[data-chauffeur-copy="services"]').textContent = text.services;
@@ -80,9 +131,10 @@ function applyLanguage(language) {
   document.querySelector("#chauffeurWhatsApp").textContent = text.whatsapp;
   document.querySelectorAll("footer a").forEach((link,index) => link.textContent = text.footer[index]);
   document.querySelector("[data-floating-back] span").textContent = text.back;
-  menu.querySelector(".language-menu__button").setAttribute("aria-label", language === "ru" ? "Язык" : language === "tr" ? "Dil" : "Language");
+  menu.querySelector(".language-menu__button").setAttribute("aria-label", language === "ru" ? "Язык" : language === "tr" ? "Dil" : language === "de" ? "Sprache" : language === "ar" ? "اللغة" : "Language");
   updateMenu(language);
   window.dispatchEvent(new CustomEvent("chauffeur-language-change",{detail:{language}}));
 }
 
 applyLanguage(getLanguage());
+window.addEventListener("gotransfer:languagechange", (event) => applyLanguage(event.detail.language));

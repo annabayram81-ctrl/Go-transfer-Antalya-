@@ -1,5 +1,5 @@
 import { placesBySlug, routes, whatsappPhone } from "./route-data.js?v=20260728-pwa-78";
-import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260727-pwa-60";
+import { bindLanguageMenu, getLanguage, setupBackButton } from "./journey-language.js?v=20260729-i18n-1";
 
 const pathSlug = location.pathname.split("/").filter(Boolean).at(-1);
 const querySlug = new URLSearchParams(location.search).get("slug");
@@ -11,6 +11,8 @@ const interfaceCopy = {
   en: { back:"← Back to route", add:"Add this stop", others:"Other stops", interesting:"WHAT IS INTERESTING HERE", see:"What to see and do", planning:"PLANNING YOUR STOP", time:"How much time should you allow?", want:"Would you like to include this place?", help:"Our operator will help calculate the time and choose a convenient stop format.", discuss:"Discuss with the operator", choose:"Back to places", home:"Home", journey:"Choose a journey", routes:"Destinations", mobileBack:"Back" },
   tr: { back:"← Rotaya dön", add:"Bu durağı ekle", others:"Diğer duraklar", interesting:"BURADA NELER İLGİNÇ", see:"Görülecek ve yapılacaklar", planning:"DURAĞI PLANLAYIN", time:"Ne kadar zaman ayırmalı?", want:"Bu yeri yolculuğa eklemek ister misiniz?", help:"Operatörümüz süreyi hesaplamanıza ve uygun durak biçimini seçmenize yardımcı olur.", discuss:"Operatörle görüş", choose:"Yer seçimine dön", home:"Ana sayfa", journey:"Yolculuk seç", routes:"Rotalar", mobileBack:"Geri" },
 };
+interfaceCopy.de = { back:"← Zurück zur Route", add:"Diesen Stopp hinzufügen", others:"Weitere Stopps", interesting:"DAS ERWARTET SIE HIER", see:"Sehenswertes und Erlebnisse", planning:"STOPP PLANEN", time:"Wie viel Zeit sollten Sie einplanen?", want:"Möchten Sie diesen Ort in Ihre Reise aufnehmen?", help:"Unser Buchungsteam hilft Ihnen, die Zeit zu berechnen und den passenden Ablauf zu wählen.", discuss:"Mit dem Buchungsteam sprechen", choose:"Zurück zu den Orten", home:"Startseite", journey:"Reise auswählen", routes:"Ziele", mobileBack:"Zurück" };
+interfaceCopy.ar = { back:"العودة إلى المسار →", add:"أضف هذه المحطة", others:"محطات أخرى", interesting:"ما الذي يميز هذا المكان؟", see:"ما الذي يمكنك رؤيته وتجربته؟", planning:"تخطيط محطة التوقف", time:"كم من الوقت تحتاج للزيارة؟", want:"هل ترغب في إضافة هذا المكان إلى رحلتك؟", help:"يساعدك مسؤول الحجز في تقدير الوقت واختيار أفضل صيغة للتوقف.", discuss:"تواصل مع مسؤول الحجز", choose:"العودة إلى قائمة الأماكن", home:"الصفحة الرئيسية", journey:"اختر رحلتك", routes:"الوجهات", mobileBack:"رجوع" };
 const localizedNames = {
   en: {"lower-duden":"Lower Düden Waterfall","duden-park":"Düden Park","kaleici":"Kaleiçi Old Town","perge":"Ancient City of Perge","kursunlu-waterfall":"Kurşunlu Waterfall","upper-duden":"Upper Düden Waterfall","antalya-museum":"Antalya Archaeological Museum","land-of-legends":"The Land of Legends","belek-beach":"Belek Beach","aspendos":"Ancient Theatre of Aspendos","zeytintasi-cave":"Zeytintaşı Cave","side-ancient-city":"Ancient Side and the Temple of Apollo","side-museum":"Side Archaeological Museum","manavgat-waterfall":"Manavgat Waterfall","koprulu-canyon":"Köprülü Canyon","konyaalti-beach":"Konyaaltı Beach and Promenade","antalya-aquarium":"Antalya Aquarium","termessos":"Ancient City of Termessos","karain-cave":"Karain Cave","beldibi-cave":"Beldibi Cave","beldibi-beach":"Beldibi Coast","goynuk-canyon":"Göynük Canyon","phaselis":"Ancient City of Phaselis"},
   tr: {"lower-duden":"Aşağı Düden Şelalesi","duden-park":"Düden Parkı","kaleici":"Kaleiçi","perge":"Perge Antik Kenti","kursunlu-waterfall":"Kurşunlu Şelalesi","upper-duden":"Yukarı Düden Şelalesi","antalya-museum":"Antalya Arkeoloji Müzesi","land-of-legends":"The Land of Legends","belek-beach":"Belek Plajı","aspendos":"Aspendos Antik Tiyatrosu","zeytintasi-cave":"Zeytintaşı Mağarası","side-ancient-city":"Side Antik Kenti ve Apollon Tapınağı","side-museum":"Side Arkeoloji Müzesi","manavgat-waterfall":"Manavgat Şelalesi","koprulu-canyon":"Köprülü Kanyon","konyaalti-beach":"Konyaaltı Plajı ve Sahili","antalya-aquarium":"Antalya Akvaryum","termessos":"Termessos Antik Kenti","karain-cave":"Karain Mağarası","beldibi-cave":"Beldibi Mağarası","beldibi-beach":"Beldibi Sahili","goynuk-canyon":"Göynük Kanyonu","phaselis":"Phaselis Antik Kenti"},
@@ -53,13 +55,32 @@ Object.assign(localizedNames.tr, {
   "rhodiapolis": "Rhodiapolis Antik Kenti",
   "finike-marina":"Finike Marina ve Sahili","limyra":"Limyra Antik Kenti","arykanda":"Arykanda Antik Kenti","myra":"Myra Antik Kenti","saint-nicholas-demre":"Aziz Nikolaos Kilisesi","andriake":"Andriake ve Likya Uygarlıkları Müzesi","kekova":"Kekova ve Batık Şehir","kas-old-town":"Kaş Eski Şehir ve Liman","antiphellos":"Antiphellos Antik Tiyatrosu","kaputas":"Kaputaş Plajı","patara":"Patara Antik Kenti ve Plajı",
 });
+localizedNames.de = Object.fromEntries(Object.entries(localizedNames.en).map(([key, value]) => [key, value
+  .replace("Ancient City of ", "Antike Stadt ")
+  .replace("Ancient Theatre of ", "Antikes Theater von ")
+  .replace("Archaeological Museum", "Archäologisches Museum")
+  .replace("Waterfall", "Wasserfall")
+  .replace("Beach", "Strand")
+  .replace("Cave", "Höhle")
+  .replace("Coast", "Küste")
+  .replace("Boat Trip", "Bootsfahrt")
+]));
+localizedNames.ar = {
+  "lower-duden":"شلال دودن السفلي","duden-park":"حديقة دودن","kaleici":"المدينة القديمة كاليتشي","perge":"مدينة بيرغه الأثرية","kursunlu-waterfall":"شلال كورشونلو","upper-duden":"شلال دودن العلوي","antalya-museum":"متحف أنطاليا للآثار","land-of-legends":"منتجع أرض الأساطير","belek-beach":"شاطئ بيليك","aspendos":"مسرح أسبندوس الأثري","zeytintasi-cave":"كهف زيتين تاش","side-ancient-city":"مدينة سيدا الأثرية ومعبد أبولو","side-museum":"متحف سيدا للآثار","manavgat-waterfall":"شلال مانافغات","koprulu-canyon":"وادي كوبرولو","konyaalti-beach":"شاطئ كونيالتي","antalya-aquarium":"أكواريوم أنطاليا","termessos":"مدينة تيرميسوس الأثرية","karain-cave":"كهف كارين","beldibi-cave":"كهف بيلديبي","beldibi-beach":"ساحل بيلديبي","goynuk-canyon":"وادي غوينوك","phaselis":"مدينة فاسيليس الأثرية","kemer-clock-tower":"برج الساعة في كيمر","kemer-marina-moonlight":"مرسى كيمر وخليج مون لايت","kiris-coast":"ساحل كيريش","tahtali-cable-car":"جبل تهتالي والتلفريك","camyuva-coast":"ساحل تشاميوفا","alacasu-bay":"خليج ألاچاسو","tekirova-coast":"ساحل تيكيروفا","three-islands":"الجزر الثلاث","olympos-ancient-city":"مدينة أوليمبوس الأثرية","cirali-beach":"شاطئ تشيرالي وأوليمبوس","yanartas":"نيران خيميرا في يانارتاش","ulupinar":"نهر أولوبينار الجبلي","adrasan-bay":"خليج أدراسان","suluada":"جزيرة سولو أدا","gelidonya-lighthouse":"منارة غيليدونيا","rhodiapolis":"مدينة روديابوليس الأثرية","finike-marina":"مرسى فينيكه","limyra":"مدينة ليميرا الأثرية","arykanda":"مدينة أريكاندا الأثرية","myra":"مدينة ميرا الأثرية","saint-nicholas-demre":"كنيسة القديس نيقولاوس","andriake":"أندرياكي ومتحف الحضارات الليسية","kekova":"كيكوفا والمدينة الغارقة","kas-old-town":"بلدة كاش القديمة والميناء","antiphellos":"مسرح أنطيفيلوس الأثري","kaputas":"شاطئ كابوتاش","patara":"مدينة باتارا الأثرية وشاطئها"
+};
 
 function whatsappUrl() {
   const destination = place.routeDestinationAccusative || "Лару";
-  const message =
-    `Здравствуйте! Меня интересует остановка «${place.title}» ` +
-    `во время VIP-трансфера из аэропорта Антальи в ${destination}. ` +
-    "Подскажите, пожалуйста, сколько времени она займёт.";
+  const title = currentLanguage === "ru" ? place.title : localizedNames[currentLanguage]?.[place.slug];
+  const message = currentLanguage === "ar"
+    ? `مرحباً، أود إضافة محطة ${title} إلى خدمة النقل الخاصة من مطار أنطاليا. كم من الوقت تستغرق الزيارة؟`
+    : currentLanguage === "de"
+      ? `Guten Tag, ich möchte ${title} als Stopp zu meinem privaten Transfer vom Flughafen Antalya hinzufügen. Wie viel Zeit sollte ich einplanen?`
+      : currentLanguage === "en"
+        ? `Hello, I would like to add ${title} to my private transfer from Antalya Airport. How much time should I allow?`
+        : currentLanguage === "tr"
+          ? `Merhaba, Antalya Havalimanı özel transferime ${title} durağını eklemek istiyorum. Ne kadar zaman ayırmalıyım?`
+          : `Здравствуйте! Меня интересует остановка «${place.title}» во время VIP-трансфера из аэропорта Антальи в ${destination}. Подскажите, пожалуйста, сколько времени она займёт.`;
 
   return `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
 }
@@ -67,9 +88,13 @@ function whatsappUrl() {
 function renderHighlights() {
   const container = document.querySelector("#placeHighlights");
 
-  const generic = currentLanguage === "en"
-    ? [{title:"Main experience",text:"See the character and atmosphere of this place at a comfortable pace."},{title:"Time for photos",text:"Your driver can help choose a convenient meeting point after the visit."},{title:"Flexible planning",text:"The duration can be adapted to your transfer and arrival time."}]
-    : [{title:"Başlıca deneyim",text:"Bu yerin karakterini ve atmosferini rahat bir tempoda keşfedin."},{title:"Fotoğraf zamanı",text:"Ziyaret sonrası uygun buluşma noktasını şoförünüzle belirleyebilirsiniz."},{title:"Esnek planlama",text:"Süre, transferinize ve varış saatinize göre ayarlanabilir."}];
+  const genericByLanguage = {
+    en: [{title:"Main experience",text:"See the character and atmosphere of this place at a comfortable pace."},{title:"Time for photos",text:"Your driver can help choose a convenient meeting point after the visit."},{title:"Flexible planning",text:"The duration can be adapted to your transfer and arrival time."}],
+    tr: [{title:"Başlıca deneyim",text:"Bu yerin karakterini ve atmosferini rahat bir tempoda keşfedin."},{title:"Fotoğraf zamanı",text:"Ziyaret sonrası uygun buluşma noktasını şoförünüzle belirleyebilirsiniz."},{title:"Esnek planlama",text:"Süre, transferinize ve varış saatinize göre ayarlanabilir."}],
+    de: [{title:"Das wichtigste Erlebnis",text:"Erleben Sie Charakter und Atmosphäre dieses Ortes in angenehmem Tempo."},{title:"Zeit für Fotos",text:"Ihr Fahrer stimmt mit Ihnen einen bequemen Treffpunkt nach dem Besuch ab."},{title:"Flexible Planung",text:"Die Dauer lässt sich an Transfer und Ankunftszeit anpassen."}],
+    ar: [{title:"التجربة الأساسية",text:"اكتشف طابع المكان وأجواءه بهدوء ومن دون استعجال."},{title:"وقت للصور",text:"يمكن للسائق ترتيب نقطة لقاء مريحة معك بعد الزيارة."},{title:"تخطيط مرن",text:"يمكن تكييف مدة الزيارة مع موعد وصولك ومسار الرحلة."}]
+  };
+  const generic = genericByLanguage[currentLanguage] || genericByLanguage.en;
   const highlights = currentLanguage === "ru" ? place.highlights : generic;
   highlights.forEach((highlight, index) => {
     const article = document.createElement("article");
@@ -96,9 +121,9 @@ function renderGallery() {
   section.hidden = false;
   const heading = section.querySelector(".place-gallery__heading");
   heading.querySelector("p").textContent =
-    currentLanguage === "en" ? "PHOTOS OF THE PLACE" : currentLanguage === "tr" ? "MEKÂN FOTOĞRAFLARI" : "ФОТОГРАФИИ МЕСТА";
+    currentLanguage === "en" ? "PHOTOS OF THE PLACE" : currentLanguage === "tr" ? "MEKÂN FOTOĞRAFLARI" : currentLanguage === "de" ? "FOTOS DES ORTES" : currentLanguage === "ar" ? "صور المكان" : "ФОТОГРАФИИ МЕСТА";
   heading.querySelector("h2").textContent =
-    currentLanguage === "en" ? "See what awaits you" : currentLanguage === "tr" ? "Sizi nelerin beklediğini görün" : "Посмотрите, что вас ждёт";
+    currentLanguage === "en" ? "See what awaits you" : currentLanguage === "tr" ? "Sizi nelerin beklediğini görün" : currentLanguage === "de" ? "Entdecken Sie, was Sie erwartet" : currentLanguage === "ar" ? "اكتشف ما ينتظرك" : "Посмотрите, что вас ждёт";
 
   place.gallery.forEach((item, index) => {
     const localizedCaptions = {
@@ -152,7 +177,8 @@ function renderGallery() {
     const caption =
       currentLanguage === "ru"
         ? item.caption
-        : localizedCaptions[place.slug]?.[currentLanguage]?.[index] || item.caption;
+        : localizedCaptions[place.slug]?.[currentLanguage]?.[index] ||
+          (currentLanguage === "ar" ? `مشهد من ${localizedNames.ar[place.slug]}` : currentLanguage === "de" ? `Impression aus ${localizedNames.de[place.slug]}` : item.caption);
     const figure = document.createElement("figure");
     figure.innerHTML = `
       <img src="${item.image}" alt="${place.title}: ${caption}" loading="${index ? "lazy" : "eager"}" decoding="async">
@@ -165,12 +191,13 @@ function renderGallery() {
 function renderPlace() {
   const copy = interfaceCopy[currentLanguage];
   document.documentElement.lang = currentLanguage;
+  document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
   document.title = `${place.title}: что посмотреть — GoTransfer`;
   document.querySelector('meta[name="description"]').content = place.seoDescription;
   document.querySelector("#placeCanonical").href = `https://gotransfer.my/places/${place.slug}`;
   const requestedRoute = new URLSearchParams(location.search).get("route");
   const selectedRoute = routes[requestedRoute] || routes[place.routeSlug] || routes.lara;
-  const routeHref = `/routes/${selectedRoute.slug}`;
+  const routeHref = `/routes/${selectedRoute.slug}?lang=${currentLanguage}`;
   const selectedDestination =
     selectedRoute.slug === "cirali"
       ? "Çıralı"
@@ -187,6 +214,8 @@ function renderPlace() {
                 : selectedRoute.slug === "kas"
                   ? "Kaş"
             : selectedRoute.destination;
+  const arabicDestinations = {lara:"لارا",konyaalti:"كونيالتي",belek:"بيليك",side:"سيدا",alanya:"ألانيا",beldibi:"بيلديبي",goynuk:"غوينوك",kemer:"كيمر",kiris:"كيريش",camyuva:"تشاميوفا",tekirova:"تيكيروفا",olympos:"أوليمبوس",cirali:"تشيرالي",adrasan:"أدراسان",kumluca:"كوملوجا",finike:"فينيكه",demre:"ديمره",kas:"كاش"};
+  const routeDestination = currentLanguage === "ar" ? arabicDestinations[selectedRoute.slug] || selectedDestination : selectedDestination;
   document.querySelector(".place-detail-route-link").href = routeHref;
   document.querySelector(".place-hero__content > a").href = routeHref;
   document.querySelector(".place-secondary-action").href = routeHref;
@@ -196,21 +225,25 @@ function renderPlace() {
       ? `Маршрут: аэропорт Анталии → ${selectedRoute.destination}`
       : currentLanguage === "en"
         ? `Route: Antalya Airport → ${selectedDestination}`
-        : `Rota: Antalya Havalimanı → ${selectedDestination}`;
+        : currentLanguage === "tr"
+          ? `Rota: Antalya Havalimanı → ${selectedDestination}`
+          : currentLanguage === "de"
+            ? `Route: Flughafen Antalya → ${selectedDestination}`
+            : `المسار: مطار أنطاليا ← ${routeDestination}`;
 
   const image = document.querySelector("#placeImage");
   image.src = place.image;
   image.alt = place.title;
 
-  const displayTitle = currentLanguage === "ru" ? place.title : localizedNames[currentLanguage]?.[place.slug] || place.title;
+  const displayTitle = currentLanguage === "ru" ? place.title : localizedNames[currentLanguage]?.[place.slug] || (currentLanguage === "ar" ? "محطة سياحية مختارة" : place.title);
   if (currentLanguage !== "ru") {
-    document.title = currentLanguage === "en" ? `${displayTitle}: travel stop — GoTransfer` : `${displayTitle}: rota durağı — GoTransfer`;
-    document.querySelector('meta[name="description"]').content = currentLanguage === "en" ? `Discover ${displayTitle} during a private transfer from Antalya Airport.` : `${displayTitle} yerini Antalya Havalimanı özel transferinize ekleyin.`;
+    document.title = currentLanguage === "en" ? `${displayTitle}: travel stop — GoTransfer` : currentLanguage === "tr" ? `${displayTitle}: rota durağı — GoTransfer` : currentLanguage === "de" ? `${displayTitle}: privater Reisestopp — GoTransfer` : `${displayTitle}: محطة ضمن رحلة خاصة — GoTransfer`;
+    document.querySelector('meta[name="description"]').content = currentLanguage === "en" ? `Discover ${displayTitle} during a private transfer from Antalya Airport.` : currentLanguage === "tr" ? `${displayTitle} yerini Antalya Havalimanı özel transferinize ekleyin.` : currentLanguage === "de" ? `Entdecken Sie ${displayTitle} während Ihres privaten Transfers vom Flughafen Antalya.` : `اكتشف ${displayTitle} ضمن خدمة نقل خاصة من مطار أنطاليا.`;
   }
-  document.querySelector("#placeEyebrow").textContent = currentLanguage === "ru" ? place.eyebrow : (currentLanguage === "en" ? "A stop worth discovering" : "Keşfedilmeye değer bir durak");
+  document.querySelector("#placeEyebrow").textContent = currentLanguage === "ru" ? place.eyebrow : currentLanguage === "en" ? "A stop worth discovering" : currentLanguage === "tr" ? "Keşfedilmeye değer bir durak" : currentLanguage === "de" ? "Ein lohnender Reisestopp" : "محطة تستحق الاكتشاف";
   document.querySelector("#placeTitle").textContent = displayTitle;
-  document.querySelector("#placeIntro").textContent = currentLanguage === "ru" ? place.intro : (currentLanguage === "en" ? `${displayTitle} can become a memorable part of your private transfer from Antalya Airport. Explore it without rushing and continue the journey when you are ready.` : `${displayTitle}, Antalya Havalimanı'ndan özel transferinizin unutulmaz bir parçası olabilir. Acele etmeden keşfedin ve hazır olduğunuzda yolculuğa devam edin.`);
-  document.querySelector("#placeVisitNote").textContent = currentLanguage === "ru" ? place.visitNote : (currentLanguage === "en" ? "Ask the operator to allow enough time for the visit and the additional drive." : "Ziyaret ve ek yol için yeterli süreyi operatörle önceden planlayın.");
+  document.querySelector("#placeIntro").textContent = currentLanguage === "ru" ? place.intro : currentLanguage === "en" ? `${displayTitle} can become a memorable part of your private transfer from Antalya Airport. Explore it without rushing and continue when you are ready.` : currentLanguage === "tr" ? `${displayTitle}, Antalya Havalimanı'ndan özel transferinizin unutulmaz bir parçası olabilir. Acele etmeden keşfedin.` : currentLanguage === "de" ? `${displayTitle} kann zu einem besonderen Teil Ihres privaten Transfers vom Flughafen Antalya werden. Entdecken Sie den Ort in Ihrem eigenen Tempo.` : `يمكن أن تصبح زيارة ${displayTitle} جزءاً مميزاً من رحلتك الخاصة من مطار أنطاليا. استمتع بالمكان بهدوء ثم تابع الرحلة في الوقت المناسب لك.`;
+  document.querySelector("#placeVisitNote").textContent = currentLanguage === "ru" ? place.visitNote : currentLanguage === "en" ? "Ask the operator to allow enough time for the visit and the additional drive." : currentLanguage === "tr" ? "Ziyaret ve ek yol için yeterli süreyi operatörle önceden planlayın." : currentLanguage === "de" ? "Planen Sie mit unserem Buchungsteam ausreichend Zeit für Besuch und zusätzliche Fahrt ein." : "نسّق مع مسؤول الحجز وقتاً كافياً للزيارة والطريق الإضافي.";
   document.querySelector(".place-detail-route-link").textContent = copy.back;
   document.querySelector("#placeOperatorLink").textContent = copy.add;
   document.querySelector(".place-secondary-action").textContent = copy.others;
@@ -243,3 +276,9 @@ const updateLanguageMenu = bindLanguageMenu(document.querySelector(".language-me
 });
 updateLanguageMenu(currentLanguage);
 setupBackButton(document.querySelector("#mobileBackButton"), "/routes");
+window.addEventListener("gotransfer:languagechange", (event) => {
+  currentLanguage = event.detail.language;
+  document.querySelector("#placeHighlights").replaceChildren();
+  renderPlace();
+  updateLanguageMenu(currentLanguage);
+});

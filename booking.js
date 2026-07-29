@@ -121,6 +121,7 @@ const routeDistancesKm = [
 
 const translations = {
   ru: {
+    pageTitle: "GoTransfer — частный трансфер по Анталийскому побережью",
     metaDescription: "Заказ трансфера по Анталье и курортным локациям региона.",
     menuLabel: "Открыть меню",
     languageLabel: "Язык",
@@ -227,6 +228,7 @@ const translations = {
     distanceUnit: "км",
   },
   en: {
+    pageTitle: "GoTransfer — Private transfers along the Antalya coast",
     metaDescription: "Book a private transfer in Antalya and popular resort locations.",
     menuLabel: "Open menu",
     languageLabel: "Language",
@@ -332,7 +334,24 @@ const translations = {
     },
     distanceUnit: "km",
   },
+  de: {
+    pageTitle:"GoTransfer — Private Transfers an der Küste von Antalya",
+    metaDescription:"Privaten Transfer in Antalya und zu beliebten Urlaubsorten buchen.",menuLabel:"Menü öffnen",languageLabel:"Sprache",languageMenuLabel:"Sprache auswählen",brandTagline:"Transfers an der Küste von Antalya",serviceCta:"Reise auswählen",eyebrow:"Transfers an der Küste von Antalya",heroLead:"Private Transfers an der Küste von Antalya.",routeKicker:"Route",bookingTitle:"Preis berechnen",payOnArrivalBadge:"Zahlung bei Ankunft",swapRoute:"Abholort und Ziel tauschen",fromLabel:"Von",toLabel:"Nach",quickHotel:"Hotel",quickClinic:"Klinik",quickAttraction:"Sehenswürdigkeit",dateLabel:"Datum",timeLabel:"Uhrzeit",hoursLabel:"Stunden",minutesLabel:"Minuten",openTimePicker:"Uhrzeit auswählen",passengersLabel:"Fahrgäste",adultLabel:"Erwachsene",childrenLabel:"Kinder",changeChildren:"Ändern",
+    childrenSheetNote:"Kinder zählen zur Gesamtzahl der Fahrgäste. Kindersitze und Sitzerhöhungen werden der Anfrage hinzugefügt.",infantSeatTitle:"Babyschale",infantSeatText:"Bis 10 kg, bis 6 Monate",childSeatTitle:"Kindersitz",childSeatText:"9–25 kg, 0–7 Jahre",boosterSeatTitle:"Sitzerhöhung",boosterSeatText:"22–36 kg, 6–12 Jahre",childAgeLabel:"Alter des Kindes",childAgePrefix:"Kind",noChildren:"keine Kinder",childOne:"Kind",childFew:"Kinder",childMany:"Kinder",childAgeYears:"Jahre",childAgeUnderOne:"unter 1 Jahr",childAgeTeen:"13+ Jahre",childSeats:"Kindersitze",childSeat:"Kindersitz",boosterSeat:"Sitzerhöhung",noChildSeat:"kein Sitz",
+    priceLabel:"Preis",chooseRoute:"Route auswählen",chooseDifferent:"Wählen Sie zwei verschiedene Orte",selectGooglePlace:"Route auswählen",routeCalculating:"Straßenentfernung wird berechnet …",routeUnavailable:"Diese Route konnte nicht erstellt werden. Wählen Sie einen anderen Ort oder kontaktieren Sie uns.",clearFrom:"Abholort löschen",clearTo:"Ziel löschen",searchPlaceholder:"Hotel, Klinik oder Ort eingeben",searchNoResults:"Keine Orte gefunden",searchError:"Die Suche ist vorübergehend nicht verfügbar. Prüfen Sie Ihre Verbindung oder schreiben Sie uns.",whatsappAction:"Operator über WhatsApp kontaktieren",telegramAction:"Operator über Telegram kontaktieren",
+    detailPriceTitle:"Transparenter Preis",detailPriceText:"Sie sehen die Schätzung vor dem Wechsel zu WhatsApp; sie dient als Grundlage für die Bestätigung.",detailCurrencyTitle:"Flexible Währung",detailCurrencyText:"Die Zahlung kann nach Rücksprache mit dem Operator in einer passenden Währung vereinbart werden.",detailFlightTitle:"Wir warten auf Sie",detailFlightText:"Auch bei Flugverspätung warten wir und begrüßen Sie nach der Ankunft.",detailExperienceTitle:"5 Jahre Erfahrung",detailExperienceText:"Unser erfahrenes Team organisiert täglich Transfers in Antalya und den Ferienorten der Region.",installTitle:"GoTransfer installieren",installText:"Fügen Sie die Website zum Startbildschirm hinzu und öffnen Sie sie wie eine App.",installIosText:"Tippen Sie auf dem iPhone auf Teilen und dann auf Zum Home-Bildschirm.",installAndroidText:"Öffnen Sie auf Android das Chrome-Menü ⋮ und wählen Sie App installieren oder Zum Startbildschirm hinzufügen.",installAction:"Installieren",installHowTo:"Installationshilfe",installDone:"Verstanden",dismissInstall:"Schließen",privacyPolicy:"Datenschutzerklärung",
+    passengerOne:"1 Fahrgast",passengerFew:"Fahrgäste",passengerMany:"Fahrgäste",totalPassengers:"Gesamt",payOnArrivalShort:"Zahlung bei Ankunft",tariffPrefix:"Tarif",quickWhatsappMessage:"Guten Tag! Ich möchte mich nach einem GoTransfer-Transfer erkundigen.",whatsappGreeting:"Guten Tag! Ich möchte einen Transfer buchen.",whatsappRoute:"Route",whatsappDistance:"Streckenlänge",whatsappDateTime:"Datum und Uhrzeit",whatsappPassengers:"Fahrgäste",whatsappAdults:"Erwachsene",whatsappChildren:"Kinder",whatsappChildSeats:"Kindersitze/Sitzerhöhungen",whatsappPrice:"Preis",whatsappFrom:"Von",whatsappTo:"Nach",whatsappAddress:"Adresse",whatsappPlaceId:"Google Place ID",notSpecified:"nicht angegeben",dateLocale:"de-DE",dateFormatOptions:{day:"numeric",month:"long",year:"numeric"},distanceUnit:"km"
+  },
+  ar: {
+    pageTitle:"GoTransfer — خدمة نقل خاصة على ساحل أنطاليا",
+    metaDescription:"احجز خدمة نقل خاصة في أنطاليا وإلى أشهر المنتجعات.",menuLabel:"فتح القائمة",languageLabel:"اللغة",languageMenuLabel:"اختيار اللغة",brandTagline:"خدمة نقل على طول ساحل أنطاليا",serviceCta:"اختر الرحلة",eyebrow:"خدمة نقل على طول ساحل أنطاليا",heroLead:"خدمة نقل خاصة على طول ساحل أنطاليا.",routeKicker:"المسار",bookingTitle:"احسب التكلفة",payOnArrivalBadge:"الدفع عند الوصول",swapRoute:"تبديل نقطة الانطلاق والوجهة",fromLabel:"من",toLabel:"إلى",quickHotel:"فندق",quickClinic:"عيادة",quickAttraction:"معلم سياحي",dateLabel:"التاريخ",timeLabel:"الوقت",hoursLabel:"الساعات",minutesLabel:"الدقائق",openTimePicker:"اختيار الوقت",passengersLabel:"الركاب",adultLabel:"البالغون",childrenLabel:"الأطفال",changeChildren:"تعديل",
+    childrenSheetNote:"يُحتسب الأطفال ضمن العدد الإجمالي للركاب، وتُضاف مقاعد الأطفال إلى طلب الحجز.",infantSeatTitle:"مقعد للرضيع",infantSeatText:"حتى 10 كغ، وحتى 6 أشهر",childSeatTitle:"مقعد طفل",childSeatText:"9–25 كغ، من 0 إلى 7 سنوات",boosterSeatTitle:"مقعد رافع",boosterSeatText:"22–36 كغ، من 6 إلى 12 سنة",childAgeLabel:"عمر الطفل",childAgePrefix:"الطفل",noChildren:"من دون أطفال",childOne:"طفل",childFew:"أطفال",childMany:"أطفال",childAgeYears:"سنوات",childAgeUnderOne:"أقل من سنة",childAgeTeen:"13 سنة فأكثر",childSeats:"مقاعد الأطفال",childSeat:"مقعد طفل",boosterSeat:"مقعد رافع",noChildSeat:"من دون مقعد",
+    priceLabel:"التكلفة",chooseRoute:"اختر المسار",chooseDifferent:"يرجى اختيار موقعين مختلفين",selectGooglePlace:"اختر المسار",routeCalculating:"جارٍ حساب المسافة على الطريق…",routeUnavailable:"تعذر إنشاء هذا المسار. جرّبوا مكاناً آخر أو تواصلوا معنا.",clearFrom:"مسح نقطة الانطلاق",clearTo:"مسح الوجهة",searchPlaceholder:"ابدؤوا بكتابة اسم الفندق أو العيادة أو المكان",searchNoResults:"لم يتم العثور على أماكن",searchError:"البحث غير متاح مؤقتاً. تحققوا من الاتصال أو راسلونا.",whatsappAction:"تواصل مع مسؤول الحجز عبر WhatsApp",telegramAction:"تواصل مع مسؤول الحجز عبر Telegram",
+    detailPriceTitle:"سعر واضح",detailPriceText:"يظهر التقدير قبل الانتقال إلى WhatsApp ويُعتمد أساساً لتأكيد الحجز.",detailCurrencyTitle:"عملة مناسبة",detailCurrencyText:"يمكن الاتفاق مع مسؤول الحجز على الدفع بالعملة المناسبة.",detailFlightTitle:"سننتظركم",detailFlightText:"حتى عند تأخر الرحلة الجوية، سننتظركم ونستقبلكم بعد الوصول.",detailExperienceTitle:"خبرة خمس سنوات",detailExperienceText:"ينظم فريقنا يومياً خدمات النقل في أنطاليا ومنتجعات المنطقة.",installTitle:"تثبيت GoTransfer",installText:"أضيفوا الموقع إلى شاشة الهاتف وافتحوه مثل التطبيق.",installIosText:"على iPhone اضغطوا مشاركة ثم اختاروا إضافة إلى الشاشة الرئيسية.",installAndroidText:"على Android افتحوا قائمة Chrome ⋮ ثم اختاروا تثبيت التطبيق أو الإضافة إلى الشاشة الرئيسية.",installAction:"تثبيت",installHowTo:"طريقة التثبيت",installDone:"حسناً",dismissInstall:"إغلاق",privacyPolicy:"سياسة الخصوصية",
+    passengerOne:"راكب واحد",passengerFew:"ركاب",passengerMany:"ركاب",totalPassengers:"الإجمالي",payOnArrivalShort:"الدفع عند الوصول",tariffPrefix:"الفئة",quickWhatsappMessage:"مرحباً، أود الاستفسار عن خدمة النقل من GoTransfer.",whatsappGreeting:"مرحباً، أود حجز خدمة نقل.",whatsappRoute:"المسار",whatsappDistance:"مسافة المسار",whatsappDateTime:"التاريخ والوقت",whatsappPassengers:"الركاب",whatsappAdults:"البالغون",whatsappChildren:"الأطفال",whatsappChildSeats:"مقاعد الأطفال",whatsappPrice:"التكلفة",whatsappFrom:"من",whatsappTo:"إلى",whatsappAddress:"العنوان",whatsappPlaceId:"معرّف المكان في Google",notSpecified:"غير محدد",dateLocale:"ar",dateFormatOptions:{day:"numeric",month:"long",year:"numeric"},distanceUnit:"كم"
+  },
   tr: {
+    pageTitle:"GoTransfer — Antalya kıyısında özel transfer",
     metaDescription: "Antalya ve popüler tatil bölgeleri için özel transfer rezervasyonu.",
     menuLabel: "Menüyü aç",
     languageLabel: "Dil",
@@ -595,6 +614,7 @@ function bindEvents() {
 
   elements.languageOptions.forEach((button) => {
     button.addEventListener("click", () => {
+      window.GoTransferLocale?.set(button.dataset.languageOption,{notify:false});
       setLanguage(button.dataset.languageOption);
       closeLanguageMenu();
     });
@@ -1366,7 +1386,14 @@ function setLanguage(language) {
 
 function applyTranslations() {
   document.documentElement.lang = currentLanguage;
+  document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
+  document.title = t("pageTitle");
   elements.metaDescription.content = t("metaDescription");
+  ["og:title","og:description"].forEach((property)=>{
+    let meta=document.head.querySelector(`meta[property="${property}"]`);
+    if(!meta){meta=document.createElement("meta");meta.setAttribute("property",property);document.head.appendChild(meta)}
+    meta.content=property==="og:title"?t("pageTitle"):t("metaDescription");
+  });
   elements.languageMenuButton.setAttribute("aria-label", t("languageMenuLabel"));
 
   elements.translatable.forEach((element) => {
@@ -1400,6 +1427,10 @@ function t(key) {
 }
 
 function getInitialLanguage() {
+  const requestedLanguage = new URLSearchParams(location.search).get("lang");
+  if (translations[requestedLanguage]) {
+    return requestedLanguage;
+  }
   const savedLanguage = localStorage.getItem("gotransfer-language");
 
   if (translations[savedLanguage]) {
@@ -1590,5 +1621,6 @@ function isStandaloneApp() {
   return window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
 }
 
+window.addEventListener("gotransfer:languagechange",event=>setLanguage(event.detail.language));
 init();
 
