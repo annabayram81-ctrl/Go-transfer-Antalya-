@@ -65,3 +65,12 @@ test("shared locale handler does not double-toggle page-owned language menus", (
   assert.match(source, /localeGenerated/);
   assert.match(read("route-placeholder.html"), /data-global-locale-menu/);
 });
+
+test("every VIP journey has a reusable photographic stop showcase", () => {
+  const source = read("journey-showcases.js");
+  const slugs = [...read("journey-data.js").matchAll(/slug:"([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(slugs.length, 21);
+  slugs.forEach((slug) => assert.match(source, new RegExp(`"${slug}"\\s*:`), slug));
+  assert.match(read("journey-detail.html"), /id="detailPlaceCards"/);
+  assert.match(read("journey-detail.js"), /JourneyShowcases\.details/);
+});
