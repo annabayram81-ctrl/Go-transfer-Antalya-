@@ -8,6 +8,7 @@
         <item name="android:colorAccent">@color/gotransfer_ink</item>
         <item name="android:navigationBarColor">@color/gotransfer_background</item>
         <item name="android:statusBarColor">@color/gotransfer_background</item>
+        <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowSplashScreenBackground">@color/gotransfer_background</item>
         <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>

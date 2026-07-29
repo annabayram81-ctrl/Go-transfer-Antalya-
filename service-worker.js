@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260729-mobile-layout-5";
+const CACHE_NAME = "gotransfer-v20260729-android-bars-6";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -17,7 +17,7 @@ const CORE_ASSETS = [
   "/booking.js?v=20260729-i18n-1",
   "/site-locale.js?v=20260729-i18n-3",
   "/rtl.css?v=20260729-i18n-1",
-  "/services.css?v=20260727-pwa-49",
+  "/services.css?v=20260729-android-51",
   "/services.js?v=20260729-i18n-1",
   "/chauffeur.css?v=20260728-pwa-1",
   "/chauffeur-form.css?v=20260728-pwa-1",

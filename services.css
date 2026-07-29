@@ -376,6 +376,7 @@
 
   .services-topbar {
     position: absolute;
+    top: calc(34px + env(safe-area-inset-top));
   }
 
   .services-intro {

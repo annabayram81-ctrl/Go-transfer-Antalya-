@@ -13,6 +13,8 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
+import android.view.WindowInsetsController
+import android.view.WindowManager
 import android.window.OnBackInvokedDispatcher
 import android.webkit.SslErrorHandler
 import android.webkit.WebResourceError
@@ -37,6 +39,7 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
 
         WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG)
+        keepSystemBarsVisible()
 
         val root = FrameLayout(this).apply {
             setBackgroundColor(getColorCompat(R.color.gotransfer_background))
@@ -134,6 +137,22 @@ class MainActivity : Activity() {
             insets.systemWindowInsetRight,
             insets.systemWindowInsetBottom,
         )
+    }
+
+    private fun keepSystemBarsVisible() {
+        window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.setDecorFitsSystemWindows(true)
+            window.insetsController?.apply {
+                show(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+                systemBarsBehavior = WindowInsetsController.BEHAVIOR_DEFAULT
+            }
+            return
+        }
+
+        @Suppress("DEPRECATION")
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
     }
 
     private fun buildErrorView(): View {
