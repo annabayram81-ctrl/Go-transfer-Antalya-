@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260729-journey-details-1";
+const CACHE_NAME = "gotransfer-v20260729-journey-details-2";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -32,7 +32,7 @@ const CORE_ASSETS = [
   "/journeys.js?v=20260729-i18n-1",
   "/journey-detail.css?v=20260729-pwa-1",
   "/journey-showcases.css?v=20260729-detail-1",
-  "/journey-showcases.js?v=20260729-detail-1",
+  "/journey-showcases.js?v=20260729-detail-2",
   "/journey-detail.js?v=20260729-detail-1",
   "/routes.css?v=20260729-i18n-2",
   "/route-detail.css?v=20260728-pwa-73",
