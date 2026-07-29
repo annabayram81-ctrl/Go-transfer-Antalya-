@@ -75,6 +75,23 @@ test("every VIP journey has a reusable photographic stop showcase", () => {
   assert.match(read("journey-detail.js"), /JourneyShowcases\.details/);
 });
 
+test("mobile layouts prevent horizontal page drift", () => {
+  const sharedCss = read("styles.css");
+  const routesCss = read("routes.css");
+  assert.match(sharedCss, /html\s*\{[\s\S]*?overflow-x:\s*clip/);
+  assert.match(sharedCss, /body\s*\{[\s\S]*?overflow-x:\s*clip/);
+  assert.match(routesCss, /\.routes-intro h1\s*\{[\s\S]*?overflow-wrap:\s*anywhere/);
+});
+
+test("privacy page keeps all languages and a floating mobile back button", () => {
+  const html = read("privacy.html");
+  ["ru", "tr", "en", "de", "ar"].forEach((language) => {
+    assert.match(html, new RegExp(`data-language="${language}"`));
+  });
+  assert.match(html, /class="mobile-back-button"/);
+  assert.match(html, /floating-back\.js/);
+});
+
 test("floating mobile back button is localized in German and Arabic", () => {
   const source = read("floating-back.js");
   assert.match(source, /de:\s*"Zurück"/);

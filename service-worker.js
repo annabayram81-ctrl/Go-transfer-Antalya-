@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260729-journey-details-4";
+const CACHE_NAME = "gotransfer-v20260729-mobile-layout-5";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -12,7 +12,7 @@ const CORE_ASSETS = [
   "/route-placeholder.html",
   "/place-placeholder.html",
   "/privacy.html",
-  "/styles.css?v=20260728-pwa-58",
+  "/styles.css?v=20260729-mobile-59",
   "/pricing.js?v=20260727-long-distance-1",
   "/booking.js?v=20260729-i18n-1",
   "/site-locale.js?v=20260729-i18n-3",
@@ -34,7 +34,7 @@ const CORE_ASSETS = [
   "/journey-showcases.css?v=20260729-detail-1",
   "/journey-showcases.js?v=20260729-detail-3",
   "/journey-detail.js?v=20260729-detail-1",
-  "/routes.css?v=20260729-i18n-2",
+  "/routes.css?v=20260729-mobile-3",
   "/route-detail.css?v=20260728-pwa-73",
   "/place-detail.css?v=20260728-pwa-59",
   "/route-data.js?v=20260728-pwa-78",
