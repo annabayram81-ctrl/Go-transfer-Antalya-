@@ -84,7 +84,8 @@ test("mobile layouts prevent horizontal page drift", () => {
   assert.match(sharedCss, /body\s*\{[\s\S]*?overflow-x:\s*clip/);
   assert.match(routesCss, /\.routes-intro h1\s*\{[\s\S]*?overflow-wrap:\s*anywhere/);
   assert.match(journeysCss, /\.journeys-root\s*\{[\s\S]*?overflow-x:\s*clip/);
-  assert.match(journeysCss, /\.journeys-page\s*\{[\s\S]*?overscroll-behavior-x:\s*none/);
+  assert.match(journeysCss, /\.journeys-page\s*\{[\s\S]*?overscroll-behavior:\s*none/);
+  assert.match(journeysCss, /\.journeys-page\s*\{[\s\S]*?touch-action:\s*pan-y/);
   assert.match(vipEventsCss, /\.vip-events-root\s*\{[\s\S]*?overflow-x:\s*clip/);
   assert.match(vipEventsCss, /\.vip-events-page\s*\{[\s\S]*?overscroll-behavior-x:\s*none/);
 });

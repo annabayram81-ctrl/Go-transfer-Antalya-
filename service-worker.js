@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260729-vip-mobile-8";
+const CACHE_NAME = "gotransfer-v20260729-webview-overscroll-9";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -28,7 +28,7 @@ const CORE_ASSETS = [
   "/vip-events.js?v=20260729-i18n-1",
   "/vip-events-language.js?v=20260729-i18n-1",
   "/journeys.css?v=20260729-mobile-3",
-  "/journeys-mobile.css?v=20260729-mobile-2",
+  "/journeys-mobile.css?v=20260729-mobile-3",
   "/journey-data.js?v=20260729-pwa-3",
   "/journey-locales.js?v=20260729-i18n-1",
   "/journeys.js?v=20260729-i18n-1",

@@ -1,13 +1,17 @@
 .journeys-root {
+  width: 100%;
   max-width: 100%;
   overflow-x: clip;
+  overscroll-behavior: none;
   background: #0e1013;
 }
 
 .journeys-page {
+  width: 100%;
   max-width: 100%;
   overflow-x: clip;
-  overscroll-behavior-x: none;
+  overscroll-behavior: none;
+  touch-action: pan-y;
 }
 
 .journeys-page .contact {

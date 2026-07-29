@@ -54,6 +54,8 @@ class MainActivity : Activity() {
                 ViewGroup.LayoutParams.MATCH_PARENT,
             )
             setBackgroundColor(getColorCompat(R.color.gotransfer_background))
+            overScrollMode = View.OVER_SCROLL_NEVER
+            isHorizontalScrollBarEnabled = false
             webViewClient = GoTransferWebViewClient()
             configureSettings(settings)
         }
