@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260801-home-spacing-13";
+const CACHE_NAME = "gotransfer-v20260801-navigation-14";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -31,18 +31,18 @@ const CORE_ASSETS = [
   "/review-evidence-home.js?v=20260801-evidence-2",
   "/editorial.css?v=20260801-1",
   "/reviews-board.css?v=20260801-1",
-  "/reviews-evidence.css?v=20260801-1",
+  "/reviews-evidence.css?v=20260801-2",
   "/images/reviews/fleet-coast.jpg",
   "/images/reviews/vip-welcome-no-face.jpg",
   "/images/reviews/vip-cabin.jpg",
   "/images/reviews/vip-van.jpg",
   "/editorial-data.js?v=20260801-editorial-2",
-  "/editorial.js?v=20260801-1",
+  "/editorial.js?v=20260801-2",
   "/styles.css?v=20260730-topbar-60",
   "/app-store-button.css?v=20260730-store-1",
   "/pricing.js?v=20260727-long-distance-1",
   "/booking.js?v=20260729-i18n-1",
-  "/site-locale.js?v=20260729-i18n-3",
+  "/site-locale.js?v=20260801-nav-2",
   "/rtl.css?v=20260729-i18n-1",
   "/services.css?v=20260729-android-51",
   "/app-mobile-cards.css?v=20260730-mobile-3",
