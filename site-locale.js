@@ -13,7 +13,7 @@
   addAsset("script",{src:"/site-navigation.js?v=20260801-nav-1",async:false,"data-site-asset":"navigation-script"});
   addAsset("script",{src:"/site-navigation-enhancements.js?v=20260801-nav-4",async:false,"data-site-asset":"navigation-enhancements"});
   addAsset("script",{src:"/site-back-control.js?v=20260801-back-1",async:false,"data-site-asset":"back-control-script"});
-  addAsset("script",{src:"/review-evidence-home.js?v=20260801-evidence-1",async:false,"data-site-asset":"review-evidence-home"});
+  addAsset("script",{src:"/review-evidence-home.js?v=20260801-evidence-2",async:false,"data-site-asset":"review-evidence-home"});
   if(!document.querySelector('link[href^="/rtl.css"]')){
     const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="/rtl.css?v=20260729-i18n-1";document.head.appendChild(stylesheet);
   }
