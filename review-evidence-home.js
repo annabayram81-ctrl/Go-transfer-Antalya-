@@ -1,0 +1,5 @@
+(function(){
+function language(){return window.GoTransferLocale?.get?.()||"ru"}
+function render(){if(!/^\/$|index\.html$/.test(location.pathname))return;const host=document.querySelector('.home-reviews__empty,.home-review-strip,.home-review-evidence'),items=window.GoTransferEditorial?.reviewEvidence||[];if(!host||!items.length)return;if(!document.querySelector('link[href^="/reviews-evidence.css"]'))document.head.appendChild(Object.assign(document.createElement('link'),{rel:'stylesheet',href:'/reviews-evidence.css?v=20260801-1'}));host.className='home-review-evidence';host.innerHTML=items.slice(1,5).map(item=>`<a href="/reviews?lang=${language()}"><img src="${item.src}" alt="${item.alt?.[language()]||item.alt?.ru||''}" loading="lazy"></a>`).join('')}
+const observer=new MutationObserver(render);observer.observe(document.documentElement,{childList:true,subtree:true});window.addEventListener('gotransfer:editorialready',render);window.addEventListener('gotransfer:languagechange',()=>setTimeout(render));if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render,{once:true});else render();
+})();
