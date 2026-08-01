@@ -1,0 +1,3 @@
+.site-quick-button--play{color:#fff;background:#20242a}
+@media(min-width:981px){.site-nav-desktop{display:none!important}.site-menu-toggle{display:grid!important}}
+@media(max-width:380px){.site-quick-actions{gap:3px}.site-quick-button{width:33px;height:33px}.site-menu-toggle{width:38px;height:38px}.site-nav-brand{padding:0 8px;font-size:.74rem}}
