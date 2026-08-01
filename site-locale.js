@@ -9,6 +9,7 @@
   addAsset("link",{rel:"stylesheet",href:"/site-navigation-mobile-wrap.css?v=20260801-nav-5","data-site-asset":"navigation-mobile-wrap"});
   addAsset("link",{rel:"stylesheet",href:"/site-navigation-deduplicate.css?v=20260801-nav-6","data-site-asset":"navigation-deduplicate"});
   addAsset("link",{rel:"stylesheet",href:"/site-back-control.css?v=20260801-back-1","data-site-asset":"back-control-style"});
+  addAsset("link",{rel:"stylesheet",href:"/home-navigation-spacing.css?v=20260801-home-1","data-site-asset":"home-navigation-spacing"});
   addAsset("script",{src:"/editorial-data.js?v=20260801-editorial-2",async:false,"data-site-asset":"editorial-data"});
   addAsset("script",{src:"/site-navigation.js?v=20260801-nav-1",async:false,"data-site-asset":"navigation-script"});
   addAsset("script",{src:"/site-navigation-enhancements.js?v=20260801-nav-4",async:false,"data-site-asset":"navigation-enhancements"});

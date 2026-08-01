@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260801-all-review-screens-12";
+const CACHE_NAME = "gotransfer-v20260801-home-spacing-13";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -24,6 +24,7 @@ const CORE_ASSETS = [
   "/site-navigation-mobile-wrap.css?v=20260801-nav-5",
   "/site-navigation-deduplicate.css?v=20260801-nav-6",
   "/site-back-control.css?v=20260801-back-1",
+  "/home-navigation-spacing.css?v=20260801-home-1",
   "/site-navigation.js?v=20260801-nav-1",
   "/site-navigation-enhancements.js?v=20260801-nav-4",
   "/site-back-control.js?v=20260801-back-1",
