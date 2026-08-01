@@ -1491,39 +1491,15 @@ function registerServiceWorker() {
   }
 
   window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("./service-worker.js")
-      .then((registration) => {
-        registration.update();
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      registrations.forEach((registration) => registration.unregister());
+    }).catch(() => {});
 
-        if (registration.waiting) {
-          registration.waiting.postMessage("SKIP_WAITING");
-        }
-
-        registration.addEventListener("updatefound", () => {
-          const worker = registration.installing;
-
-          if (!worker) {
-            return;
-          }
-
-          worker.addEventListener("statechange", () => {
-            if (worker.state === "installed" && navigator.serviceWorker.controller) {
-              worker.postMessage("SKIP_WAITING");
-            }
-          });
-        });
-      })
-      .catch(() => {});
-  });
-
-  navigator.serviceWorker.addEventListener("controllerchange", () => {
-    if (sessionStorage.getItem("gotransfer-sw-refreshed") === "true") {
-      return;
+    if ("caches" in window) {
+      caches.keys().then((keys) => {
+        keys.filter((key) => key.startsWith("gotransfer-")).forEach((key) => caches.delete(key));
+      }).catch(() => {});
     }
-
-    sessionStorage.setItem("gotransfer-sw-refreshed", "true");
-    window.location.reload();
   });
 }
 
