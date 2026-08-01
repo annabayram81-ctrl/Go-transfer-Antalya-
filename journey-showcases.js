@@ -20,7 +20,25 @@ const images={
 "orthodox-alanya":["/images/places/alanya-aya-yorgi.jpg","/images/places/alanya-castle.jpg","/images/places/alanya-cable-car.jpg","/images/places/alanya-red-tower.jpg"],
 "termessos-duden":["/images/places/termessos.png","/images/places/termessos.png","/images/places/termessos.png","/images/places/lower-duden.jpg"],
 "koprulu-aspendos":["/images/places/koprulu-canyon.png","/images/places/koprulu-canyon.png","/images/places/koprulu-canyon.png","/images/places/aspendos.png"],
-"antalya-waterfalls-old-town":["/images/places/lower-duden.jpg","/images/places/upper-duden.jpg","/images/places/kaleici.jpg","/images/places/kemer-marina-moonlight.png"]
+"antalya-waterfalls-old-town":["/images/places/lower-duden.jpg","/images/places/upper-duden.jpg","/images/places/kaleici.jpg","/images/places/kemer-marina-moonlight.png"],
+"lycian-way-gelidonya":["/images/places/gelidonya-lighthouse.png","/images/places/gelidonya-lighthouse.png","/images/places/three-islands.png","/images/places/adrasan-bay.jpg"],
+"lycian-way-cirali-olympos":["/images/places/cirali-beach.jpg","/images/places/olympos-ancient-city.jpg","/images/places/olympos-ancient-city.jpg","/images/places/cirali-beach.jpg"],
+"adrasan-suluada":["/images/places/adrasan-bay.jpg","/images/places/suluada.png","/images/places/suluada.png","/images/places/adrasan-bay.jpg"],
+"goynuk-canyon-lycian-way":["/images/places/goynuk-canyon.jpg","/images/places/goynuk-canyon.jpg","/images/places/goynuk-canyon.jpg","/images/places/kemer-marina-moonlight.png"],
+"arykanda-limyra-finike":["/images/places/arykanda.png","/images/places/limyra.png","/images/places/finike-marina.jpg","/images/places/finike-marina.jpg"],
+"alanya-dim-river-cave":["/images/places/alanya-dim-cave.jpg","/images/places/alanya-castle.jpg","/images/places/alanya-dim-river.jpg","/images/places/alanya-red-tower.jpg"],
+"syedra-alanya":["/images/places/alanya-syedra.jpg","/images/places/alanya-syedra.jpg","/images/places/alanya-syedra.jpg","/images/places/alanya-castle.jpg"],
+"karain-cave-termessos":["/images/places/karain-cave.png","/images/places/termessos.png","/images/places/termessos.png","/images/places/termessos.png"],
+"perge-kursunlu-museum":["/images/places/perge.jpg","/images/places/kursunlu.jpg","/images/places/antalya-museum.jpg","/images/places/konyaalti-beach.png"],
+"antalya-museum-kaleici":["/images/places/antalya-museum.jpg","/images/places/kaleici.jpg","/images/places/kaleici.jpg","/images/places/kaleici.jpg"],
+"alanya-cleopatra-damlatas":["/images/places/alanya-cleopatra-beach.jpg","/images/places/alanya-cleopatra-beach.jpg","/images/places/alanya-cable-car.jpg","/images/places/alanya-castle.jpg"],
+"tekirova-three-islands":["/images/places/tekirova-coast.png","/images/places/three-islands.png","/images/places/three-islands.png","/images/places/tekirova-coast.png"],
+"phaselis-tahtali":["/images/places/phaselis.png","/images/places/alacasu-bay.png","/images/places/tahtali-cable-car.png","/images/places/tahtali-cable-car.png"],
+"beldibi-goynuk-kemer":["/images/places/beldibi-cave.png","/images/places/goynuk-canyon.jpg","/images/places/goynuk-canyon.jpg","/images/places/kemer-marina-moonlight.png"],
+"zeytintasi-aspendos":["/images/places/zeytintasi-cave.png","/images/places/zeytintasi-cave.png","/images/places/aspendos.png","/images/places/aspendos.png"],
+"rhodiapolis-finike-limyra":["/images/places/rhodiapolis.png","/images/places/limyra.png","/images/places/finike-marina.jpg","/images/places/finike-marina.jpg"],
+"kekova-kalekoy-ucagiz":["/images/places/kekova.png","/images/places/kekova.png","/images/places/andriake.png","/images/places/kekova.png"],
+"land-of-legends-belek":["/images/places/land-legends-castle-day.jpg","/images/places/land-of-legends.jpg","/images/places/land-legends-park.jpg","/images/places/belek-beach.jpg"]
 };
 
 const specificRu=[

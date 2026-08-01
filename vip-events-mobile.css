@@ -1,13 +1,17 @@
 .vip-events-root {
+  width: 100%;
   max-width: 100%;
   overflow-x: clip;
+  overscroll-behavior: none;
   background: #0e1013;
 }
 
 .vip-events-page {
+  width: 100%;
   max-width: 100%;
   overflow-x: clip;
-  overscroll-behavior-x: none;
+  overscroll-behavior: none;
+  touch-action: pan-y;
 }
 
 .vip-events-page .contact {
@@ -26,7 +30,7 @@
 
 @media (max-width: 620px) {
   .vip-topbar {
-    top: calc(30px + env(safe-area-inset-top));
+    top: calc(18px + env(safe-area-inset-top));
     right: 12px;
     left: 12px;
     padding: 0;
@@ -68,7 +72,7 @@
   }
 
   .vip-hero__copy {
-    padding: 132px 18px 54px;
+    padding: 120px 18px 54px;
   }
 
   .vip-hero h1 {

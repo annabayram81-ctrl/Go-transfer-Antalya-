@@ -1405,7 +1405,7 @@ h1 {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     position: absolute;
-    top: calc(22px + env(safe-area-inset-top));
+    top: calc(14px + env(safe-area-inset-top));
     right: 10px;
     left: 10px;
     z-index: 4;

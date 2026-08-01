@@ -30,7 +30,7 @@
 
 @media (max-width: 620px) {
   .journeys-topbar {
-    top: calc(30px + env(safe-area-inset-top));
+    top: calc(18px + env(safe-area-inset-top));
     right: 12px;
     left: 12px;
     padding: 0;
@@ -72,7 +72,7 @@
   }
 
   .journeys-hero > div:last-child {
-    padding: 132px 18px 54px;
+    padding: 120px 18px 54px;
   }
 
   .journeys-hero h1 {

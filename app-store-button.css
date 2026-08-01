@@ -1,0 +1,58 @@
+.topbar__icon-link--google-play {
+  color: #fff;
+  background: #111316;
+  box-shadow: 0 8px 20px rgba(17, 19, 22, 0.24);
+}
+
+.topbar__icon-link--google-play::before {
+  content: "▶";
+  display: grid;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  color: #7ed7c4;
+  font-size: 0.78rem;
+  line-height: 1;
+}
+
+.topbar__icon-link--google-play:hover,
+.topbar__icon-link--google-play:focus-visible {
+  color: #fff;
+  background: #2b3035;
+}
+
+@media (max-width: 720px) {
+  .topbar__icon-link--google-play::before {
+    width: 20px;
+    height: 20px;
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .topbar {
+    gap: 5px;
+  }
+
+  .topbar .brand {
+    min-width: 0;
+    padding: 0 10px;
+    font-size: 0.82rem;
+  }
+
+  .topbar .quick-links {
+    gap: 4px;
+  }
+
+  .topbar .topbar__icon-link {
+    width: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+
+  .topbar .language-menu__button {
+    min-width: 40px;
+    min-height: 38px;
+  }
+}

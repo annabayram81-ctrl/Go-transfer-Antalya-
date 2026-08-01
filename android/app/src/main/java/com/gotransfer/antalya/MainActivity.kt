@@ -41,19 +41,16 @@ class MainActivity : Activity() {
         WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG)
         keepSystemBarsVisible()
 
+        val webViewBackground = Color.parseColor("#0E1013")
         val root = FrameLayout(this).apply {
-            setBackgroundColor(getColorCompat(R.color.gotransfer_background))
-            setOnApplyWindowInsetsListener { view, insets ->
-                applySafeAreaPadding(view, insets)
-                insets
-            }
+            setBackgroundColor(webViewBackground)
         }
         webView = WebView(this).apply {
             layoutParams = FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT,
             )
-            setBackgroundColor(getColorCompat(R.color.gotransfer_background))
+            setBackgroundColor(webViewBackground)
             overScrollMode = View.OVER_SCROLL_NEVER
             isHorizontalScrollBarEnabled = false
             webViewClient = GoTransferWebViewClient()
@@ -83,6 +80,18 @@ class MainActivity : Activity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         webView.saveState(outState)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        keepSystemBarsVisible()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            keepSystemBarsVisible()
+        }
     }
 
     @Deprecated("Required for devices below Android 13.")
@@ -125,36 +134,29 @@ class MainActivity : Activity() {
         finish()
     }
 
-    private fun applySafeAreaPadding(view: View, insets: WindowInsets) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            val systemBars = insets.getInsets(WindowInsets.Type.systemBars() or WindowInsets.Type.displayCutout())
-            view.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            return
-        }
-
-        @Suppress("DEPRECATION")
-        view.setPadding(
-            insets.systemWindowInsetLeft,
-            insets.systemWindowInsetTop,
-            insets.systemWindowInsetRight,
-            insets.systemWindowInsetBottom,
-        )
-    }
-
     private fun keepSystemBarsVisible() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.navigationBarColor = getColorCompat(R.color.gotransfer_background)
+        window.statusBarColor = getColorCompat(R.color.gotransfer_background)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.setDecorFitsSystemWindows(true)
             window.insetsController?.apply {
                 show(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
                 systemBarsBehavior = WindowInsetsController.BEHAVIOR_DEFAULT
+                setSystemBarsAppearance(
+                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS or
+                        WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
+                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS or
+                        WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
+                )
             }
             return
         }
 
         @Suppress("DEPRECATION")
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+        window.decorView.systemUiVisibility =
+            View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
     }
 
     private fun buildErrorView(): View {

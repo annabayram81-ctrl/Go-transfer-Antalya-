@@ -35,12 +35,12 @@ const translations = {
         imageAlt: "VIP-трансфер с остановками по пути",
       },
       {
-        title: "VIP-путешествия по Анталийскому побережью",
+        title: "Однодневные VIP-путешествия по Анталийскому побережью",
         description:
           "Однодневные индивидуальные маршруты с персональным водителем: море, античные города, каньоны и святыни древней Ликии.",
         button: "Выбрать путешествие",
-        ariaLabel: "Выбрать индивидуальное путешествие по Турции",
-        imageAlt: "Однодневное VIP-путешествие по Анталийскому побережью",
+        ariaLabel: "Открыть однодневные VIP-путешествия по Анталийскому побережью",
+        imageAlt: "Бирюзовое побережье — однодневные VIP-путешествия",
       },
       {
         title: "VIP-трансфер для бизнеса и особых случаев",
@@ -81,7 +81,7 @@ const translations = {
         imageAlt: "VIP transfer with stops along the way",
       },
       {
-        title: "VIP journeys along the Antalya coast",
+        title: "One-day VIP journeys along the Antalya coast",
         description:
           "Private day itineraries with a personal chauffeur: the sea, ancient cities, canyons, and the sacred heritage of Lycia.",
         button: "Choose a journey",

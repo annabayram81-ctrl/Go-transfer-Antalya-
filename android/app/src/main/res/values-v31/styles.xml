@@ -4,6 +4,8 @@
         <item name="android:fontFamily">sans</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowBackground">@color/gotransfer_background</item>
         <item name="android:colorAccent">@color/gotransfer_ink</item>
         <item name="android:navigationBarColor">@color/gotransfer_background</item>

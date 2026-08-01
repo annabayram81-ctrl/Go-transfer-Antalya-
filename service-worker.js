@@ -1,4 +1,4 @@
-const CACHE_NAME = "gotransfer-v20260729-webview-overscroll-9";
+const CACHE_NAME = "gotransfer-v20260801-navigation-editorial-2";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -12,27 +12,41 @@ const CORE_ASSETS = [
   "/route-placeholder.html",
   "/place-placeholder.html",
   "/privacy.html",
-  "/styles.css?v=20260729-mobile-59",
+  "/blog.html",
+  "/blog-article.html",
+  "/reviews.html",
+  "/site-navigation.css?v=20260801-nav-1",
+  "/site-navigation-overrides.css?v=20260801-nav-1",
+  "/site-navigation.js?v=20260801-nav-1",
+  "/site-navigation-enhancements.js?v=20260801-nav-1",
+  "/editorial.css?v=20260801-1",
+  "/editorial-data.js?v=20260801-editorial-1",
+  "/editorial.js?v=20260801-1",
+  "/styles.css?v=20260730-topbar-60",
+  "/app-store-button.css?v=20260730-store-1",
   "/pricing.js?v=20260727-long-distance-1",
   "/booking.js?v=20260729-i18n-1",
   "/site-locale.js?v=20260729-i18n-3",
   "/rtl.css?v=20260729-i18n-1",
   "/services.css?v=20260729-android-51",
+  "/app-mobile-cards.css?v=20260730-mobile-3",
   "/services.js?v=20260729-i18n-1",
   "/chauffeur.css?v=20260728-pwa-1",
   "/chauffeur-form.css?v=20260728-pwa-1",
   "/chauffeur.js?v=20260728-pwa-3",
   "/chauffeur-language.js?v=20260729-i18n-1",
   "/vip-events.css?v=20260729-pwa-2",
-  "/vip-events-mobile.css?v=20260729-mobile-1",
+  "/vip-events-mobile.css?v=20260730-topbar-3",
   "/vip-events.js?v=20260729-i18n-1",
   "/vip-events-language.js?v=20260729-i18n-1",
-  "/journeys.css?v=20260729-mobile-3",
-  "/journeys-mobile.css?v=20260729-mobile-3",
-  "/journey-data.js?v=20260729-pwa-3",
-  "/journey-locales.js?v=20260729-i18n-1",
-  "/journeys.js?v=20260729-i18n-1",
+  "/journeys.css?v=20260730-image-link-4",
+  "/journeys-mobile.css?v=20260730-topbar-4",
+  "/journey-data.js?v=20260730-routes-2",
+  "/journey-locales.js?v=20260730-routes-2",
+  "/journeys.js?v=20260801-android-layout-4",
   "/journey-detail.css?v=20260729-pwa-1",
+  "/journey-header-fix.css?v=20260730-topbar-2",
+  "/journey-card-fix.css?v=20260801-android-layout-4",
   "/journey-showcases.css?v=20260729-detail-1",
   "/journey-showcases.js?v=20260729-detail-3",
   "/journey-detail.js?v=20260729-detail-1",
@@ -82,7 +96,7 @@ self.addEventListener("fetch", (event) => {
 
   if (event.request.mode === "navigate") {
     event.respondWith(
-      fetch(event.request)
+      fetch(event.request, { cache: "no-store" })
         .then((response) => {
           const responseCopy = response.clone();
 
@@ -93,6 +107,21 @@ self.addEventListener("fetch", (event) => {
           return response;
         })
         .catch(() => caches.match("/index.html").then((cachedResponse) => cachedResponse || caches.match("/"))),
+    );
+    return;
+  }
+
+  if (event.request.destination === "style" || event.request.destination === "script") {
+    event.respondWith(
+      fetch(event.request, { cache: "no-store" })
+        .then((response) => {
+          if (response.ok) {
+            const responseCopy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseCopy));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request)),
     );
     return;
   }

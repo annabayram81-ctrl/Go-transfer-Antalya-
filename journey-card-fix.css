@@ -1,0 +1,181 @@
+.journey-card > .journey-card__image-link {
+  z-index: 2;
+}
+
+.journey-card > div {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.journey-card nav {
+  position: relative;
+  z-index: 4;
+  pointer-events: auto;
+}
+
+.journey-card h3 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.journey-card[role="link"] { cursor: pointer; touch-action: manipulation; }
+.journey-card[role="link"]:focus-visible { outline: 3px solid #d9b76e; outline-offset: 3px; }
+
+@media (max-width: 760px) {
+  .journey-card {
+    min-height: clamp(590px, 162vw, 680px);
+  }
+
+  .journey-card h3 {
+    font-size: clamp(1.45rem, 7vw, 1.9rem);
+    line-height: 1.12;
+  }
+}
+
+/* The Android app uses a WebView with a shorter usable viewport. Keep the
+   photograph and copy in separate rows there so no title can slide under the
+   clipped top edge of an overlay card. */
+@media (min-width: 320px) and (max-width: 480px) {
+  .gotransfer-android-app .journeys-page {
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+
+  .gotransfer-android-app .journey-list {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .gotransfer-android-app .journey-grid {
+    gap: 18px;
+  }
+
+  .gotransfer-android-app .journey-card {
+    display: block;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    border-radius: 20px;
+    background: #171a1f;
+  }
+
+  .gotransfer-android-app .journey-card > .journey-card__image-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    pointer-events: auto;
+    touch-action: manipulation;
+  }
+
+  .gotransfer-android-app .journey-card > .journey-card__image-link > img,
+  .gotransfer-android-app .journey-card > .journey-card__image-link > .journey-card__shade {
+    height: 188px;
+  }
+
+  .gotransfer-android-app .journey-card > .journey-card__image-link > .journey-card__shade {
+    background: linear-gradient(0deg, rgba(5, 7, 10, 0.55), rgba(5, 7, 10, 0.02) 62%);
+    pointer-events: none;
+  }
+
+  .gotransfer-android-app .journey-card > div {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    height: auto;
+    min-height: 0;
+    margin-top: 188px;
+    padding: 18px;
+    border-radius: 0 0 20px 20px;
+    overflow: visible;
+    background: #171a1f;
+    pointer-events: none;
+  }
+
+  .gotransfer-android-app .journey-card small {
+    display: block;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .gotransfer-android-app .journey-card h3 {
+    margin: 8px 0 9px;
+    font-size: clamp(1.15rem, 5.4vw, 1.4rem);
+    line-height: 1.18;
+    overflow: visible;
+    overflow-wrap: anywhere;
+  }
+
+  .gotransfer-android-app .journey-card p {
+    margin: 0 0 15px;
+    font-size: clamp(0.82rem, 3.7vw, 0.94rem);
+    line-height: 1.45;
+    overflow: visible;
+    overflow-wrap: anywhere;
+  }
+
+  .gotransfer-android-app .journey-card nav {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    pointer-events: auto;
+  }
+
+  .gotransfer-android-app .journey-card nav a {
+    position: relative;
+    z-index: 4;
+    display: grid;
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 12px;
+    place-items: center;
+    font-size: 0.76rem;
+    line-height: 1.2;
+    text-align: center;
+    pointer-events: auto;
+    touch-action: manipulation;
+  }
+
+  .gotransfer-android-app .mobile-back-button {
+    position: sticky;
+    left: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    z-index: 12;
+    display: inline-flex;
+    width: max-content;
+    min-height: 40px;
+    margin: 12px 12px calc(14px + env(safe-area-inset-bottom));
+    padding: 0 14px;
+    font-size: 0.78rem;
+    pointer-events: auto;
+    touch-action: manipulation;
+  }
+
+  .gotransfer-android-app body:has(.mobile-back-button) {
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+
+  .gotransfer-android-app .journey-cta,
+  .gotransfer-android-app footer {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 359px) {
+  .gotransfer-android-app .journey-card > div {
+    padding: 16px;
+  }
+
+  .gotransfer-android-app .journey-card h3 {
+    font-size: 1.12rem;
+  }
+
+  .gotransfer-android-app .journey-card p {
+    font-size: 0.8rem;
+  }
+}
