@@ -3,6 +3,10 @@
   addAsset("link",{rel:"stylesheet",href:"/site-navigation.css?v=20260801-nav-1","data-site-asset":"navigation-style"});
   addAsset("link",{rel:"stylesheet",href:"/site-navigation-overrides.css?v=20260801-nav-2","data-site-asset":"navigation-overrides"});
   addAsset("link",{rel:"stylesheet",href:"/site-desktop-compact.css?v=20260801-nav-3","data-site-asset":"desktop-compact"});
+  addAsset("link",{rel:"stylesheet",href:"/site-navigation-polish.css?v=20260801-nav-4","data-site-asset":"navigation-polish"});
+  addAsset("link",{rel:"stylesheet",href:"/site-navigation-spacing.css?v=20260801-nav-4","data-site-asset":"navigation-spacing"});
+  addAsset("link",{rel:"stylesheet",href:"/site-navigation-fixes.css?v=20260801-nav-5","data-site-asset":"navigation-fixes"});
+  addAsset("link",{rel:"stylesheet",href:"/site-navigation-mobile-wrap.css?v=20260801-nav-5","data-site-asset":"navigation-mobile-wrap"});
   addAsset("script",{src:"/editorial-data.js?v=20260801-editorial-1",async:false,"data-site-asset":"editorial-data"});
   addAsset("script",{src:"/site-navigation.js?v=20260801-nav-1",async:false,"data-site-asset":"navigation-script"});
   addAsset("script",{src:"/site-navigation-enhancements.js?v=20260801-nav-3",async:false,"data-site-asset":"navigation-enhancements"});

@@ -1,0 +1,3 @@
+.services-topbar,.journeys-topbar,.routes-topbar,.chauffeur-topbar,.vip-topbar,.route-detail-topbar,.place-detail-topbar,.journey-detail-page>header{display:none!important}
+@media(max-width:620px){.site-nav-shell{display:flex;flex-wrap:wrap;align-items:center;row-gap:5px}.site-nav-brand{order:1;margin-right:auto}.site-menu-toggle{order:2}.site-quick-actions{order:3;margin-left:auto}.site-quick-button--play{width:92px!important}.site-quick-button--play::after{content:"Google Play"}.services-hero__content,.hero-copy,.vip-hero__copy,.journeys-hero>div:last-child,.detail-hero article{padding-top:150px!important}}
+@media(max-width:360px){.site-quick-button--play{width:82px!important;font-size:.58rem}.site-quick-actions{max-width:100%}}
