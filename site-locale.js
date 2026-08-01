@@ -1,10 +1,10 @@
 (function(){
   function addAsset(tag,attrs){if(document.querySelector(`${tag}[data-site-asset="${attrs["data-site-asset"]}"]`))return null;const node=document.createElement(tag);Object.assign(node,attrs);document.head.appendChild(node);return node}
   addAsset("link",{rel:"stylesheet",href:"/site-navigation.css?v=20260801-nav-1","data-site-asset":"navigation-style"});
-  addAsset("link",{rel:"stylesheet",href:"/site-navigation-overrides.css?v=20260801-nav-1","data-site-asset":"navigation-overrides"});
+  addAsset("link",{rel:"stylesheet",href:"/site-navigation-overrides.css?v=20260801-nav-2","data-site-asset":"navigation-overrides"});
   addAsset("script",{src:"/editorial-data.js?v=20260801-editorial-1",async:false,"data-site-asset":"editorial-data"});
   addAsset("script",{src:"/site-navigation.js?v=20260801-nav-1",async:false,"data-site-asset":"navigation-script"});
-  addAsset("script",{src:"/site-navigation-enhancements.js?v=20260801-nav-1",async:false,"data-site-asset":"navigation-enhancements"});
+  addAsset("script",{src:"/site-navigation-enhancements.js?v=20260801-nav-2",async:false,"data-site-asset":"navigation-enhancements"});
   if(!document.querySelector('link[href^="/rtl.css"]')){
     const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="/rtl.css?v=20260729-i18n-1";document.head.appendChild(stylesheet);
   }
