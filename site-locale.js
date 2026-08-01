@@ -8,9 +8,11 @@
   addAsset("link",{rel:"stylesheet",href:"/site-navigation-fixes.css?v=20260801-nav-5","data-site-asset":"navigation-fixes"});
   addAsset("link",{rel:"stylesheet",href:"/site-navigation-mobile-wrap.css?v=20260801-nav-5","data-site-asset":"navigation-mobile-wrap"});
   addAsset("link",{rel:"stylesheet",href:"/site-navigation-deduplicate.css?v=20260801-nav-6","data-site-asset":"navigation-deduplicate"});
+  addAsset("link",{rel:"stylesheet",href:"/site-back-control.css?v=20260801-back-1","data-site-asset":"back-control-style"});
   addAsset("script",{src:"/editorial-data.js?v=20260801-editorial-2",async:false,"data-site-asset":"editorial-data"});
   addAsset("script",{src:"/site-navigation.js?v=20260801-nav-1",async:false,"data-site-asset":"navigation-script"});
   addAsset("script",{src:"/site-navigation-enhancements.js?v=20260801-nav-4",async:false,"data-site-asset":"navigation-enhancements"});
+  addAsset("script",{src:"/site-back-control.js?v=20260801-back-1",async:false,"data-site-asset":"back-control-script"});
   if(!document.querySelector('link[href^="/rtl.css"]')){
     const stylesheet=document.createElement("link");stylesheet.rel="stylesheet";stylesheet.href="/rtl.css?v=20260729-i18n-1";document.head.appendChild(stylesheet);
   }

@@ -1,0 +1,2 @@
+html.site-inner-page .mobile-back-button{display:none!important}html.site-inner-page .site-nav-brand[data-site-back]{min-width:92px;justify-content:center;color:#f4e5bd;background:#111419ec}html[dir="rtl"].site-inner-page .site-nav-brand[data-site-back]{direction:rtl}
+@media(max-width:480px){html.site-inner-page .site-nav-brand[data-site-back]{width:auto;min-width:78px;padding:0 10px;font-size:.72rem}html.site-inner-page .site-nav-brand[data-site-back]::after{content:none}}
