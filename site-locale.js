@@ -1,5 +1,10 @@
 (function(){
   function addAsset(tag,attrs){if(document.querySelector(`${tag}[data-site-asset="${attrs["data-site-asset"]}"]`))return null;const node=document.createElement(tag);Object.assign(node,attrs);document.head.appendChild(node);return node}
+  if(!document.querySelector('script[src*="googletagmanager.com/gtag/js?id=AW-18353045092"]'))addAsset("script",{async:true,src:"https://www.googletagmanager.com/gtag/js?id=AW-18353045092","data-site-asset":"google-tag-aw-18353045092"});
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+  if(!window.__goTransferGoogleTagConfigured){window.__goTransferGoogleTagConfigured=true;window.gtag("js",new Date());window.gtag("config","AW-18353045092")}
+  addAsset("script",{src:"/gift-promo.js?v=20260809-2","data-site-asset":"gift-promo"});
   addAsset("link",{rel:"stylesheet",href:"/site-navigation.css?v=20260801-nav-1","data-site-asset":"navigation-style"});
   addAsset("link",{rel:"stylesheet",href:"/site-navigation-overrides.css?v=20260801-nav-2","data-site-asset":"navigation-overrides"});
   addAsset("link",{rel:"stylesheet",href:"/site-desktop-compact.css?v=20260801-nav-3","data-site-asset":"desktop-compact"});
