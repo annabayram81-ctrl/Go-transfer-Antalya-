@@ -27,10 +27,10 @@
     {
       "source": "/",
       "has": [{ "type": "query", "key": "lang", "value": "(?<lang>ru|en|tr|de|ar)" }],
-      "destination": "/:lang/",
+      "destination": "/:lang",
       "permanent": true
     },
-    { "source": "/", "destination": "/ru/", "permanent": true }
+    { "source": "/", "destination": "/ru", "permanent": true }
   ],
   "rewrites": [
     { "source": "/blog/:slug", "destination": "/blog-article" },

@@ -68,7 +68,7 @@ test("clean legacy URLs redirect once to Russian default", async () => {
   const home = await render(homeHandler, {});
   assert.equal(route.headers.Location, "/ru/routes/alanya");
   assert.equal(place.headers.Location, "/ru/places/kaleici");
-  assert.equal(home.headers.Location, "/ru/");
+  assert.equal(home.headers.Location, "/ru");
 });
 
 test("unapproved translations are noindex 404 and cannot leak Russian content", async () => {
@@ -89,7 +89,7 @@ test("Russian-only pages do not advertise hreflang URLs that return 404", async 
 test("localized homepage is self-canonical", async () => {
   const result = await render(homeHandler, { lang: "ar", localized: "1" });
   assert.equal(result.statusCode, 200);
-  assert.equal(metadata(result.body).canonical, "https://gotransfer.my/ar/");
+  assert.equal(metadata(result.body).canonical, "https://gotransfer.my/ar");
   assert.equal(metadata(result.body).lang, "ar");
   assert.match(result.body, /<html lang="ar" dir="rtl">/);
   assert.match(result.body, /id="bookingForm"/);

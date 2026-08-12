@@ -8,8 +8,7 @@ export function validLanguage(value) {
 }
 
 export function localizedPath(language, path = "/") {
-  const suffix = path === "/" ? "/" : path;
-  return `/${language}${suffix}`;
+  return path === "/" ? `/${language}` : `/${language}${path}`;
 }
 
 function seoLinks(path, availableLanguages) {
