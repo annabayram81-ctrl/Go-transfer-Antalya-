@@ -194,7 +194,8 @@
       if (grid) {
         const section = document.createElement("section");
         section.className = "blog-future";
-        section.innerHTML = `<div class="blog-future__intro"><span>${current.kicker}</span><h2>${current.futureTitle}</h2><p>${current.futureIntro}</p></div><ol>${current.topics.map((topic, index) => index === 0 ? `<li class="is-published"><a href="/blog/our-first-car-gotransfer-story?lang=${language()}"><span>${String(index + 1).padStart(2, "0")}</span><p>${topic}</p><small>${current.readNow}</small><strong aria-hidden="true">→</strong></a></li>` : `<li class="is-upcoming"><span>${String(index + 1).padStart(2, "0")}</span><p>${topic}</p><small>${current.soon}</small></li>`).join("")}</ol>`;
+        const published = ["our-first-car-gotransfer-story", "what-happens-after-booking-transfer"];
+        section.innerHTML = `<div class="blog-future__intro"><span>${current.kicker}</span><h2>${current.futureTitle}</h2><p>${current.futureIntro}</p></div><ol>${current.topics.map((topic, index) => published[index] ? `<li class="is-published"><a href="/blog/${published[index]}?lang=${language()}"><span>${String(index + 1).padStart(2, "0")}</span><p>${topic}</p><small>${current.readNow}</small><strong aria-hidden="true">→</strong></a></li>` : `<li class="is-upcoming"><span>${String(index + 1).padStart(2, "0")}</span><p>${topic}</p><small>${current.soon}</small></li>`).join("")}</ol>`;
         grid.after(section);
       }
     }
