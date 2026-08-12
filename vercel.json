@@ -5,7 +5,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "functions": {
-    "api/home-page.js": { "includeFiles": ["i18n-content.js", "index.html"] },
+    "api/home-page.js": { "includeFiles": "{i18n-content.js,index.html}" },
     "api/place-page.js": { "includeFiles": "place-placeholder.html" },
     "api/route-page.js": { "includeFiles": "route-detail.html" }
   },
