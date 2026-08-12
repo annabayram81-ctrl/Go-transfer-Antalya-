@@ -30,6 +30,7 @@ function renderHome(template, language) {
   html = /<link rel="canonical" href="[^"]+"\s*\/?>/.test(html)
     ? html.replace(/<link rel="canonical" href="[^"]+"\s*\/?>/, seoLinks)
     : html.replace("</head>", `    ${seoLinks}\n  </head>`);
+  html = html.replace("</body>", '    <script src="/return-transfer-ui.js?v=20260812-restore-8"></script>\n  </body>');
   return html;
 }
 

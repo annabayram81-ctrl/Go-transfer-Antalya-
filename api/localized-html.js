@@ -25,7 +25,7 @@ function menu(path, language, availableLanguages) {
 }
 
 function commonScript() {
-  return `<script>document.querySelectorAll('.language-menu__button').forEach(function(b){b.addEventListener('click',function(){var x=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!x));b.closest('.language-menu').classList.toggle('is-open',!x)})});document.querySelectorAll('[data-add-stop]').forEach(function(b){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')==='true';b.setAttribute('aria-pressed',String(!on));b.closest('.stop-card').classList.toggle('is-selected',!on)})});document.querySelectorAll('.mobile-back-button').forEach(function(b){b.addEventListener('click',function(){history.length>1?history.back():location.assign(b.dataset.fallback||'/')})});</script>`;
+  return `<script>document.querySelectorAll('.language-menu__button').forEach(function(b){b.addEventListener('click',function(){var x=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!x));b.closest('.language-menu').classList.toggle('is-open',!x)})});document.querySelectorAll('[data-add-stop]').forEach(function(b){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')==='true';b.setAttribute('aria-pressed',String(!on));b.closest('.stop-card').classList.toggle('is-selected',!on)})});document.querySelectorAll('.mobile-back-button').forEach(function(b){b.addEventListener('click',function(){history.length>1?history.back():location.assign(b.dataset.fallback||'/')})});</script><script src="/return-transfer-ui.js?v=20260812-restore-8"></script>`;
 }
 
 function routeBody({ language, path, h1, lead, image, sections, availableLanguages, entity }) {

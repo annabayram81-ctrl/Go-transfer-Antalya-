@@ -124,5 +124,9 @@
 
   function init(){ensureMenu();set(current,{updateUrl:Boolean(params.get("lang")),notify:false});}
   window.GoTransferLocale={supported,get:()=>current,set,applyDocument,labels};
+  const giftScript=document.createElement("script");
+  giftScript.src="/return-transfer-ui.js?v=20260812-restore-8";
+  giftScript.dataset.siteAsset="gift-promo";
+  document.body.appendChild(giftScript);
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
 })();

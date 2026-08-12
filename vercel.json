@@ -33,6 +33,8 @@
     { "source": "/", "destination": "/ru", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/return-transfer-ui.js", "destination": "/gift-promo.js" },
+    { "source": "/return-transfer-ui.css", "destination": "/gift-promo.css" },
     { "source": "/blog/:slug", "destination": "/blog-article" },
     { "source": "/journeys/:slug", "destination": "/journey-detail" },
     {

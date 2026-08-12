@@ -51,10 +51,11 @@ createServer(async (request, response) => {
     return;
   }
 
-  const requestedPath =
-    url.pathname.startsWith("/images/")
+  const assetAliases = { "/return-transfer-ui.js": "/gift-promo.js", "/return-transfer-ui.css": "/gift-promo.css" };
+  const requestedPath = assetAliases[url.pathname] ||
+    (url.pathname.startsWith("/images/")
         ? `/public${url.pathname}`
-        : url.pathname;
+        : url.pathname);
   const filePath = normalize(join(root, requestedPath));
 
   if (!filePath.startsWith(root) || !existsSync(filePath) || !statSync(filePath).isFile()) {
