@@ -4,6 +4,11 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/home-page.js": { "includeFiles": ["i18n-content.js", "index.html"] },
+    "api/place-page.js": { "includeFiles": "place-placeholder.html" },
+    "api/route-page.js": { "includeFiles": "route-detail.html" }
+  },
   "headers": [
     {
       "source": "/service-worker.js",
@@ -25,76 +30,80 @@
       "source": "/images/:path*",
       "destination": "/public/images/:path*"
     },
+    { "source": "/:lang(ru|en|tr|de|ar)", "destination": "/api/home-page?localized=1&lang=:lang" },
+    { "source": "/:lang(ru|en|tr|de|ar)/routes/:slug", "destination": "/api/route-page?localized=1&lang=:lang&slug=:slug" },
+    { "source": "/:lang(ru|en|tr|de|ar)/places/:slug", "destination": "/api/place-page?localized=1&lang=:lang&slug=:slug" },
+    { "source": "/", "destination": "/api/home-page" },
     {
       "source": "/routes/lara",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=lara"
     },
     {
       "source": "/routes/belek",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=belek"
     },
     {
       "source": "/routes/alanya",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=alanya"
     },
     {
       "source": "/routes/side",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=side"
     },
     {
       "source": "/routes/konyaalti",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=konyaalti"
     },
     {
       "source": "/routes/beldibi",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=beldibi"
     },
     {
       "source": "/routes/goynuk",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=goynuk"
     },
     {
       "source": "/routes/kemer",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=kemer"
     },
     {
       "source": "/routes/kiris",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=kiris"
     },
     {
       "source": "/routes/camyuva",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=camyuva"
     },
     {
       "source": "/routes/tekirova",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=tekirova"
     },
     {
       "source": "/routes/olympos",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=olympos"
     },
     {
       "source": "/routes/cirali",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=cirali"
     },
     {
       "source": "/routes/adrasan",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=adrasan"
     },
     {
       "source": "/routes/kumluca",
-      "destination": "/route-detail"
+      "destination": "/api/route-page?slug=kumluca"
     },
-    {"source":"/routes/finike","destination":"/route-detail"},
-    {"source":"/routes/demre","destination":"/route-detail"},
-    {"source":"/routes/kas","destination":"/route-detail"},
+    {"source":"/routes/finike","destination":"/api/route-page?slug=finike"},
+    {"source":"/routes/demre","destination":"/api/route-page?slug=demre"},
+    {"source":"/routes/kas","destination":"/api/route-page?slug=kas"},
     {
       "source": "/routes/:slug",
-      "destination": "/route-placeholder"
+      "destination": "/api/route-page?slug=:slug"
     },
     {
       "source": "/places/:slug",
-      "destination": "/place-placeholder"
+      "destination": "/api/place-page?slug=:slug"
     }
   ]
 }

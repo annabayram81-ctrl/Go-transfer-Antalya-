@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node local-server.mjs",
     "start": "node local-server.mjs",
-    "test": "node --test",
+    "build": "node scripts/generate-sitemap.mjs && node --check booking.js && node --check api/localized-html.js && node --check api/home-page.js && node --check api/route-page.js && node --check api/place-page.js",
+    "test": "node --test tests/*.test.js",
     "vercel": "node node_modules/vercel/dist/vc.js",
     "deploy": "node node_modules/vercel/dist/vc.js deploy --prod"
   },
