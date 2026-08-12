@@ -6,3 +6,7 @@ package-lock.json
 local-server.mjs
 README.md
 assets/hero-car-drive-scrub.mp4
+.codex-*
+_*worktree/
+.*_worktree/
+live-*
