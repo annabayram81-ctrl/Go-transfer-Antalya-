@@ -10,6 +10,7 @@
       intro: "О Турции, поездках, людях и нашей повседневной работе — тепло и честно, как в разговоре за чашкой кофе.",
       futureTitle: "О чём я расскажу дальше",
       futureIntro: "Это темы следующих публикаций. Я буду добавлять их постепенно — с личными историями, полезными деталями и без рекламных шаблонов.",
+      readNow: "Читать статью", soon: "Скоро",
       topics: [
         "Как появилась наша семейная компания GoTransfer",
         "Что происходит после того, как клиент заказывает трансфер",
@@ -30,6 +31,7 @@
       intro: "Turkey, journeys, people and our everyday work — shared warmly and honestly, as if we were talking over coffee.",
       futureTitle: "Stories I’ll share next",
       futureIntro: "These are the next conversations I would like us to have — personal, practical and never written like an advertisement.",
+      readNow: "Read article", soon: "Coming soon",
       topics: [
         "How our family company, GoTransfer, began",
         "What happens after a guest books a transfer",
@@ -50,6 +52,7 @@
       intro: "Türkiye, yolculuklar, insanlar ve günlük işimiz üzerine; bir kahve sohbeti kadar sıcak ve içten yazılar.",
       futureTitle: "Bundan sonra neler anlatacağım",
       futureIntro: "Sıradaki yazılarımızın konuları bunlar. Her birini kişisel hikâyeler ve işe yarayan ayrıntılarla, reklâm dili kullanmadan paylaşacağım.",
+      readNow: "Yazıyı oku", soon: "Yakında",
       topics: [
         "Aile şirketimiz GoTransfer nasıl doğdu?",
         "Bir misafir transfer rezervasyonu yaptıktan sonra neler oluyor?",
@@ -191,7 +194,7 @@
       if (grid) {
         const section = document.createElement("section");
         section.className = "blog-future";
-        section.innerHTML = `<div class="blog-future__intro"><span>${current.kicker}</span><h2>${current.futureTitle}</h2><p>${current.futureIntro}</p></div><ol>${current.topics.map((topic, index) => index === 0 ? `<li class="is-published"><a href="/stories/our-first-car-gotransfer-story?lang=${language()}"><span>${String(index + 1).padStart(2, "0")}</span><p>${topic}</p><strong aria-hidden="true">→</strong></a></li>` : `<li><span>${String(index + 1).padStart(2, "0")}</span><p>${topic}</p></li>`).join("")}</ol>`;
+        section.innerHTML = `<div class="blog-future__intro"><span>${current.kicker}</span><h2>${current.futureTitle}</h2><p>${current.futureIntro}</p></div><ol>${current.topics.map((topic, index) => index === 0 ? `<li class="is-published"><a href="/blog/our-first-car-gotransfer-story?lang=${language()}"><span>${String(index + 1).padStart(2, "0")}</span><p>${topic}</p><small>${current.readNow}</small><strong aria-hidden="true">→</strong></a></li>` : `<li class="is-upcoming"><span>${String(index + 1).padStart(2, "0")}</span><p>${topic}</p><small>${current.soon}</small></li>`).join("")}</ol>`;
         grid.after(section);
       }
     }
