@@ -23,6 +23,15 @@
       "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
     }
   ],
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "lang", "value": "(?<lang>ru|en|tr|de|ar)" }],
+      "destination": "/:lang/",
+      "permanent": true
+    },
+    { "source": "/", "destination": "/ru/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/blog/:slug", "destination": "/blog-article" },
     { "source": "/journeys/:slug", "destination": "/journey-detail" },
