@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GoTransfer</string>
-    <string name="site_url">https://antalya-transfer.vercel.app/?source=android-app</string>
+    <string name="site_url">https://gotransfer.my/?source=android-app</string>
     <string name="loading_error_title">Connection problem</string>
     <string name="loading_error_message">GoTransfer could not load. Check your connection and try again.</string>
     <string name="retry">Retry</string>

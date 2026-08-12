@@ -1,12 +1,29 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { defaultLanguage, homeTranslations, supportedLanguages } from "../i18n-content.js";
-import { localizedPath, permanentRedirect, sendHtml, validLanguage } from "./localized-html.js";
+import { localizedPath, sendHtml, validLanguage } from "./localized-html.js";
 
 const origin = "https://gotransfer.my";
 const templatePath = join(process.cwd(), "index.html");
 
 function first(value) { return Array.isArray(value) ? value[0] : value; }
+function preferredLanguage(req) {
+  const cookieLanguage = String(req.headers?.cookie || "").match(/(?:^|;\s*)gotransfer-language=(ru|en|tr|de|ar)(?:;|$)/i)?.[1]?.toLowerCase();
+  if (cookieLanguage) return cookieLanguage;
+
+  const accepted = String(req.headers?.["accept-language"] || "")
+    .split(",")
+    .map((item) => item.split(";")[0].trim().split("-")[0].toLowerCase());
+  const browserLanguage = accepted[0];
+  if (supportedLanguages.includes(browserLanguage)) return browserLanguage;
+
+  const country = String(req.headers?.["x-vercel-ip-country"] || "").toUpperCase();
+  if (["TR"].includes(country)) return "tr";
+  if (["DE", "AT", "CH", "LI", "LU"].includes(country)) return "de";
+  if (["RU", "BY", "KZ", "KG"].includes(country)) return "ru";
+  if (["AE", "BH", "DZ", "EG", "IQ", "JO", "KW", "LB", "LY", "MA", "OM", "PS", "QA", "SA", "SD", "SY", "TN", "YE"].includes(country)) return "ar";
+  return "en";
+}
 function escapeHtml(value) {
   return String(value ?? "").replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 }
@@ -38,7 +55,10 @@ export default async function handler(req, res) {
   const isLocalized = first(req.query?.localized) === "1";
   const requestedLanguage = validLanguage(first(req.query?.lang));
   if (!isLocalized) {
-    permanentRedirect(res, localizedPath(requestedLanguage || defaultLanguage, "/"));
+    res.setHeader("Location", localizedPath(requestedLanguage || preferredLanguage(req), "/"));
+    res.setHeader("Cache-Control", "private, no-store");
+    res.setHeader("Vary", "Cookie, Accept-Language, X-Vercel-IP-Country");
+    res.status(302).send("");
     return;
   }
 

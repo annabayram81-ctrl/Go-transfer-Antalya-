@@ -11,6 +11,7 @@ const android15Theme = readFileSync(
   "android/app/src/main/res/values-v35/styles.xml",
   "utf8",
 );
+const strings = readFileSync("android/app/src/main/res/values/strings.xml", "utf8");
 
 test("Android app never requests fullscreen or immersive navigation", () => {
   assert.doesNotMatch(
@@ -28,4 +29,8 @@ test("Samsung three-button navigation is explicitly restored throughout lifecycl
   assert.match(activity, /override fun onWindowFocusChanged\(hasFocus: Boolean\)[\s\S]*?keepSystemBarsVisible\(\)/);
   assert.match(activity, /APPEARANCE_LIGHT_NAVIGATION_BARS/);
   assert.match(android15Theme, /windowOptOutEdgeToEdgeEnforcement">true/);
+});
+
+test("Android app opens the canonical site where device language is detected", () => {
+  assert.match(strings, /<string name="site_url">https:\/\/gotransfer\.my\/\?source=android-app<\/string>/);
 });

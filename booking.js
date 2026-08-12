@@ -1379,6 +1379,7 @@ function setLanguage(language) {
 
   currentLanguage = language;
   localStorage.setItem("gotransfer-language", language);
+  document.cookie = `gotransfer-language=${language}; Max-Age=31536000; Path=/; SameSite=Lax`;
   applyTranslations();
   updateDateDisplay();
   updateQuote();
@@ -1435,6 +1436,12 @@ function getInitialLanguage() {
 
   if (translations[savedLanguage]) {
     return savedLanguage;
+  }
+
+  const browserLanguages = navigator.languages || [navigator.language];
+  for (const locale of browserLanguages) {
+    const language = String(locale || "").toLowerCase().split("-")[0];
+    if (translations[language]) return language;
   }
 
   return isLikelyRussianRegion() ? "ru" : "en";

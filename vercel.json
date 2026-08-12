@@ -29,8 +29,7 @@
       "has": [{ "type": "query", "key": "lang", "value": "(?<lang>ru|en|tr|de|ar)" }],
       "destination": "/:lang",
       "permanent": true
-    },
-    { "source": "/", "destination": "/ru", "permanent": true }
+    }
   ],
   "rewrites": [
     { "source": "/return-transfer-ui.js", "destination": "/gift-promo.js" },

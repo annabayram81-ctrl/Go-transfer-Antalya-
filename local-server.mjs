@@ -40,14 +40,14 @@ createServer(async (request, response) => {
     const [, lang, type, slug] = localized;
     const query = { lang, localized: "1", ...(slug ? { slug } : {}) };
     const handler = type === "routes" ? routeHandler : type === "places" ? placeHandler : homeHandler;
-    await handler({ query, method: request.method }, apiResponse(response));
+    await handler({ query, method: request.method, headers: request.headers }, apiResponse(response));
     return;
   }
 
   if (legacy || url.pathname === "/") {
     const query = { lang: url.searchParams.get("lang") || undefined, ...(legacy ? { slug: legacy[2] } : {}) };
     const handler = legacy?.[1] === "routes" ? routeHandler : legacy?.[1] === "places" ? placeHandler : homeHandler;
-    await handler({ query, method: request.method }, apiResponse(response));
+    await handler({ query, method: request.method, headers: request.headers }, apiResponse(response));
     return;
   }
 

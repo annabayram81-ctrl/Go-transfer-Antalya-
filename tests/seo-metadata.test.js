@@ -7,7 +7,7 @@ import homeHandler from "../api/home-page.js";
 import { routes, places } from "../route-data.js";
 import { homeTranslations, placeTranslations, routeTranslations, supportedLanguages } from "../i18n-content.js";
 
-function render(handler, query, method = "GET") {
+function render(handler, query, method = "GET", headers = {}) {
   return new Promise((resolve) => {
     const result = { statusCode: 200, headers: {} };
     const res = {
@@ -15,7 +15,7 @@ function render(handler, query, method = "GET") {
       status(code) { result.statusCode = code; return this; },
       send(body) { result.body = body; resolve(result); },
     };
-    handler({ query, method }, res);
+    handler({ query, method, headers }, res);
   });
 }
 
@@ -62,13 +62,29 @@ test("legacy query language redirects directly to localized canonical", async ()
   assert.equal(place.headers.Location, "/ar/places/kaleici");
 });
 
-test("clean legacy URLs redirect once to Russian default", async () => {
+test("clean legacy route and place URLs redirect once to Russian default", async () => {
   const route = await render(routeHandler, { slug: "alanya" });
   const place = await render(placeHandler, { slug: "kaleici" });
-  const home = await render(homeHandler, {});
   assert.equal(route.headers.Location, "/ru/routes/alanya");
   assert.equal(place.headers.Location, "/ru/places/kaleici");
-  assert.equal(home.headers.Location, "/ru");
+});
+
+test("homepage selects a supported browser language and falls back to English", async () => {
+  const turkish = await render(homeHandler, {}, "GET", { "accept-language": "tr-TR,tr;q=0.9,en;q=0.8" });
+  const german = await render(homeHandler, {}, "GET", { "accept-language": "de-DE,de;q=0.9" });
+  const unsupported = await render(homeHandler, {}, "GET", { "accept-language": "fr-FR,fr;q=0.9" });
+  assert.equal(turkish.headers.Location, "/tr");
+  assert.equal(german.headers.Location, "/de");
+  assert.equal(unsupported.headers.Location, "/en");
+  assert.equal(turkish.statusCode, 302);
+  assert.equal(turkish.headers.Vary, "Cookie, Accept-Language, X-Vercel-IP-Country");
+});
+
+test("saved language wins and country is used only as a fallback", async () => {
+  const saved = await render(homeHandler, {}, "GET", { cookie: "gotransfer-language=ar", "accept-language": "tr-TR" });
+  const country = await render(homeHandler, {}, "GET", { "accept-language": "fr-FR", "x-vercel-ip-country": "TR" });
+  assert.equal(saved.headers.Location, "/ar");
+  assert.equal(country.headers.Location, "/tr");
 });
 
 test("unapproved translations are noindex 404 and cannot leak Russian content", async () => {

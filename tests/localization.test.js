@@ -12,6 +12,17 @@ test("the shared locale layer supports all five languages and Arabic RTL", () =>
   assert.match(source, /hreflang/);
 });
 
+test("language choice is remembered for future visits", () => {
+  const source = readFileSync("site-locale.js", "utf8");
+  assert.match(source, /document\.cookie=`\$\{key\}=\$\{language\}; Max-Age=31536000; Path=\/; SameSite=Lax`/);
+});
+
+test("root entry asks the server to select the visitor language before rendering", () => {
+  const html = readFileSync("index.html", "utf8");
+  assert.match(html, /location\.pathname === "\/"/);
+  assert.match(html, /location\.replace\(`\/api\/home-page\$\{location\.search\}`\)/);
+});
+
 test("all public HTML pages load the shared locale layer", () => {
   [
     "index.html",

@@ -114,6 +114,7 @@
     if(!supported.includes(language))return;
     current=language;
     localStorage.setItem(key,language);
+    document.cookie=`${key}=${language}; Max-Age=31536000; Path=/; SameSite=Lax`;
     if(updateUrl){
       const url=new URL(location.href);url.searchParams.set("lang",language);history.replaceState(null,"",url);
     }

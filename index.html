@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="ru">
   <head>
+    <script>
+      if (location.pathname === "/" && !new URLSearchParams(location.search).has("lang")) {
+        location.replace(`/api/home-page${location.search}`);
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="google-site-verification" content="GTXr1XiaeOlDStYCKxnyrnLeF8zaxl91jII-qiSTUsA" />
