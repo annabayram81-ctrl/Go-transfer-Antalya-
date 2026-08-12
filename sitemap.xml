@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://gotransfer.my/ru/</loc></url>
-  <url><loc>https://gotransfer.my/en/</loc></url>
-  <url><loc>https://gotransfer.my/tr/</loc></url>
-  <url><loc>https://gotransfer.my/de/</loc></url>
-  <url><loc>https://gotransfer.my/ar/</loc></url>
+  <url><loc>https://gotransfer.my/ru</loc></url>
+  <url><loc>https://gotransfer.my/en</loc></url>
+  <url><loc>https://gotransfer.my/tr</loc></url>
+  <url><loc>https://gotransfer.my/de</loc></url>
+  <url><loc>https://gotransfer.my/ar</loc></url>
   <url><loc>https://gotransfer.my/ru/routes/lara</loc></url>
   <url><loc>https://gotransfer.my/ru/routes/belek</loc></url>
   <url><loc>https://gotransfer.my/ru/routes/alanya</loc></url>

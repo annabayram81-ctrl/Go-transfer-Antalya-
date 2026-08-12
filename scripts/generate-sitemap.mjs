@@ -5,7 +5,7 @@ import { homeTranslations, placeTranslations, routeTranslations, supportedLangua
 const origin = "https://gotransfer.my";
 const urls = [];
 for (const language of supportedLanguages) {
-  if (homeTranslations[language]) urls.push(`${origin}/${language}/`);
+  if (homeTranslations[language]) urls.push(`${origin}/${language}`);
 }
 for (const slug of Object.keys(routes)) {
   urls.push(`${origin}/ru/routes/${slug}`);

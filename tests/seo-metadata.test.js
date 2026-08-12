@@ -109,7 +109,7 @@ test("every Russian route and place is indexable", async () => {
 test("sitemap contains exactly the available canonical pages", () => {
   const expected = new Set();
   for (const language of supportedLanguages) {
-    if (homeTranslations[language]) expected.add(`https://gotransfer.my/${language}/`);
+    if (homeTranslations[language]) expected.add(`https://gotransfer.my/${language}`);
   }
   for (const slug of Object.keys(routes)) {
     expected.add(`https://gotransfer.my/ru/routes/${slug}`);
