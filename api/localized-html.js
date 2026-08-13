@@ -1,4 +1,4 @@
-import { defaultLanguage, languageNames, supportedLanguages, ui } from "../i18n-content.js";
+import { defaultLanguage, languageNames, placeTranslations, supportedLanguages, ui } from "../i18n-content.js";
 import { calculateTransferPrice, STANDARD_TARIFF_TIER } from "../pricing.js";
 import { placesBySlug } from "../route-data.js";
 
@@ -10,7 +10,17 @@ export function validLanguage(value) {
 }
 
 export function localizedPath(language, path = "/") {
+  if (path === "/routes") return routesIndexPath(language);
   return path === "/" ? `/${language}` : `/${language}${path}`;
+}
+
+function routesIndexPath(language) {
+  return `/routes?lang=${language}`;
+}
+
+function placePath(language, slug) {
+  const targetLanguage = language === defaultLanguage || placeTranslations[slug]?.[language] ? language : defaultLanguage;
+  return localizedPath(targetLanguage, `/places/${slug}`);
 }
 
 function seoLinks(path, availableLanguages) {
@@ -60,7 +70,7 @@ function routeBody({ language, path, h1, lead, image, sections, availableLanguag
     ar:{back:"العودة إلى الوجهات",choose:"اختر المحطات",direct:"أماكن يسهل زيارتها في الطريق",extra:"أضف جولة قصيرة",details:"التفاصيل",add:"أضف إلى المسار",help:"لست متأكداً ماذا تختار؟",privacy:"سياسة الخصوصية"}
   }[language];
   const allStops = [...(entity?.directStops || []), ...(entity?.extraTrips || [])];
-  const cards = allStops.map((slug,index)=>`<article class="stop-card"><div class="stop-card__visual"><img src="${escapeHtml(placesBySlug[slug].cardImage || placesBySlug[slug].image)}" alt="${escapeHtml(slug.replaceAll('-', ' '))}" loading="lazy" decoding="async"><span class="stop-card__number">${String(index+1).padStart(2,'0')}</span></div><div class="stop-card__body"><span class="stop-card__category">${escapeHtml(copy.placeKicker)}</span><h3>${escapeHtml(slug.replaceAll('-', ' '))}</h3><p>${escapeHtml(sections[index % Math.max(sections.length,1)]?.text || lead)}</p><div class="stop-card__actions"><a href="${localizedPath(language, `/places/${slug}`)}">${escapeHtml(labels.details)}</a><button type="button" data-add-stop="${slug}" aria-pressed="false">${escapeHtml(labels.add)}</button></div></div></article>`).join("");
+  const cards = allStops.map((slug,index)=>`<article class="stop-card"><div class="stop-card__visual"><img src="${escapeHtml(placesBySlug[slug].cardImage || placesBySlug[slug].image)}" alt="${escapeHtml(slug.replaceAll('-', ' '))}" loading="lazy" decoding="async"><span class="stop-card__number">${String(index+1).padStart(2,'0')}</span></div><div class="stop-card__body"><span class="stop-card__category">${escapeHtml(copy.placeKicker)}</span><h3>${escapeHtml(slug.replaceAll('-', ' '))}</h3><p>${escapeHtml(sections[index % Math.max(sections.length,1)]?.text || lead)}</p><div class="stop-card__actions"><a href="${placePath(language, slug)}">${escapeHtml(labels.details)}</a><button type="button" data-add-stop="${slug}" aria-pressed="false">${escapeHtml(labels.add)}</button></div></div></article>`).join("");
   return `<header class="route-detail-topbar"><a class="brand" href="${localizedPath(language,'/')}"><span class="brand__text"><span>GoTransfer</span></span></a><div class="topbar__actions"><a class="route-detail-back" href="${localizedPath(language,'/routes')}">${escapeHtml(labels.back)}</a><div class="quick-links"><a class="topbar__icon-link topbar__icon-link--whatsapp topbar__icon-link--compact" href="https://wa.me/905346801828" target="_blank" rel="noreferrer">WhatsApp</a><a class="topbar__icon-link topbar__icon-link--telegram topbar__icon-link--compact" href="https://t.me/AnnaBayram07" target="_blank" rel="noreferrer">Telegram</a></div>${menu(path,language,availableLanguages)}</div></header><main><section class="route-hero"><img id="routeHeroImage" src="${escapeHtml(image)}" alt="${escapeHtml(h1)}"><span class="route-hero__overlay"></span><div class="route-hero__content"><a class="route-breadcrumb" href="${localizedPath(language,'/routes')}">← ${escapeHtml(labels.back)}</a><p class="route-hero__eyebrow">${escapeHtml(copy.routeKicker)}</p><h1>${escapeHtml(h1)}</h1><p>${escapeHtml(lead)}</p><div class="route-hero__actions"><a class="route-action route-action--primary" href="https://wa.me/905346801828" target="_blank" rel="noreferrer">${escapeHtml(copy.contact)}</a><a class="route-action route-action--secondary" href="#routeStops">${escapeHtml(labels.choose)}</a></div></div></section><section class="route-section route-container" id="routeStops"><header class="route-section__head"><div><p class="section-kicker">${escapeHtml(copy.routeIntro)}</p><h2>${escapeHtml(labels.direct)}</h2></div><p>${escapeHtml(sections[0]?.text || lead)}</p></header><div class="stop-grid">${cards}</div></section><section class="route-intro route-container"><div><p class="section-kicker">${escapeHtml(copy.routeKicker)}</p><h2>${escapeHtml(sections[0]?.title || labels.extra)}</h2><p>${escapeHtml(sections[0]?.text || lead)}</p></div><ul>${sections.map(s=>`<li>${escapeHtml(s.title)}</li>`).join('')}</ul></section><section class="route-help route-container"><p class="section-kicker">${escapeHtml(copy.planning)}</p><h2>${escapeHtml(labels.help)}</h2><p>${escapeHtml(sections[1]?.text || lead)}</p><a class="route-action route-action--primary" href="https://wa.me/905346801828">${escapeHtml(copy.contact)}</a></section></main><footer class="route-footer"><span>GoTransfer</span><a href="/privacy">${escapeHtml(labels.privacy)}</a></footer><button class="mobile-back-button" data-fallback="${localizedPath(language,'/routes')}" type="button">← <span>${escapeHtml(labels.back)}</span></button>${commonScript()}`;
 }
 

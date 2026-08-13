@@ -79,6 +79,16 @@ test("route stop cards use each place's real image path and extension", async ()
   }
 });
 
+test("rendered navigation links only target published localized pages", async () => {
+  const englishAlanya = await render(routeHandler, { slug: "alanya", lang: "en", localized: "1" });
+  assert.match(englishAlanya.body, /href="\/routes\?lang=en"/);
+  assert.match(englishAlanya.body, /href="\/ru\/places\/alanya-castle"/);
+  assert.doesNotMatch(englishAlanya.body, /href="\/en\/places\/alanya-castle"/);
+
+  const englishKaleici = await render(placeHandler, { slug: "kaleici", lang: "en", localized: "1" });
+  assert.match(englishKaleici.body, /href="\/routes\?lang=en"/);
+});
+
 test("homepage selects a supported browser language and falls back to English", async () => {
   const turkish = await render(homeHandler, {}, "GET", { "accept-language": "tr-TR,tr;q=0.9,en;q=0.8" });
   const german = await render(homeHandler, {}, "GET", { "accept-language": "de-DE,de;q=0.9" });
