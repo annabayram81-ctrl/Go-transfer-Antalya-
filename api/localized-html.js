@@ -92,7 +92,7 @@ export function renderPage({ language, path, title, description, h1, lead, image
 ${seoLinks(path, availableLanguages)}
     <script type="application/ld+json">${JSON.stringify(breadcrumbSchema).replaceAll("<","\\u003c")}</script>
     <link rel="icon" href="/assets/app-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/styles.css?v=20260728-pwa-58" />
+    <link rel="stylesheet" href="/styles.css?v=20260813-topbar-1" />
     <link rel="stylesheet" href="/${pageType === "place" ? "place-detail" : "route-detail"}.css?v=20260811-ssr-parity" />
   </head>
   <body class="${pageType === "place" ? "place-detail-page" : "route-detail-page"}">
