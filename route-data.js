@@ -7,7 +7,7 @@ export const places = [
     category: "Короткая остановка",
     description:
       "Живописный водопад, который впадает прямо в Средиземное море. Подходит для короткой остановки и фотографий недалеко от Лары.",
-    image: "/images/places/lower-duden.jpg",
+    image: "/images/chauffeur/beaches.png",
     slug: "lower-duden",
     eyebrow: "Водопад у Средиземного моря",
     intro:
@@ -1143,6 +1143,23 @@ export const places = [
 export const placesBySlug = Object.fromEntries(places.map((place) => [place.slug, place]));
 
 export const routes = {
+  kundu: {
+    slug: "kundu",
+    origin: "Аэропорт Анталии",
+    destination: "Kundu",
+    destinationAccusative: "Kundu",
+    title: "Трансфер из аэропорта Анталии в Kundu",
+    description: "Короткий частный трансфер из аэропорта Анталии прямо к отелю в гостиничном районе Kundu.",
+    seoTitle: "Трансфер из аэропорта Анталии в Kundu — цена и время | GoTransfer",
+    seoDescription: "Частный трансфер Antalya Airport — Kundu: около 17 км, ориентировочное время в пути 20–30 минут и расчёт цены по единому тарифу GoTransfer.",
+    image: "/images/places/lower-duden.jpg",
+    distanceKm: 17.1,
+    durationText: "20–30 минут",
+    pricingDestinationId: "kundu",
+    isKunduRoute: true,
+    directStops: [],
+    extraTrips: [],
+  },
   lara: {
     slug: "lara",
     origin: "Аэропорт Антальи",

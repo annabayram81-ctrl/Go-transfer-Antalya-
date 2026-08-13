@@ -1,3 +1,5 @@
+import { STANDARD_TARIFF_TIER } from "./pricing.js";
+
 const config = {
   whatsappPhone: "905346801828",
   telegramUsername: "AnnaBayram07",
@@ -34,7 +36,7 @@ const config = {
     { id: "adrasan", name: "Adrasan", prices: [80, 85, 90] },
   ],
   tariffTiers: [
-    { label: "1-3 пассажира", min: 1, max: 3, priceIndex: 0, base: 24.13, perKm: 0.49 },
+    STANDARD_TARIFF_TIER,
     { label: "4-6 пассажиров", min: 4, max: 6, priceIndex: 1, base: 28.35, perKm: 0.503 },
     { label: "7-9 пассажиров", min: 7, max: 9, priceIndex: 2, base: 32.57, perKm: 0.515 },
     { label: "10-20 пассажиров", min: 10, max: 20, priceIndex: 2, base: 32.57, perKm: 0.515, extraPassengerRate: 0.2 },
@@ -118,6 +120,18 @@ const routeDistancesKm = [
   [75,79.3,81.1,100.1,108.2,124.3,134.1,138.4,155.5,164.6,170.5,172.4,178.2,183.3,193.8,205.3,237.6,51.4,32.5,24.2,16.1,14.2,9.7,0,35.6],
   [107.8,112.1,113.9,133,141,157.1,166.9,171.2,188.3,197.4,203.3,205.2,211,216.1,226.6,238.1,270.4,84.2,65.3,57,48.9,47,42.5,35.5,0],
 ];
+
+globalThis.GoTransferRouteCatalog = Object.freeze({
+  locations: config.locations,
+  tariffTiers: config.tariffTiers,
+  routeMatrixIds,
+  routeDistancesKm,
+  supplementalDistancesKm: Object.freeze({ kas: 203.5 }),
+  getDistanceFromAirport(destinationId) {
+    const destinationIndex = routeMatrixIds.indexOf(destinationId);
+    return destinationIndex >= 0 ? routeDistancesKm[0]?.[destinationIndex] ?? null : this.supplementalDistancesKm[destinationId] ?? null;
+  },
+});
 
 const translations = {
   ru: {

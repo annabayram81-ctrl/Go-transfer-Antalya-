@@ -28,6 +28,63 @@ export const homeTranslations = {
 // Only editorially approved translations belong here. Missing translations are
 // deliberately not published or included in the sitemap.
 export const routeTranslations = {
+  kundu: {
+    ru: {
+      title: "Трансфер из аэропорта Анталии в Kundu — цена и время | GoTransfer",
+      description: "Частный трансфер Antalya Airport — Kundu: около 17 км, ориентировочно 20–30 минут и минимальная цена по единому тарифу GoTransfer.",
+      h1: "Трансфер из аэропорта Анталии в Kundu",
+      lead: "Встречаем в аэропорту Анталии и отвозим прямо к вашему отелю в Kundu. Это один из ближайших к аэропорту гостиничных районов побережья.",
+      sections: [
+        { title: "Гостиничный район у моря", text: "Kundu известен крупными курортными комплексами с выразительной архитектурой, просторными территориями и удобным доступом к пляжам. Конкретный адрес отеля лучше указать при бронировании." },
+        { title: "Отдых и покупки рядом", text: "Вдоль района расположены пляжные зоны, торговые галереи, магазины и места для прогулок. Состав заведений и часы работы могут меняться, поэтому актуальную информацию стоит уточнять перед посещением." },
+        { title: "Кому подходит Kundu", text: "Район удобен семьям и туристам с детьми благодаря короткой дороге из аэропорта, парам, а также гостям, которые планируют большую часть отдыха провести на территории отеля и у моря." }
+      ]
+    },
+    en: {
+      title: "Antalya Airport to Kundu Transfer — Price and Time | GoTransfer",
+      description: "Private Antalya Airport to Kundu transfer: about 17 km, approximately 20–30 minutes, with the minimum fare calculated from GoTransfer's shared tariff.",
+      h1: "Private transfer from Antalya Airport to Kundu",
+      lead: "Meet your driver at Antalya Airport and travel directly to your hotel in Kundu, one of the closest coastal hotel districts to the airport.",
+      sections: [
+        { title: "A coastal hotel district", text: "Kundu is known for large resort properties with distinctive architecture, spacious grounds and convenient beach access. Add your exact hotel address when booking." },
+        { title: "Beaches and shopping", text: "The district includes beach areas, shopping galleries, stores and places for an evening walk. Businesses and opening hours may change, so check current details before visiting." },
+        { title: "Who Kundu suits", text: "The short airport journey makes Kundu practical for families and guests travelling with children. It also suits couples and hotel guests planning a relaxed seaside stay." }
+      ]
+    },
+    tr: {
+      title: "Antalya Havalimanı Kundu Transferi — Fiyat ve Süre | GoTransfer",
+      description: "Antalya Havalimanı'ndan Kundu'ya özel transfer: yaklaşık 17 km, tahmini 20–30 dakika ve GoTransfer ortak tarifesinden hesaplanan başlangıç fiyatı.",
+      h1: "Antalya Havalimanı'ndan Kundu'ya özel transfer",
+      lead: "Sizi Antalya Havalimanı'nda karşılıyor ve doğrudan Kundu'daki otelinize götürüyoruz. Kundu, havalimanına en yakın sahil otel bölgelerinden biridir.",
+      sections: [
+        { title: "Deniz kıyısında otel bölgesi", text: "Kundu; dikkat çekici mimariye, geniş alanlara ve plaja kolay erişime sahip büyük tatil tesisleriyle bilinir. Rezervasyonda otelinizin tam adresini belirtmeniz yeterlidir." },
+        { title: "Plajlar ve alışveriş", text: "Bölgede plaj alanları, alışveriş galerileri, mağazalar ve yürüyüş yerleri bulunur. İşletmeler ve çalışma saatleri değişebileceği için ziyaret öncesinde güncel bilgileri kontrol edin." },
+        { title: "Kundu kimler için uygun", text: "Kısa havalimanı yolculuğu nedeniyle aileler ve çocuklu misafirler için pratiktir. Çiftlere ve tatilinin çoğunu otelde ve deniz kenarında geçirmek isteyenlere de uygundur." }
+      ]
+    },
+    de: {
+      title: "Transfer vom Flughafen Antalya nach Kundu — Preis und Dauer | GoTransfer",
+      description: "Privater Transfer vom Flughafen Antalya nach Kundu: etwa 17 km, ungefähr 20–30 Minuten und Mindestpreis nach dem gemeinsamen GoTransfer-Tarif.",
+      h1: "Privater Transfer vom Flughafen Antalya nach Kundu",
+      lead: "Wir empfangen Sie am Flughafen Antalya und bringen Sie direkt zu Ihrem Hotel in Kundu, einem der flughafennahen Hotelgebiete an der Küste.",
+      sections: [
+        { title: "Hotelgebiet am Meer", text: "Kundu ist für große Ferienanlagen mit markanter Architektur, weitläufigen Bereichen und bequemem Strandzugang bekannt. Geben Sie bei der Buchung die genaue Hoteladresse an." },
+        { title: "Strände und Einkaufsmöglichkeiten", text: "Im Gebiet gibt es Strandbereiche, Einkaufsgalerien, Geschäfte und Wege für einen Spaziergang. Angebote und Öffnungszeiten können sich ändern; prüfen Sie aktuelle Angaben vor dem Besuch." },
+        { title: "Für wen Kundu geeignet ist", text: "Die kurze Anfahrt ist praktisch für Familien und Reisende mit Kindern. Auch Paare und Hotelgäste, die einen ruhigen Aufenthalt am Meer planen, fühlen sich hier wohl." }
+      ]
+    },
+    ar: {
+      title: "نقل من مطار أنطاليا إلى Kundu — السعر والمدة | GoTransfer",
+      description: "نقل خاص من مطار أنطاليا إلى Kundu: نحو 17 كم، ومدة تقريبية 20–30 دقيقة، وسعر يبدأ وفق تعرفة GoTransfer الموحدة.",
+      h1: "نقل خاص من مطار أنطاليا إلى Kundu",
+      lead: "نستقبلكم في مطار أنطاليا ونوصلكم مباشرة إلى فندقكم في Kundu، وهي من أقرب المناطق الفندقية الساحلية إلى المطار.",
+      sections: [
+        { title: "منطقة فندقية على البحر", text: "تشتهر Kundu بالمنتجعات الكبيرة ذات العمارة المميزة والمساحات الواسعة والوصول المريح إلى الشاطئ. يُفضّل إدخال عنوان الفندق الكامل عند الحجز." },
+        { title: "الشواطئ والتسوق", text: "تضم المنطقة شواطئ وأروقة للتسوق ومتاجر وأماكن للتنزه. قد تتغير الأنشطة وساعات العمل، لذلك يُنصح بالتحقق من المعلومات الحالية قبل الزيارة." },
+        { title: "لمن تناسب Kundu", text: "قصر الرحلة من المطار يجعل المنطقة مناسبة للعائلات والمسافرين مع الأطفال، كما تناسب الأزواج ونزلاء الفنادق الراغبين في عطلة هادئة قرب البحر." }
+      ]
+    }
+  },
   alanya: {
     ru: { title: "Трансфер из аэропорта Антальи в Аланию с интересными остановками", description: "Индивидуальный трансфер из аэропорта Антальи в Аланию: крепость, канатная дорога, Красная башня, Димчай и другие остановки.", h1: "Трансфер из аэропорта Антальи в Аланию", lead: "Долгую поездку в Аланию можно превратить в индивидуальное путешествие и заранее выбрать интересные остановки.", sections: [{ title: "Алания по вашему маршруту", text: "Крепость, Красная башня, пещера Дамлаташ и набережная находятся рядом с основным направлением поездки." }, { title: "Остановки согласуются заранее", text: "Продолжительность и стоимость зависят от выбранных мест. Оператор подтвердит порядок остановок до поездки." }] },
     en: { title: "Antalya Airport to Alanya Transfer with Sightseeing Stops", description: "Private transfer from Antalya Airport to Alanya with optional stops at Alanya Castle, the Red Tower, Damlataş Cave and Dim River.", h1: "Private transfer from Antalya Airport to Alanya", lead: "Turn the longer journey to Alanya into a private trip with sightseeing stops selected in advance.", sections: [{ title: "Discover Alanya on your route", text: "Alanya Castle, the Red Tower, Damlataş Cave and the harbour can be included near the main transfer route." }, { title: "Stops arranged in advance", text: "Journey time and price depend on your selected places. The operator confirms the order of stops before departure." }] },
