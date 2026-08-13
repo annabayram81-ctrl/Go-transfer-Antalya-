@@ -89,6 +89,16 @@ test("rendered navigation links only target published localized pages", async ()
   assert.match(englishKaleici.body, /href="\/routes\?lang=en"/);
 });
 
+test("Vercel redirects legacy localized route indexes to the working language view", () => {
+  const config = JSON.parse(readFileSync("vercel.json", "utf8"));
+  const redirect = config.redirects.find((item) => item.source === "/:lang(ru|en|tr|de|ar)/routes");
+  assert.deepEqual(redirect, {
+    source: "/:lang(ru|en|tr|de|ar)/routes",
+    destination: "/routes?lang=:lang",
+    permanent: true,
+  });
+});
+
 test("homepage selects a supported browser language and falls back to English", async () => {
   const turkish = await render(homeHandler, {}, "GET", { "accept-language": "tr-TR,tr;q=0.9,en;q=0.8" });
   const german = await render(homeHandler, {}, "GET", { "accept-language": "de-DE,de;q=0.9" });

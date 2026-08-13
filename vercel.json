@@ -25,6 +25,11 @@
   ],
   "redirects": [
     {
+      "source": "/:lang(ru|en|tr|de|ar)/routes",
+      "destination": "/routes?lang=:lang",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [{ "type": "query", "key": "lang", "value": "(?<lang>ru|en|tr|de|ar)" }],
       "destination": "/:lang",
