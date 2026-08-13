@@ -6,11 +6,18 @@ await import("../pricing.js");
 const {
   LONG_DISTANCE_RATE,
   LONG_DISTANCE_THRESHOLD_KM,
+  MINIMUM_TRANSFER_PRICE,
   calculateDistanceSubtotal,
   calculateTransferPrice,
 } = globalThis.GoTransferPricing;
 
 const standardTier = { min: 1, max: 3, base: 24.13, perKm: 0.49 };
+
+test("never quotes less than the 35 euro minimum fare", () => {
+  assert.equal(MINIMUM_TRANSFER_PRICE, 35);
+  assert.equal(calculateTransferPrice(standardTier, 0, 2), 35);
+  assert.equal(calculateTransferPrice(standardTier, 17.1, 2), 35);
+});
 
 test("uses the existing calculation through 100 km", () => {
   assert.equal(LONG_DISTANCE_THRESHOLD_KM, 100);

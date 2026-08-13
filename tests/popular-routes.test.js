@@ -14,7 +14,7 @@ test("Kundu has a complete indexable page in every supported language", async ()
     assert.equal(response.statusCode,200,language);
     assert.match(response.body,new RegExp(`<html lang="${language}"`));
     assert.match(response.body,/17\.1 km/);
-    assert.match(response.body,/€30/);
+    assert.match(response.body,/€35/);
     assert.match(response.body,/application\/ld\+json/);
     assert.match(response.body,/property="og:title"/);
     assert.match(response.body,new RegExp(`href="/routes/lara\\?lang=${language}"`));

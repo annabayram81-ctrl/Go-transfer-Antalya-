@@ -1,5 +1,6 @@
 export const LONG_DISTANCE_THRESHOLD_KM = 100;
 export const LONG_DISTANCE_RATE = 1.25;
+export const MINIMUM_TRANSFER_PRICE = 35;
 export const STANDARD_TARIFF_TIER = Object.freeze({ label: "1-3 пассажира", min: 1, max: 3, priceIndex: 0, base: 24.13, perKm: 0.49 });
 
 export function roundToFive(value) {
@@ -21,7 +22,7 @@ export function calculateTransferPrice(tariffTier, distanceKm, passengers) {
     const distanceSubtotal = calculateDistanceSubtotal(tariffTier, distanceKm);
 
     return Math.max(
-      0,
+      MINIMUM_TRANSFER_PRICE,
       roundToFive(distanceSubtotal * (tariffTier.multiplier || 1) * largeBusMultiplier) - 5,
     );
   }
@@ -29,6 +30,7 @@ export function calculateTransferPrice(tariffTier, distanceKm, passengers) {
 globalThis.GoTransferPricing = Object.freeze({
     LONG_DISTANCE_THRESHOLD_KM,
     LONG_DISTANCE_RATE,
+    MINIMUM_TRANSFER_PRICE,
     calculateDistanceSubtotal,
     calculateTransferPrice,
     roundToFive,
