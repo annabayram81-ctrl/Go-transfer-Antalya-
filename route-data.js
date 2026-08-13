@@ -8,6 +8,7 @@ export const places = [
     description:
       "Живописный водопад, который впадает прямо в Средиземное море. Подходит для короткой остановки и фотографий недалеко от Лары.",
     image: "/images/chauffeur/beaches.png",
+    cardImage: "/images/places/lower-duden.jpg",
     slug: "lower-duden",
     eyebrow: "Водопад у Средиземного моря",
     intro:
@@ -96,6 +97,7 @@ export const places = [
     description:
       "Один из наиболее известных античных городов региона с древними улицами, колоннами, стадионом и историческими сооружениями.",
     image: "/images/places/perge-panorama.jpg",
+    cardImage: "/images/places/perge.jpg",
     slug: "perge",
     eyebrow: "Античный город",
     intro:
@@ -186,6 +188,7 @@ export const places = [
     description:
       "Музей с археологическими находками из Перге, Аспендоса и других древних городов региона.",
     image: "/images/places/antalya-museum-dancer-full.jpg",
+    cardImage: "/images/places/antalya-museum.jpg",
     gallery: [
       {
         image: "/images/places/antalya-museum-dancer-full.jpg",
@@ -230,6 +233,7 @@ export const places = [
     description:
       "Яркий комплекс в Кадрие с каналом, вечерними огнями, ресторанами, магазинами и тематическим парком. Можно выбрать короткую прогулку или оставить больше времени на развлечения.",
     image: "/images/places/land-legends-castle-day.jpg",
+    cardImage: "/images/places/land-of-legends.jpg",
     gallery: [
       {
         image: "/images/places/land-legends-castle-day.jpg",

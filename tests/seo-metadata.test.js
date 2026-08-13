@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import routeHandler from "../api/route-page.js";
 import placeHandler from "../api/place-page.js";
 import homeHandler from "../api/home-page.js";
-import { routes, places } from "../route-data.js";
+import { routes, places, placesBySlug } from "../route-data.js";
 import { homeTranslations, placeTranslations, routeTranslations, supportedLanguages } from "../i18n-content.js";
 
 function render(handler, query, method = "GET", headers = {}) {
@@ -67,6 +67,16 @@ test("clean legacy route and place URLs redirect once to Russian default", async
   const place = await render(placeHandler, { slug: "kaleici" });
   assert.equal(route.headers.Location, "/ru/routes/alanya");
   assert.equal(place.headers.Location, "/ru/places/kaleici");
+});
+
+test("route stop cards use each place's real image path and extension", async () => {
+  for (const [routeSlug, route] of Object.entries(routes)) {
+    const result = await render(routeHandler, { slug: routeSlug, lang: "ru", localized: "1" });
+    for (const placeSlug of [...(route.directStops || []), ...(route.extraTrips || [])]) {
+      const image = placesBySlug[placeSlug].cardImage || placesBySlug[placeSlug].image;
+      assert.match(result.body, new RegExp(`<img src="${image.replaceAll(".", "\\.")}"`), `${routeSlug}: ${placeSlug}`);
+    }
+  }
 });
 
 test("homepage selects a supported browser language and falls back to English", async () => {
