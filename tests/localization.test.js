@@ -1,6 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+
+test("localized home URLs keep the GoTransfer logo instead of a back button", () => {
+  const backControl = readFileSync("site-back-control.js", "utf8");
+  assert.ok(backControl.includes('/^\\/(?:ru|en|tr|de|ar)\\/?$/'));
+});
 import { resolve } from "node:path";
 
 const read = (file) => readFileSync(resolve(file), "utf8");
